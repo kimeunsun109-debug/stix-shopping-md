@@ -34,13 +34,8 @@ STIX_*.json
 MD_*.xlsx
 MD_*.json
 
-# Sales/product exports (large — sync via OneDrive or upload manually)
-쇼핑몰별 전체상품/**/*
-!쇼핑몰별 전체상품/README.md
-!쇼핑몰별 전체상품/.gitkeep
-
-로켓그로스/**/*
-!로켓그로스/.gitkeep
-
-# Misc local
+# Misc local (outside data folder)
 로켓그로스 보관비.xlsx
+
+# Template only — keep example xls if present
+# (data under 쇼핑몰별 전체상품/ is tracked for Cursor Cloud)

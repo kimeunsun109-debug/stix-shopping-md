@@ -3,5 +3,5 @@
     "dockerfile": "Dockerfile",
     "context": ".."
   },
-  "install": "pip3 install --break-system-packages -r requirements.txt && python3 -m playwright install --with-deps chromium"
+  "install": "bash .cursor/cloud-install.sh"
 }

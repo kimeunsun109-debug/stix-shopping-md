@@ -22,7 +22,7 @@ python -m playwright install chromium
 copy .env.example .env.txt   # Windows — 비밀번호 입력
 ```
 
-매출/상품 엑셀은 `쇼핑몰별 전체상품/` 에 배치 (Git 미포함, OneDrive 동기화).
+매출/상품 엑셀은 **`쇼핑몰별 전체상품/`** 에 Git으로 포함 (~6MB). Cloud Agent clone 후 바로 분석 가능.
 
 Chrome CDP (로컬 스크래핑): `start_chrome_for_md.bat` → 포트 **9233**
 
