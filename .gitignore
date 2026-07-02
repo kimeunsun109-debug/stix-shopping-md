@@ -1,0 +1,46 @@
+# Secrets
+.env
+.env.txt
+.env.local
+rocket_price_manager/.env
+
+# Chrome CDP profile (local login session)
+chrome_md_profile/
+chrome_debug_profile/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS / IDE
+.Desktop
+Thumbs.db
+*.lnk
+
+# Logs & debug
+*.log
+fetch_log*.txt
+debug_*.png
+probe_results/
+screenshots/
+_hist_tmp/
+rocket_price_manager/probe_results/
+
+# Generated reports (re-run scripts to recreate)
+STIX_*.xlsx
+STIX_*.json
+MD_*.xlsx
+MD_*.json
+
+# Sales/product exports (large — sync via OneDrive or upload manually)
+쇼핑몰별 전체상품/**/*
+!쇼핑몰별 전체상품/README.md
+!쇼핑몰별 전체상품/.gitkeep
+
+로켓그로스/**/*
+!로켓그로스/.gitkeep
+
+# Misc local
+로켓그로스 보관비.xlsx

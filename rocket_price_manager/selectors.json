@@ -1,0 +1,42 @@
+{
+  "_comment": "2026-06-29 CDP(9233) 로그인 세션에서 Wing DOM 프로브로 검증",
+  "meta": {
+    "competitor_verified_at": "2026-06-29",
+    "login_verified_at": "2026-06-29",
+    "wing_price_verified_at": "2026-06-29 16:41",
+    "wing_page_mode": "modify"
+  },
+  "competitor": {
+    "price_selected_option": "div.option-table-list__option--selected div.option-table-list__option-price",
+    "price_container": "div.price-container.twc-relative",
+    "price_fallback": "div.price-container div.twc-text-\\[22px\\]",
+    "option_items": "div.option-table-list__option",
+    "option_price": "div.option-table-list__option-price",
+    "seller_xpath": "//*[contains(normalize-space(text()), '판매자:')]"
+  },
+  "login": {
+    "username": "#username",
+    "password": "#password",
+    "submit": "#kc-login",
+    "login_url_contains": "xauth.coupang.com"
+  },
+  "wing": {
+    "verified": true,
+    "page_mode": "modify",
+    "price_page_url_template": "https://wing.coupang.com/tenants/seller-price-management/?searchInputValue={search}&searchInputType=KEYWORD",
+    "modify_url_template": "https://wing.coupang.com/tenants/seller-web/vendor-inventory/modify?vendorInventoryId={vendor_inventory_id}",
+    "logged_in_url_excludes": [
+      "xauth.coupang.com",
+      "/login"
+    ],
+    "search_input": "input[placeholder*=\"등록상품명\"]",
+    "row_modify_link": "a.ap-action-link",
+    "price_input_class": "input.sc-common-input",
+    "save_button": "button.fs-unmask",
+    "save_confirm_button": "button.wing-modal-confirm-trigger",
+    "price_management_apply_button": "button.wds2.w-btn-primary",
+    "find_price_by_option_label_js": true,
+    "probed_url": "https://wing.coupang.com/tenants/seller-web/vendor-inventory/modify?vendorInventoryId=16020715295",
+    "probed_at": "2026-06-29 16:41"
+  }
+}
