@@ -20,8 +20,8 @@ gh repo create stix-shopping-md --public --push
 1. https://cursor.com/dashboard → **Cloud Agents**
 2. GitHub 계정 연결 → `stix-shopping-md` 저장소 선택
 3. 새 Cloud Agent 실행 (브랜치 `main`)
-4. `.cursor/environment.json` 이 Python + Playwright 자동 설치
-5. **데이터**: Agent에 `쇼핑몰별 전체상품/` 폴더 엑셀 업로드 (OneDrive에서 복사)
+4. Agent 시작 시 `.cursor/environment.json` → `cloud-install.sh`로 Python + Playwright 자동 설치
+5. **데이터**: `쇼핑몰별 전체상품/` 엑셀 39개가 Git에 포함됨 — 푸시 후 별도 업로드 불필요
 6. **비밀번호**: Dashboard → Secrets (Wing 등, `.env.txt` 내용)
 
 로컬 CDP(Chrome 9233) 스크래핑은 Cloud에서 불가 → 엑셀 export 후 분석 스크립트 사용.
