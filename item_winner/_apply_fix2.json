@@ -1,0 +1,17 @@
+[
+  {
+    "step": "login",
+    "ok": true,
+    "msg": "already logged in"
+  },
+  {
+    "step": "p2",
+    "ok": false,
+    "msg": "sale price input not found: {'ok': False, 'reason': 'row not found', 'vid': '94705203391'}"
+  },
+  {
+    "step": "p3",
+    "ok": false,
+    "msg": "sale price input not found: {'ok': False, 'reason': 'row not found', 'vid': '94705203395'}"
+  }
+]

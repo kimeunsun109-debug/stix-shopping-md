@@ -1,0 +1,92 @@
+[
+  {
+    "date": "2026-07-17",
+    "marketplace": "gmarket",
+    "keyword": "코바늘",
+    "items": [
+      {
+        "rank": null,
+        "title": "튤립 에띠모 로즈 모사용 코바늘레이스 바늘세트",
+        "price": 185000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "튤립",
+          "에띠모",
+          "로즈",
+          "모사용",
+          "코바늘레이스",
+          "바늘세트"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "튤립 에티모 로즈 모사용 코바늘 10종세트",
+        "price": 185000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "튤립",
+          "에티모",
+          "로즈",
+          "모사용",
+          "코바늘",
+          "종세트"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "튤립 에띠모 레이스 코바늘 블루 세트",
+        "price": 105000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "튤립",
+          "에띠모",
+          "레이스",
+          "코바늘",
+          "블루"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "43-405 크로바 크로스 바 코바늘10종 세트",
+        "price": 72000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "크로바",
+          "크로스",
+          "코바늘"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "튤립 에띠모 로즈 코바늘3개케이스 세트",
+        "price": 48000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "튤립",
+          "에띠모",
+          "로즈",
+          "코바늘",
+          "개케이스"
+        ]
+      }
+    ],
+    "repeating": [
+      "튤립",
+      "코바늘",
+      "로즈",
+      "에띠모",
+      "모사용"
+    ],
+    "ts": "2026-07-17T16:02:39"
+  }
+]

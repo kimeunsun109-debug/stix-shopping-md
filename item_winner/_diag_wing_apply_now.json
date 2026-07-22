@@ -1,0 +1,103 @@
+[
+  {
+    "inv": "?vendorInventoryId=15897375629",
+    "url": "https://wing.coupang.com/tenants/seller-web/vendor-inventory/modify?vendorInventoryId=15897375629",
+    "optPaneCells": 0,
+    "nameCells": [],
+    "editCells": 0,
+    "editBtns": [
+      {
+        "text": "수정",
+        "visible": true,
+        "parentClass": "",
+        "rowText": "수정"
+      },
+      {
+        "text": "수정",
+        "visible": true,
+        "parentClass": "",
+        "rowText": "B7000 투명 다용도 접착제 치약본드 15ml\n\t\n\t\n개\n \n\t\n아이템위너\n\t\n원\n\t\n원\n\t1개당 1,650\t\n1,560\n\t\n1,650\n\t\n\t\n\t\n\t\n\t\n\t수정"
+      }
+    ],
+    "hasOptionList": false,
+    "optionClasses": [
+      "option-pane-component",
+      "single-option-pane-top-info",
+      "scrollable-option-pane-table"
+    ],
+    "priceLikeInputs": [],
+    "bodyHead": "Coupang Wing\n판매자교육\n|\n온라인문의\n|\n도움말\n|\n4\n김은선\n님\n상품관리\n상품 등록\n상품 일괄등록\n통합솔루션으로 상품등록(무료)\n상품 조회/수정\n컴플라이언스 센터\n카탈로그 매칭관리\n로켓그로스 배지관리\n상품 알림\n브랜드 관리\n판매 성장\n가격관리\n로켓그로스\n주문/배송\n정산\n셀러월렛 빠른정산\n문의/리뷰\n마이샵\n프로모션\n광고센터\n라이브 & 숏츠\n비즈니스 인사이트\n판매자정보\n공지사항\n온라인문의\n관련사이트\n쿠팡 마켓플레이스 \n쿠팡 로켓그로스 \n쿠팡광고 \n쿠팡 라이브 \n윤리경영제보 \n기타 서비스\n쿠팡 API \n모바일 앱 다운로드 \nDownload for Android Download for iOS\n\n상품 등록필수항목\n상품등록 매뉴얼 \n공산품/식품 상품등록 가이드\n동영상 가이드\n\n현재 상품 승인이 완료되었습니다.\n변경이력 보기\n쿠팡에서 어떻게 판매할까요?\n\n중복선택 가능해요\n\n판매자배송\n\n내가 직접 배송하고 관리해요. 판매 수수료만 발생해요.\n\n로켓그로스\n더 알아보기\n\n쿠팡이 직접 배송하고 물류를 관리해요. 지금 로켓그로스 상품을 등록하고, 나중에 판매할 때 시간을 절약하세요.\n\n노출상품명\n도움말\n26 / 100\n판매 상품과 직접 관련이 없거나 중복된 정보가 적힌 상품명은 쿠팡에 의해 변경될 수 있습니다. \n등록상품명(판매자관리용)  \n26 / 100\n카테고리\n도움말\n카테고리 검색\n카테고리 선택\n선택한 카테고리 : 가구/홈데코>수선/수예도구>수선/재단도구>섬유접착제/수선풀 \n재선택\n 판매수수료 : 10.8 %, (VAT 별도, 정률)\n 판매하려는 상품에 맞는 카테고리를 선택해주세요\n• 상품과 맞지 않는 카테고리",
+    "inv_id": "15897375629"
+  },
+  {
+    "inv": "?vendorInventoryId=16020715295",
+    "url": "https://wing.coupang.com/tenants/seller-web/vendor-inventory/modify?vendorInventoryId=16020715295",
+    "optPaneCells": 65,
+    "nameCells": [
+      "1. 15ml × 3개 (소량,테스트용), 1개",
+      "2. 15ml × 5개 (가성비 구성), 1개",
+      "3. 110ml × 2개 (대용량 기본), 1개",
+      "4. 110ml × 4개 (대용량 추천), 1개"
+    ],
+    "editCells": 4,
+    "editBtns": [
+      {
+        "text": "수정",
+        "visible": true,
+        "parentClass": "option-pane-table-cell",
+        "rowText": "1. 15ml × 3개 (소량,테스트용), 1개 \n아이템위너\n10,190\n10,290\n수정"
+      },
+      {
+        "text": "수정",
+        "visible": true,
+        "parentClass": "option-pane-table-cell",
+        "rowText": "2. 15ml × 5개 (가성비 구성), 1개 \n아이템위너\n17,900\n17,900\n수정"
+      },
+      {
+        "text": "수정",
+        "visible": true,
+        "parentClass": "option-pane-table-cell",
+        "rowText": "3. 110ml × 2개 (대용량 기본), 1개 \n-\n13,800\n13,800\n수정"
+      },
+      {
+        "text": "수정",
+        "visible": true,
+        "parentClass": "option-pane-table-cell",
+        "rowText": "4. 110ml × 4개 (대용량 추천), 1개 \n아이템위너\n23,900\n23,900\n수정"
+      }
+    ],
+    "hasOptionList": true,
+    "optionClasses": [
+      "option-pane-component",
+      "dynamic-option-form-pane",
+      "option-content",
+      "option-header",
+      "option-pane-table",
+      "scrollable-option-pane-table",
+      "option-pane-table-header-content",
+      "option-pane-table-head",
+      "option-pane-table-head-with-auto-pricing",
+      "option-pane-table-cell",
+      "option-pane-table-column",
+      "option-pane-table-row",
+      "option-pane-table-head-cell-min-width",
+      "option-pane-table-filter",
+      "option-pane-table-body",
+      "option-pane-table-spacer",
+      "option-pane-table-content",
+      "option-pane-table-cell-min-width",
+      "options-button-group",
+      "option-level",
+      "content-option-table",
+      "selected-option-label",
+      "content-option-table-content-td",
+      "option-select-header",
+      "option-select-header-action",
+      "sku-detail-option-tab-button",
+      "option-name"
+    ],
+    "priceLikeInputs": [],
+    "bodyHead": "Coupang Wing\n판매자교육\n|\n온라인문의\n|\n도움말\n|\n3\n김은선\n님\n상품관리\n상품 등록\n상품 일괄등록\n통합솔루션으로 상품등록(무료)\n상품 조회/수정\n컴플라이언스 센터\n카탈로그 매칭관리\n로켓그로스 배지관리\n상품 알림\n브랜드 관리\n판매 성장\n가격관리\n로켓그로스\n주문/배송\n정산\n셀러월렛 빠른정산\n문의/리뷰\n마이샵\n프로모션\n광고센터\n라이브 & 숏츠\n비즈니스 인사이트\n판매자정보\n공지사항\n온라인문의\n관련사이트\n쿠팡 마켓플레이스 \n쿠팡 로켓그로스 \n쿠팡광고 \n쿠팡 라이브 \n윤리경영제보 \n기타 서비스\n쿠팡 API \n모바일 앱 다운로드 \nDownload for Android Download for iOS\n\n상품 등록필수항목\n상품등록 매뉴얼 \n공산품/식품 상품등록 가이드\n동영상 가이드\n\n현재 상품 승인이 완료되었습니다.\n변경이력 보기\n쿠팡에서 어떻게 판매할까요?\n\n중복선택 가능해요\n\n판매자배송\n\n내가 직접 배송하고 관리해요. 판매 수수료만 발생해요.\n\n로켓그로스\n더 알아보기\n\n쿠팡이 직접 배송하고 물류를 관리해요. 지금 로켓그로스 상품을 등록하고, 나중에 판매할 때 시간을 절약하세요.\n\n*최종 소비자 판매가가 합리적이고 경쟁력 있는 가격인지에 대한 여부 및 쿠팡 정책 준수 여부에 따라 판매자로켓 배지 부착 여부가 달라질 수 있습니다.\n노출상품명\n도움말\n27 / 100\n판매 상품과 직접 관련이 없거나 중복된 정보가 적힌 상품명은 쿠팡에 의해 변경될 수 있습니다. \n등록상품명(판매자관리용)  \n카테고리\n도움말\n카테고리 검색\n카테고리 선택\n선택한 카테고리 : 가구/홈데코>수선/수예도구>수선/재단도구>섬유접착제/수선풀 \n재선",
+    "inv_id": "16020715295"
+  }
+]

@@ -1,0 +1,109 @@
+[
+  {
+    "date": "2026-07-17",
+    "marketplace": "smartstore",
+    "keyword": "스팃스 NEW",
+    "items": [
+      {
+        "rank": null,
+        "title": "스팃스 NEW 투명 하트 막대 보빈 케이스",
+        "price": 9000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "스팃스",
+          "NEW",
+          "투명",
+          "하트",
+          "막대",
+          "보빈",
+          "케이스"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "스팃스 NEW 어린이 보석십자수 캐릭터 마그네틱 냉장고자석 만들기세트 8종 택1",
+        "price": 8400,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "보석십자수",
+          "십자수",
+          "어린이",
+          "만들기",
+          "스팃스",
+          "NEW",
+          "캐릭터",
+          "마그네틱",
+          "냉장고자석",
+          "만들기세트"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "스팃스 NEW DMC 자수실 디아망뜨 그란데 6색상 택1 메탈릭사",
+        "price": 6900,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "스팃스",
+          "NEW",
+          "DMC",
+          "자수실",
+          "디아망뜨",
+          "그란데",
+          "색상",
+          "메탈릭사"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "스팃스 NEW 투명 하트 막대 보빈 10개 자수실정리",
+        "price": 1500,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "스팃스",
+          "NEW",
+          "투명",
+          "하트",
+          "막대",
+          "보빈",
+          "자수실정리"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "스팃스 DMC 자수실 5번사 펄코튼 25M 318색 풀세트",
+        "price": 920000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "스팃스",
+          "DMC",
+          "자수실",
+          "번사",
+          "펄코튼",
+          "25M",
+          "풀세트"
+        ]
+      }
+    ],
+    "repeating": [
+      "스팃스",
+      "NEW",
+      "보빈",
+      "하트",
+      "투명",
+      "막대",
+      "자수실",
+      "DMC"
+    ],
+    "ts": "2026-07-17T16:19:31"
+  }
+]

@@ -1,0 +1,52 @@
+{
+  "keyword": "보석십자수",
+  "mine": {
+    "title": "스팃스 보석십자수 30x40 튜립 키트 DIY",
+    "brand": "스팃스",
+    "product_id": "demo-stix-001",
+    "price": 18900,
+    "category": "보석십자수",
+    "options": "30x40, 튤립",
+    "detail": "초보자도 가능한 보석십자수 키트입니다.\n캔버스와 큐빅 포함\n선물용으로 좋아요",
+    "reviews": "초보도 쉬워요|선물로 줬더니 좋아함|완성하니 인테리어로 예쁨|집중력 도움|또 다른 도안 샀어요",
+    "image_notes": "어두운 배경, 텍스트 많음, 손 없음",
+    "images": "https://example.com/mine.jpg"
+  },
+  "competitors": [
+    {
+      "rank": 1,
+      "title": "보석십자수 DIY 키트 초보자 집콕 취미 선물 40x50 액자형",
+      "brand": "경쟁A",
+      "price": 21900,
+      "review_count": 1250,
+      "rating": 4.8,
+      "reviews": "초보 가능|선물 추천|스트레스 해소|예쁘게 완성",
+      "image_notes": "밝은 배경, 완성본+키트, 손 등장"
+    },
+    {
+      "rank": 2,
+      "title": "큐빅 십자수 키트 인테리어 만들기 캔버스 도안 포함",
+      "price": 15900,
+      "review_count": 880,
+      "rating": 4.6
+    },
+    {
+      "rank": 3,
+      "title": "DIY 보석십자수 초보자용 집콕 취미 꽃 해바라기",
+      "price": 19900,
+      "review_count": 640
+    },
+    {
+      "rank": 4,
+      "title": "액자형 보석십자수 키트 어린이 선물 집중력",
+      "price": 24900,
+      "review_count": 410
+    },
+    {
+      "rank": 5,
+      "title": "십자수 DIY 키트 완성 인테리어 도안 큐빅 비즈",
+      "price": 17900,
+      "review_count": 320
+    }
+  ]
+}

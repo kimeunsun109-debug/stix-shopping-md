@@ -1,0 +1,12 @@
+[
+  {
+    "step": "login",
+    "ok": true,
+    "msg": "already logged in"
+  },
+  {
+    "step": "p3",
+    "ok": true,
+    "msg": "price set to 13,670"
+  }
+]

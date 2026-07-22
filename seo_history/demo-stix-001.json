@@ -1,0 +1,148 @@
+[
+  {
+    "date": "2026-07-15",
+    "productId": "demo-stix-001",
+    "keyword": "보석십자수",
+    "title": "십자수 키트 보석십자수 DIY 초보 스팃스 30x40 튜립",
+    "seoScore": 82,
+    "estimatedKeywordCoverage": 57,
+    "missingKeywords": [
+      "집콕",
+      "액자",
+      "액자형",
+      "취미",
+      "인테리어",
+      "도안"
+    ],
+    "changes": [
+      "상품명 재구성 제안",
+      "상세페이지 상단 카피 변경 제안",
+      "셀링포인트·구조 재설계"
+    ],
+    "rankBefore": null,
+    "rankAfter": null
+  },
+  {
+    "date": "2026-07-16",
+    "productId": "demo-stix-001",
+    "keyword": "보석십자수",
+    "title": "십자수 키트 DIY 도안 액자 스팃스 보석십자수",
+    "seoScore": 62,
+    "keywordCoverage": 57,
+    "rankBefore": 5,
+    "rankAfter": null,
+    "addedKeywords": [
+      "도안",
+      "액자",
+      "액자형",
+      "인테리어",
+      "집콕",
+      "취미"
+    ],
+    "removedKeywords": [
+      "튜립"
+    ],
+    "CTR": null,
+    "CVR": null,
+    "changes": [
+      "상품명 재구성 제안 (AB)",
+      "상세페이지 구조/상단 카피 변경 제안",
+      "Golden Keyword / Gap 반영",
+      "CTR/CVR/이미지 개선안"
+    ],
+    "marketplace": "coupang"
+  },
+  {
+    "date": "2026-07-16",
+    "productId": "demo-stix-001",
+    "keyword": "보석십자수",
+    "title": "십자수 키트 DIY 도안 액자 스팃스 보석십자수",
+    "seoScore": 65,
+    "keywordCoverage": 57,
+    "rankBefore": 11,
+    "rankAfter": 5,
+    "addedKeywords": [
+      "도안",
+      "액자",
+      "액자형",
+      "인테리어",
+      "집콕",
+      "취미"
+    ],
+    "removedKeywords": [
+      "튜립"
+    ],
+    "CTR": null,
+    "CVR": null,
+    "changes": [
+      "상품명 재구성 제안 (AB)",
+      "상세페이지 구조/상단 카피 변경 제안",
+      "Golden Keyword / Gap 반영",
+      "CTR/CVR/이미지 개선안"
+    ],
+    "changeReason": "추천 상품명: 십자수 키트 DIY 도안 액자 스팃스 보석십자수; '십자수'를 앞쪽에 배치하여 검색 일치율 증가 (검색량 높음)",
+    "marketplace": "coupang"
+  },
+  {
+    "date": "2026-07-17",
+    "productId": "demo-stix-001",
+    "keyword": "보석십자수",
+    "title": "도안 액자 액자형 인테리어 집콕 취미 스팃스 보석십자수 십자수 DIY",
+    "seoScore": 63,
+    "keywordCoverage": 57,
+    "rankBefore": 5,
+    "rankAfter": 11,
+    "addedKeywords": [
+      "도안",
+      "액자",
+      "액자형",
+      "인테리어",
+      "집콕",
+      "취미"
+    ],
+    "removedKeywords": [
+      "튜립"
+    ],
+    "CTR": 0.028,
+    "CVR": 0.018,
+    "changes": [
+      "상품명 재구성 제안 (AB)",
+      "상세페이지 구조/상단 카피 변경 제안",
+      "Golden Keyword / Gap 반영",
+      "CTR/CVR/이미지 개선안"
+    ],
+    "changeReason": "Commerce AI v4",
+    "marketplace": "coupang"
+  },
+  {
+    "date": "2026-07-17",
+    "productId": "demo-stix-001",
+    "keyword": "보석십자수",
+    "title": "도안 액자 액자형 인테리어 집콕 취미 스팃스 보석십자수 십자수 DIY",
+    "seoScore": 63,
+    "keywordCoverage": 57,
+    "rankBefore": 5,
+    "rankAfter": 11,
+    "addedKeywords": [
+      "도안",
+      "액자",
+      "액자형",
+      "인테리어",
+      "집콕",
+      "취미"
+    ],
+    "removedKeywords": [
+      "튜립"
+    ],
+    "CTR": 0.028,
+    "CVR": 0.018,
+    "changes": [
+      "상품명 재구성 제안 (AB)",
+      "상세페이지 구조/상단 카피 변경 제안",
+      "Golden Keyword / Gap 반영",
+      "CTR/CVR/이미지 개선안"
+    ],
+    "changeReason": "Commerce AI v5",
+    "marketplace": "coupang"
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "date": "2026-07-17",
+    "marketplace": "11st",
+    "keyword": "너즈 터키",
+    "items": [
+      {
+        "rank": null,
+        "title": "스팃스 너즈 터키 프리미엄 밤나무 원형 수틀 두께 2.4CM",
+        "price": 39900,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "스팃스",
+          "너즈",
+          "터키",
+          "프리미엄",
+          "밤나무",
+          "원형",
+          "수틀",
+          "두께",
+          "4CM"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "DMC 5번사 펄코튼 꼰사 자수실 25M (318색 풀세트)",
+        "price": 920000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "DMC",
+          "번사",
+          "펄코튼",
+          "꼰사",
+          "자수실",
+          "25M",
+          "풀세트"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "스팃스 DMC 자수실 5번사 펄코튼 25M 318색 풀세트",
+        "price": 920000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "스팃스",
+          "DMC",
+          "자수실",
+          "번사",
+          "펄코튼",
+          "25M",
+          "풀세트"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "스팃스 DMC 자수실 울사 태피스트리 입체자수 풀세트 414색상",
+        "price": 785000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "스팃스",
+          "DMC",
+          "자수실",
+          "울사",
+          "태피스트리",
+          "입체자수",
+          "풀세트",
+          "색상"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "DMC 자수실 4번사[89번사]285색상 풀세트",
+        "price": 540000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "DMC",
+          "자수실",
+          "번사",
+          "색상",
+          "풀세트"
+        ]
+      }
+    ],
+    "repeating": [
+      "풀세트",
+      "DMC",
+      "자수실",
+      "스팃스",
+      "번사",
+      "25M",
+      "펄코튼",
+      "색상"
+    ],
+    "ts": "2026-07-17T16:02:37"
+  }
+]

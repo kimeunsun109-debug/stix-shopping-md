@@ -1,0 +1,91 @@
+[
+  {
+    "date": "2026-07-17",
+    "marketplace": "smartstore",
+    "keyword": "크로바",
+    "items": [
+      {
+        "rank": null,
+        "title": "스팃스 45 135 크로바 장인 타쿠미 대바늘 세트 2",
+        "price": 240000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "스팃스",
+          "크로바",
+          "장인",
+          "타쿠미",
+          "대바늘"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "스팃스 74 544 크로바 가정용 제봉 바느질상자 패키지",
+        "price": 104400,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "스팃스",
+          "크로바",
+          "가정용",
+          "제봉",
+          "바느질상자",
+          "패키지"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "스팃스 43 606 크로바 모사용 코바늘 펜E 세트",
+        "price": 87000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "스팃스",
+          "크로바",
+          "모사용",
+          "코바늘"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "스팃스 36 226 SR240FT 크로바 재단가위 24cm 톱니날",
+        "price": 86800,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "스팃스",
+          "SR240FT",
+          "크로바",
+          "재단가위",
+          "24cm",
+          "톱니날"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "스팃스 36 221 NCS 210 크로바 재단가위 21cm",
+        "price": 82500,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "스팃스",
+          "NCS",
+          "크로바",
+          "재단가위",
+          "21cm"
+        ]
+      }
+    ],
+    "repeating": [
+      "스팃스",
+      "크로바",
+      "재단가위"
+    ],
+    "ts": "2026-07-17T16:20:01"
+  }
+]

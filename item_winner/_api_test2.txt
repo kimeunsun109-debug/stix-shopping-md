@@ -1,0 +1,2 @@
+False
+HTTP 403: {"path":"/api/v1/marketplace/vendor-items/94705203391/prices/10290","error":"FORBIDDEN","message":"Your ip address 116.42.103.158 is not allowed for this request. If you need service access, please contact the Coupang seller call center. (Tel: +82-1600-9879, Email: openapisupport@coupang.com)","timestamp":1784188987569,"status":403}

@@ -1,0 +1,90 @@
+[
+  {
+    "date": "2026-07-17",
+    "marketplace": "gmarket",
+    "keyword": "크로바",
+    "items": [
+      {
+        "rank": null,
+        "title": "57-336 크로바 New 크래프트 확대경-그레이 1.6배2배 세트",
+        "price": 130000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "크로바",
+          "New",
+          "크래프트",
+          "확대경",
+          "그레이"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "43-606 크로바 모사용 코바늘 펜-E 세트",
+        "price": 87000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "크로바",
+          "모사용",
+          "코바늘"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "36-226 SR-240FT 크로바 재단가위 24cm (톱니날)",
+        "price": 86800,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "SR",
+          "240FT",
+          "크로바",
+          "재단가위",
+          "24cm",
+          "톱니날"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "36-221 clover 일본 크로바 재단가위 21cm (NCS-210)",
+        "price": 82500,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "clover",
+          "일본",
+          "크로바",
+          "재단가위",
+          "21cm",
+          "NCS"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "크로바 Porte Bonheur 스즈란 가위 케이스포함",
+        "price": 79000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "크로바",
+          "Porte",
+          "Bonheur",
+          "스즈란",
+          "가위",
+          "케이스포함"
+        ]
+      }
+    ],
+    "repeating": [
+      "크로바",
+      "재단가위"
+    ],
+    "ts": "2026-07-17T16:02:40"
+  }
+]

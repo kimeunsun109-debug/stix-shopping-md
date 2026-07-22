@@ -1,0 +1,166 @@
+{
+  "idx": 0,
+  "edit_btn_count": 4,
+  "after_pw_click": {
+    "cells": [
+      {
+        "i": 0,
+        "text": "",
+        "inputs": [
+          {
+            "value": "on",
+            "disabled": true,
+            "type": "checkbox"
+          }
+        ]
+      },
+      {
+        "i": 1,
+        "text": "1. 15ml × 3개 (소량,테스트용), 1개",
+        "inputs": []
+      },
+      {
+        "i": 2,
+        "text": "아이템위너",
+        "inputs": []
+      },
+      {
+        "i": 3,
+        "text": "",
+        "inputs": [
+          {
+            "value": "0",
+            "disabled": true,
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "i": 4,
+        "text": "13,690",
+        "inputs": []
+      },
+      {
+        "i": 5,
+        "text": "",
+        "inputs": []
+      },
+      {
+        "i": 6,
+        "text": "",
+        "inputs": [
+          {
+            "value": "10,090",
+            "disabled": true,
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "i": 7,
+        "text": "13,690",
+        "inputs": []
+      },
+      {
+        "i": 8,
+        "text": "",
+        "inputs": [
+          {
+            "value": "",
+            "disabled": true,
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "i": 9,
+        "text": "",
+        "inputs": [
+          {
+            "value": "",
+            "disabled": true,
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "i": 10,
+        "text": "",
+        "inputs": [
+          {
+            "value": "S0037076287500",
+            "disabled": true,
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "i": 11,
+        "text": "수정",
+        "inputs": []
+      }
+    ],
+    "enabledPrices": [
+      "13,690",
+      "10,090",
+      "17,900",
+      "13,800",
+      "13,200",
+      "23,900"
+    ]
+  },
+  "filled": false,
+  "values": [
+    "on",
+    "B7000 투명 다용도 접착제 스마트폰 수리 본드",
+    "on",
+    "on",
+    "on",
+    "on",
+    "on",
+    "on",
+    "on",
+    "on",
+    "on",
+    "on",
+    "on",
+    "on",
+    "on",
+    "on",
+    "on",
+    "on",
+    "on",
+    "on",
+    "on",
+    "S0037076287500",
+    "S0037076287502",
+    "S0037076287503",
+    "S0037076287504",
+    "on",
+    "on",
+    "on",
+    "on",
+    "on",
+    "on",
+    "on",
+    "on",
+    "0",
+    "13,690",
+    "on",
+    "10,090",
+    "on",
+    "0",
+    "17,900",
+    "on",
+    "on",
+    "0",
+    "13,800",
+    "on",
+    "13,200",
+    "on",
+    "0",
+    "23,900",
+    "on",
+    "on"
+  ]
+}

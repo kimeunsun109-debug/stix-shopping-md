@@ -1,0 +1,51 @@
+{
+  "title": "Sign in to seller",
+  "url": "https://xauth.coupang.com/auth/realms/seller/protocol/openid-connect/auth?response_type=code&client_id=wing&redirect_uri=https%3A%2F%2Fwing.coupang.com%2Fsso%2Flogin?returnUrl%3Dhttp%253A%252F%252Fwing.coupang.com%252Ftenants%252Fseller-web%252Fvendor-inventory%252Flist%253FsearchKeywordType%253DVENDOR_ITEM_ID%2526searchKeywords%253D94705203391&state=44ee72fc-9cd7-4bbd-a863-0e3d51d223f3&login=true&ui_locales=ko-KR&scope=openid",
+  "body": "coupang\n판매자 로그인\n아이디 찾기 비밀번호 찾기\n판매자가 아니신가요?\n판매자 회원가입\n판매자 지원 센터\n판매자 개인정보 처리방침\n영어 (English)\n한국어\n中文(台灣)\n中文简体",
+  "inputs": [
+    {
+      "type": "hidden",
+      "name": "incogniaRequestToken",
+      "id": "incogniaRequestToken",
+      "placeholder": "",
+      "value": "",
+      "disabled": false,
+      "className": ""
+    },
+    {
+      "type": "text",
+      "name": "username",
+      "id": "username",
+      "placeholder": "아이디를 입력해주세요",
+      "value": "",
+      "disabled": false,
+      "className": "account-input user-id cp-loginpage__form__input--block requirement"
+    },
+    {
+      "type": "password",
+      "name": "password",
+      "id": "password",
+      "placeholder": "비밀번호를 입력해주세요",
+      "value": "",
+      "disabled": false,
+      "className": "account-input user-id cp-loginpage__form__input--block requirement"
+    },
+    {
+      "type": "submit",
+      "name": "login",
+      "id": "kc-login",
+      "placeholder": "",
+      "value": "로그인",
+      "disabled": false,
+      "className": "cp-loginpage__form__submit"
+    }
+  ],
+  "buttons": [
+    "아이디 찾기",
+    "비밀번호 찾기",
+    "판매자 회원가입",
+    "판매자 지원 센터",
+    "판매자 개인정보 처리방침",
+    "확인"
+  ]
+}

@@ -1,0 +1,93 @@
+[
+  {
+    "date": "2026-07-17",
+    "marketplace": "cafe24",
+    "keyword": "크로바",
+    "items": [
+      {
+        "rank": null,
+        "title": "크로바 45-135 타쿠미 대바늘 세트 2 | 장인 대바늘 뜨개질 프리미엄 바늘 세트",
+        "price": 240000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "크로바",
+          "타쿠미",
+          "대바늘",
+          "장인",
+          "뜨개질",
+          "프리미엄",
+          "바늘"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "크로바 장인-줄바늘 세트(콤보)",
+        "price": 192000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "크로바",
+          "장인",
+          "줄바늘",
+          "콤보"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "크로바 1.6배&2배 확대경 세트",
+        "price": 138000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "크로바",
+          "확대경"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "크로바 New 크래프트 확대경 그레이 1.6배·2배 렌즈 세트 (57-336)",
+        "price": 130000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "크로바",
+          "New",
+          "크래프트",
+          "확대경",
+          "그레이",
+          "렌즈"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "크로바 New 크래프트 확대경 핑크 1.6배·2배 렌즈 세트 (57-335)",
+        "price": 130000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "크로바",
+          "New",
+          "크래프트",
+          "확대경",
+          "핑크",
+          "렌즈"
+        ]
+      }
+    ],
+    "repeating": [
+      "크로바",
+      "확대경",
+      "장인",
+      "New",
+      "렌즈",
+      "크래프트"
+    ],
+    "ts": "2026-07-17T16:02:40"
+  }
+]

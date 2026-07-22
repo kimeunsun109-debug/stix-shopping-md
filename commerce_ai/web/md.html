@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>STIX AI MD — Today</title>
+  <style>
+    :root {
+      --bg: #10141a;
+      --panel: #181e27;
+      --line: #2a3340;
+      --text: #edf2f7;
+      --muted: #8b97a8;
+      --urgent: #e85d5d;
+      --high: #e39b3d;
+      --normal: #d4c35a;
+      --done: #3ecf8e;
+      --verify: #4c8dff;
+      --font: "IBM Plex Sans KR", "Pretendard", "Noto Sans KR", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--text);
+      min-height: 100vh;
+      background:
+        radial-gradient(900px 420px at 0% 0%, #2a1a18 0%, transparent 55%),
+        radial-gradient(800px 400px at 100% 0%, #152238 0%, transparent 50%),
+        var(--bg);
+    }
+    header {
+      padding: 22px 28px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 12px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--line);
+    }
+    h1 { margin: 0; font-size: 1.45rem; letter-spacing: -0.02em; }
+    .sub { color: var(--muted); margin-top: 6px; font-size: 0.9rem; }
+    .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    button, .btn {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--text);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font: inherit;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    button.primary { background: #3d9cf0; color: #041018; border-color: transparent; font-weight: 650; }
+    main { max-width: 1100px; margin: 0 auto; padding: 18px 28px 48px; }
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin: 16px 0 18px;
+    }
+    @media (max-width: 900px) {
+      .hero-metrics { grid-template-columns: repeat(2, 1fr); }
+      main, header { padding-left: 14px; padding-right: 14px; }
+    }
+    .metric {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .metric .l { color: var(--muted); font-size: 0.75rem; }
+    .metric .v { font-size: 1.35rem; font-weight: 700; margin-top: 4px; font-variant-numeric: tabular-nums; }
+    h2 { font-size: 1rem; margin: 18px 0 10px; }
+    .lane {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-left-width: 5px;
+      border-radius: 10px;
+      padding: 12px 14px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 12px;
+      align-items: start;
+    }
+    .card.urgent { border-left-color: var(--urgent); }
+    .card.high { border-left-color: var(--high); }
+    .card.normal { border-left-color: var(--normal); }
+    .card.verify { border-left-color: var(--verify); }
+    .card.done { border-left-color: var(--done); }
+    .badge {
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      white-space: nowrap;
+    }
+    .badge.urgent { color: var(--urgent); }
+    .badge.high { color: var(--high); }
+    .badge.normal { color: var(--normal); }
+    .badge.verify { color: var(--verify); }
+    .title { font-weight: 650; }
+    .meta { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
+    .roi { text-align: right; font-variant-numeric: tabular-nums; }
+    .roi b { display: block; font-size: 1.05rem; }
+    .empty { color: var(--muted); padding: 10px 0; }
+    details.secondary { margin-top: 22px; color: var(--muted); }
+    details.secondary summary { cursor: pointer; color: var(--text); margin-bottom: 8px; }
+    footer { text-align: center; color: var(--muted); font-size: 0.8rem; padding: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>오늘 해야 할 일</h1>
+      <div class="sub">STIX AI MD v7 · <span id="when">—</span> · 5초 안에 파악</div>
+    </div>
+    <div class="actions">
+      <button class="primary" onclick="refresh()">새로고침</button>
+      <button onclick="runDaily()">AI MD Daily 실행</button>
+      <a class="btn" href="/docs" target="_blank">API</a>
+    </div>
+  </header>
+  <main>
+    <div class="hero-metrics" id="metrics"></div>
+    <h2>🔴 긴급 · 🟠 높은 효과 · 🟡 일반 · 🔵 검증</h2>
+    <div class="lane" id="board"></div>
+    <details class="secondary">
+      <summary>추가 신호 (순위/CTR/CVR/Golden)</summary>
+      <div id="signals"></div>
+    </details>
+  </main>
+  <footer>승인 없이 상품을 수정하지 않습니다 · 추천 정확도·매출·운영시간이 KPI</footer>
+  <script>
+    const LANE = {
+      urgent: {label: "🔴 긴급", cls: "urgent"},
+      high: {label: "🟠 높은 효과", cls: "high"},
+      normal: {label: "🟡 일반", cls: "normal"},
+      verify: {label: "🔵 검증 대기", cls: "verify"},
+      done: {label: "🟢 완료", cls: "done"},
+    };
+    function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+    function pct(v){ if(v==null||v==="") return "—"; if(typeof v==="number" && v<=1) return Math.round(v*100)+"%"; return v; }
+    function card(t, lane){
+      const L = LANE[lane] || LANE.normal;
+      const ab = t.ab_test;
+      const abLine = ab
+        ? `<div class="meta">A/B ${esc(ab.metric)} · A: ${esc(String(ab.variant_a||"").slice(0,36))} · B: ${esc(String(ab.variant_b||"").slice(0,36))}</div>`
+        : "";
+      const fail = t.failure_risk ? `<div class="meta">${esc(String(t.failure_risk).slice(0,70))}</div>` : "";
+      return `<div class="card ${L.cls}">
+        <span class="badge ${L.cls}">${L.label}</span>
+        <div>
+          <div class="title">${esc(t.action)} — ${esc((t.product_title||"").slice(0,42))}</div>
+          <div class="meta">${esc(t.expected_effect||t.reason||"")} · Conf ${Math.round(t.confidence||0)}% · ~${esc(t.effort_minutes||"?")}분
+            <div>${esc(t.evidence||"")}</div>
+            ${abLine}${fail}
+          </div>
+        </div>
+        <div class="roi"><b>ROI ${esc(t.roi_score??"—")}</b>
+          <div class="meta">매출 +${esc(t.expected_revenue_lift||0)}%</div>
+        </div>
+      </div>`;
+    }
+    function render(data){
+      document.getElementById("when").textContent = data.generated_at || "—";
+      const s = data.scores || {};
+      const d = data.daily_report || {};
+      const se = data.self_evaluation || {};
+      document.getElementById("metrics").innerHTML = [
+        ["긴급", (data.board?.urgent||[]).length, "지금 처리"],
+        ["오늘 작업", (data.today_tasks||[]).length, `기회 ${(d.opportunities??"—")}`],
+        ["예상 매출", (s.expected_revenue_lift_avg!=null?"+"+s.expected_revenue_lift_avg+"%":"—"), `CTR +${s.expected_ctr_lift_avg??"—"}%`],
+        ["AI 정확도", se.accuracy_pct!=null?se.accuracy_pct+"%":pct(s.recommendation_accuracy), `${se.success||0}성공/${se.fail||0}실패`],
+        ["Commerce", s.commerce_score??"—", `Revenue ${s.revenue_score??"—"}`],
+      ].map(([l,v,h])=>`<div class="metric"><div class="l">${l}</div><div class="v">${esc(v)}</div><div class="l">${esc(h)}</div></div>`).join("");
+
+      const board = data.board || {};
+      const order = ["urgent","high","normal","verify"];
+      let html = "";
+      let n = 0;
+      for (const lane of order){
+        for (const t of (board[lane]||[])){
+          html += card(t, lane);
+          n++;
+          if (n >= 25) break;
+        }
+        if (n >= 25) break;
+      }
+      document.getElementById("board").innerHTML = html || `<div class="empty">오늘 작업 없음 — AI MD Daily를 실행하세요.</div>`;
+
+      const sig = []
+        .concat((data.rank_drops||[]).slice(0,5).map(x=>`순위/SEO ${esc(x.from)}→${esc(x.to)} · ${esc((x.title||"").slice(0,36))}`))
+        .concat((data.ctr_drops||[]).slice(0,3).map(x=>`CTR↓ ${esc(x.from)}→${esc(x.to)} · ${esc((x.title||"").slice(0,36))}`))
+        .concat((data.cvr_drops||[]).slice(0,3).map(x=>`CVR↓ ${esc(x.from)}→${esc(x.to)} · ${esc((x.title||"").slice(0,36))}`));
+      document.getElementById("signals").innerHTML = sig.length
+        ? `<ul>${sig.map(x=>`<li>${x}</li>`).join("")}</ul>`
+        : `<div class="empty">추가 신호 없음</div>`;
+    }
+    async function refresh(){
+      const res = await fetch("/api/md/ops");
+      render(await res.json());
+    }
+    async function runDaily(){
+      if(!confirm("AI MD Daily (스냅샷 기반 보드+리포트)를 생성할까요?")) return;
+      const res = await fetch("/api/md/daily?skip_batch=true", {method:"POST"});
+      const data = await res.json();
+      alert(`완료 · 작업 ${data.task_count||0} · 긴급 ${(data.board?.urgent||[]).length}`);
+      refresh();
+    }
+    refresh();
+    setInterval(refresh, 60000);
+  </script>
+</body>
+</html>

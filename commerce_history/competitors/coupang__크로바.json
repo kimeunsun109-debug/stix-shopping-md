@@ -1,0 +1,82 @@
+[
+  {
+    "date": "2026-07-17",
+    "marketplace": "coupang",
+    "keyword": "크로바",
+    "items": [
+      {
+        "rank": null,
+        "title": "10-517 크로바 자동실꿰기 (노랑)",
+        "price": null,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "크로바",
+          "자동실꿰기",
+          "노랑"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "10-517 크로바 자동실꿰기 (노랑)",
+        "price": null,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "크로바",
+          "자동실꿰기",
+          "노랑"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "10-518 크로바 자동실꿰기 (핑크)",
+        "price": null,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "크로바",
+          "자동실꿰기",
+          "핑크"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "10-518 크로바 자동실꿰기 (핑크)",
+        "price": null,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "크로바",
+          "자동실꿰기",
+          "핑크"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "10-520 NEW 크로바 자동실꿰기 퀵 - (핑크)",
+        "price": null,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "NEW",
+          "크로바",
+          "자동실꿰기",
+          "핑크"
+        ]
+      }
+    ],
+    "repeating": [
+      "자동실꿰기",
+      "크로바",
+      "핑크",
+      "노랑"
+    ],
+    "ts": "2026-07-17T16:19:31"
+  }
+]

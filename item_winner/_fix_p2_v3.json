@@ -1,0 +1,14 @@
+{
+  "edit_clicked": false,
+  "price_filled": false,
+  "submit_steps": [
+    "수정 및 검수 요청",
+    "확인",
+    "수정 및 검수 요청",
+    "확인",
+    "수정 및 검수 요청",
+    "확인"
+  ],
+  "after": "10290",
+  "ok": true
+}

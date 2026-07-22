@@ -1,0 +1,13 @@
+STIX 썸네일 개선 TOP10 (2026-07-08)
+| 우선 | 상품 | 문제점 | 개선방향 | AI 프롬프트 요약 |
+|------|------|--------|----------|------------------|
+| 1 | 보석십자수 30x40 튤립 | 사이즈·구성품 미표시 | 완성작+30x40배지+28칸비즈함 | tulip diamond painting 30x40, badge, flat lay tools |
+| 2 | E6000 30ml 쿠팡1위 | 경쟁사와 유사 컷 | 110ml 대비 소량 강조+비즈장면 | E6000 30ml glue craft beads white bg |
+| 3 | E6000 110ml G마켓1위 | 뾰족캡 미강조 | 캡 클로즈업+당일발송 배지 | precision cap E6000 110ml ecommerce |
+| 4 | 보석십자수 바닷가 30x40 | 여름 시즌 약함 | 일출+여름배지 | beach sunrise 30x40 diamond kit summer |
+| 5 | 어린이 스티커 24종 | 스티커형 구분 약함 | 아이 손+24종 그리드 | kids sticker craft 24 designs playful |
+| 6 | B7000 110ml | 스마트폰수리만 강조 | 비즈+공예 병행 | B7000 glue beads phone repair dual scene |
+| 7 | 크로바 확대경 핑크 | 제품만 단독 | 십자수 작업 장면 | magnifier on cross stitch fabric pink |
+| 8 | 보석십자수 40x50 77종 | 선택지 과다 혼란 | 3대표 도안+77종 배지 | collage 3 designs badge 77 options |
+| 9 | DMC 503색 | 단일 실만 노출 | 색상 스펙트럼 | DMC floss rainbow spectrum macro |
+| 10 | 16칸 비즈보관함 | 용도 불명확 | 정리된 비즈+십자수 연출 | 16 slot bead organizer craft desk |

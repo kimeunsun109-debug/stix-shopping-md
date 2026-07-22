@@ -1,0 +1,100 @@
+[
+  {
+    "date": "2026-07-17",
+    "marketplace": "coupang",
+    "keyword": "(일본서적) 양모펠트로",
+    "items": [
+      {
+        "rank": null,
+        "title": "(일본서적) 양모펠트로 만드는 따뜻한 동물과 홈카페",
+        "price": null,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "일본서적",
+          "양모펠트로",
+          "만드는",
+          "따뜻한",
+          "동물과",
+          "홈카페"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "(일본서적) 양모펠트로 만드는 부사카와 동물",
+        "price": null,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "일본서적",
+          "양모펠트로",
+          "만드는",
+          "부사카와",
+          "동물"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "(스팃스) LA FRAISE - 딸기 실 십자수 패키지 (도안+원단+실+바늘)",
+        "price": null,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "십자수",
+          "도안",
+          "스팃스",
+          "LA",
+          "FRAISE",
+          "딸기",
+          "패키지",
+          "원단",
+          "바늘"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "(일본 자수서적) 원 포인트 자수 도안집",
+        "price": null,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "도안",
+          "일본",
+          "자수서적",
+          "포인트",
+          "자수",
+          "도안집"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "(일본니들펠트서적) 양모 펠트로 만드는 작은 동물 잡화",
+        "price": null,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "일본니들펠트서적",
+          "양모",
+          "펠트로",
+          "만드는",
+          "작은",
+          "동물",
+          "잡화"
+        ]
+      }
+    ],
+    "repeating": [
+      "만드는",
+      "일본서적",
+      "양모펠트로",
+      "동물",
+      "도안"
+    ],
+    "ts": "2026-07-17T16:20:04"
+  }
+]

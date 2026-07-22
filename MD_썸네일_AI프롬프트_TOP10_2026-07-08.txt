@@ -1,0 +1,55 @@
+STIX MD — 메인이미지 AI 프롬프트 TOP10 (2026-07-08)
+목적: CTR 개선 | 스타일: 밝은 배경 + 사이즈 배지 + 구성품 노출
+================================================================================
+
+[1] 보석십자수 30x40 튤립 ★★★★★
+  Prompt: Product photo, diamond cross-stitch canvas kit 30x40cm tulip flowers,
+  completed sparkling artwork on easel, white clean background, badge "30x40cm",
+  included items flat lay: beads tray, pen, tweezers, 28-slot organizer box,
+  warm natural lighting, Korean e-commerce thumbnail, high contrast, no text watermark
+  예상 CTR +17% | 난이도 ★ | 소요 10분
+
+[2] 보석십자수 30x40 바닷가 일출 ★★★★★
+  Prompt: Beach sunrise diamond painting kit 30x40, finished golden hour seascape,
+  summer vibe, badge "30x40", craft supplies beside canvas, bright airy studio shot
+  예상 CTR +15% | 시즌: 여름·방학
+
+[3] 어린이 보석십자수 스티커 24종 ★★★★★
+  Prompt: Kids diamond sticker craft set, 24 cute character designs grid,
+  child hands placing sticker, colorful playful background, badge "24종",
+  sticker sheets and tools visible, family-friendly Korean product photo
+  예상 CTR +20% | 시즌: 방학
+
+[4] E6000 110ml 접착제 ★★★★☆
+  Prompt: E6000 clear craft glue tube 110ml with precision cap,
+  diamond beads and phone repair scene, "110ml" size badge,
+  professional white background, trust badges area empty for overlay
+  예상 CTR +10%
+
+[5] E6000 30ml 접착제 ★★★★☆
+  Prompt: Compact E6000 glue 30ml, craft DIY flat lay: rhinestones, fabric,
+  small tube hero shot, "30ml" badge, clean e-commerce style
+
+[6] B7000 110ml ★★★★☆
+  Prompt: B7000 transparent adhesive 110ml, smartphone screen repair + bead art,
+  safety certification sticker placeholder, bright studio lighting
+
+[7] 크로바 확대경 핑크 1.6x/2x ★★★★☆
+  Prompt: Clover pink craft magnifier dual lens 1.6x and 2x set,
+  cross-stitch fabric under magnification, elegant pink product on white desk
+
+[8] 보석십자수 40x50 최후의 만찬 ★★★★☆
+  Prompt: Large 40x50 diamond painting Last Supper religious art kit,
+  premium framed preview, badge "40x50", museum-quality sparkle close-up
+
+[9] DMC 자수실 503색 단품 ★★★☆☆
+  Prompt: Single DMC embroidery floss skein, color number label visible,
+  rainbow thread collection blurred background, macro thread texture
+
+[10] 16칸 비즈보관함 ★★★☆☆
+  Prompt: 16-compartment bead organizer box, sorted colorful rhinestones,
+  cross-stitch craft desk setup, transparent lid open, utility product shot
+
+================================================================================
+공통 규칙: 100div1000px 이상 | JPEG 85% 압축 | 텍스트는 후처리 PS/캔바
+롤백: 기존 썸네일 Wing/ESM 백업 후 교체

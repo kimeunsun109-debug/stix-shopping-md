@@ -1,0 +1,216 @@
+[
+  {
+    "find": {
+      "idx": 0,
+      "name": "1. 15ml × 3개 (소량,테스트용), 1개",
+      "btnVisible": true
+    }
+  },
+  {
+    "clicked": true
+  },
+  {
+    "enabled_after_click": [
+      {
+        "type": "text",
+        "value": "B7000 투명 다용도 접착제 스마트폰 수리 본드",
+        "name": "InputWithCounter_2",
+        "cls": "sc-common-input"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "name": "",
+        "cls": "sc-common-input"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "S0037076287500",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "S0037076287502",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "S0037076287503",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "S0037076287504",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "0",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "13,690",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "10,090",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "0",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "17,900",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "0",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "13,800",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "13,200",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "0",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "23,900",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "",
+        "name": "",
+        "cls": ""
+      }
+    ]
+  },
+  {
+    "filled_via": null
+  },
+  {
+    "values_after_fill": [
+      "B7000 투명 다용도 접착제 스마트폰 수리 본드",
+      "",
+      "",
+      "",
+      "S0037076287500",
+      "S0037076287502",
+      "S0037076287503",
+      "S0037076287504",
+      "0",
+      "13,690",
+      "10,090",
+      "",
+      "",
+      "0",
+      "17,900",
+      "",
+      "",
+      "0",
+      "13,800",
+      "13,200",
+      "",
+      "",
+      "0",
+      "23,900",
+      "",
+      ""
+    ]
+  },
+  {
+    "submit_clicked": true
+  },
+  {
+    "rows_after": [
+      "1. 15ml × 3개 (소량,테스트용), 1개 아이템위너 13,690 13,690 수정",
+      "2. 15ml × 5개 (가성비 구성), 1개 아이템위너 17,900 17,900 수정",
+      "3. 110ml × 2개 (대용량 기본), 1개 - 13,800 13,800 수정",
+      "4. 110ml × 4개 (대용량 추천), 1개 아이템위너 23,900 23,900 수정"
+    ]
+  }
+]

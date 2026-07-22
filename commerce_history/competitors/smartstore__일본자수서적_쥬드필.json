@@ -1,0 +1,105 @@
+[
+  {
+    "date": "2026-07-17",
+    "marketplace": "smartstore",
+    "keyword": "일본자수서적 쥬드필",
+    "items": [
+      {
+        "rank": null,
+        "title": "스팃스 일본자수서적 쥬드필 Jeu de Fils 토끼",
+        "price": 38000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "스팃스",
+          "일본자수서적",
+          "쥬드필",
+          "Jeu",
+          "de",
+          "Fils",
+          "토끼"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "스팃스 DMC 자수실 5번사 펄코튼 25M 318색 풀세트",
+        "price": 920000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "스팃스",
+          "DMC",
+          "자수실",
+          "번사",
+          "펄코튼",
+          "25M",
+          "풀세트"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "스팃스 DMC 자수실 울사 태피스트리 입체자수 풀세트 414색상",
+        "price": 785000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "스팃스",
+          "DMC",
+          "자수실",
+          "울사",
+          "태피스트리",
+          "입체자수",
+          "풀세트",
+          "색상"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "스팃스 DMC 자수실 4번사 89번사 285색상 전색상 풀세트",
+        "price": 540000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "스팃스",
+          "DMC",
+          "자수실",
+          "번사",
+          "색상",
+          "전색상",
+          "풀세트"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "스팃스 DMC 자수실 25번 면사 전색상 489색 풀세트 DMC 24호 바늘세트증정",
+        "price": 530000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "스팃스",
+          "DMC",
+          "자수실",
+          "면사",
+          "전색상",
+          "풀세트",
+          "바늘세트증정"
+        ]
+      }
+    ],
+    "repeating": [
+      "스팃스",
+      "자수실",
+      "풀세트",
+      "DMC",
+      "번사",
+      "색상",
+      "전색상"
+    ],
+    "ts": "2026-07-17T16:19:31"
+  }
+]

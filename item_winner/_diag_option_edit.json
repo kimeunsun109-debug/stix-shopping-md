@@ -1,0 +1,960 @@
+{
+  "url": "https://wing.coupang.com/tenants/seller-web/vendor-inventory/modify?vendorInventoryId=16020715295",
+  "click": {
+    "clicked": false
+  },
+  "dialogs": [
+    {
+      "cls": "go-to-market-modal-trigger",
+      "text": "모바일 앱 다운로드"
+    },
+    {
+      "cls": "modal",
+      "text": "판매수수료 조회    - 판매방식이 중개판매(OpenMarket)일 경우, 카테고리별 판매수수료(VAT 별도)가 부과됩니다. (배송비의 경우 수수료 3%가 부과 됩니다.)- 쿠팡과 협의하여, 프로모션 적용중인 판매자의 특정 카테고리는 카테고리별 판매수수료와 상이할 수 있습니다. - [주의] 상품등록 시 선택한 카테고리와 실제 상품이 일치하지 않는 경우, 판매금지 또는 쿠팡 가이드에 맞게 수정한 후 담당 부서에서 별도로 안내를 진행합니다.- 수정 후 변경된 수수료율로 정산되지 않을 수 있으므로 올바른 카테고리로 직접 신규 등록해주세요. 총 0개※ 판매수수료 (VAT별도)       노출상품ID 옵션ID 옵션명 카테고리 판매수수료 기타  \n        취소\n      "
+    },
+    {
+      "cls": "modal-wrapper",
+      "text": "판매수수료 조회    - 판매방식이 중개판매(OpenMarket)일 경우, 카테고리별 판매수수료(VAT 별도)가 부과됩니다. (배송비의 경우 수수료 3%가 부과 됩니다.)- 쿠팡과 협의하여, 프로모션 적용중인 판매자의 특정 카테고리는 카테고리별 판매수수료와 상이할 수 있습니다. - [주의] 상품등록 시 선택한 카테고리와 실제 상품이 일치하지 않는 경우, 판매금지 또는 쿠팡 가이드에 맞게 수정한 후 담당 부서에서 별도로 안내를 진행합니다.- 수정 후 변경된 수수료율로 정산되지 않을 수 있으므로 올바른 카테고리로 직접 신규 등록해주세요. 총 0개※ 판매수수료 (VAT별도)       노출상품ID 옵션ID 옵션명 카테고리 판매수수료 기타  \n        취소\n      "
+    },
+    {
+      "cls": "modal-dialog",
+      "text": "판매수수료 조회    - 판매방식이 중개판매(OpenMarket)일 경우, 카테고리별 판매수수료(VAT 별도)가 부과됩니다. (배송비의 경우 수수료 3%가 부과 됩니다.)- 쿠팡과 협의하여, 프로모션 적용중인 판매자의 특정 카테고리는 카테고리별 판매수수료와 상이할 수 있습니다. - [주의] 상품등록 시 선택한 카테고리와 실제 상품이 일치하지 않는 경우, 판매금지 또는 쿠팡 가이드에 맞게 수정한 후 담당 부서에서 별도로 안내를 진행합니다.- 수정 후 변경된 수수료율로 정산되지 않을 수 있으므로 올바른 카테고리로 직접 신규 등록해주세요. 총 0개※ 판매수수료 (VAT별도)       노출상품ID 옵션ID 옵션명 카테고리 판매수수료 기타  \n        취소\n      "
+    },
+    {
+      "cls": "modal-dialog-section modal-header",
+      "text": "판매수수료 조회   "
+    },
+    {
+      "cls": "modal-title",
+      "text": "판매수수료 조회"
+    },
+    {
+      "cls": "modal-close",
+      "text": ""
+    },
+    {
+      "cls": "modal-dialog-section modal-content with-footer",
+      "text": "- 판매방식이 중개판매(OpenMarket)일 경우, 카테고리별 판매수수료(VAT 별도)가 부과됩니다. (배송비의 경우 수수료 3%가 부과 됩니다.)- 쿠팡과 협의하여, 프로모션 적용중인 판매자의 특정 카테고리는 카테고리별 판매수수료와 상이할 수 있습니다. - [주의] 상품등록 시 선택한 카테고리와 실제 상품이 일치하지 않는 경우, 판매금지 또는 쿠팡 가이드에 맞게 수정한 후 담당 부서에서 별도로 안내를 진행합니다.- 수정 후 변경된 수수료율로 정산되지 않을 수 있으므로 올바른 카테고리로 직접 신규 등록해주세요. 총 0개※ 판매수수료 (VAT별도)       노출상품ID 옵션ID 옵션명 카테고리 판매수수료 기타 "
+    },
+    {
+      "cls": "modal-dialog-section modal-footer",
+      "text": "\n        취소\n      "
+    },
+    {
+      "cls": "wing-web-component the-modal",
+      "text": "\n            \n          \n                확인\n            "
+    },
+    {
+      "cls": "popup-wrapper",
+      "text": ""
+    },
+    {
+      "cls": "wing-web-component image-defect-reduction-modal__backdrop-overlay",
+      "text": "\n                        상품 이미지 수정\n                        \n                            이미지 가이드라인 확인\n                         \n                        이미지 가이드라인을 위반한 상품이 있습니다. 가이드라인 위반 시 노출 제한, 광고/프로모션 제한, 판매중지 등제재 대상이 될 수 있으므로 가이드라인에 맞는 올바른 이미지로 수정해 주시기 바랍니다.\n                      \n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                             원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반"
+    },
+    {
+      "cls": "image-defect-reduction-modal",
+      "text": "\n                        상품 이미지 수정\n                        \n                            이미지 가이드라인 확인\n                         \n                        이미지 가이드라인을 위반한 상품이 있습니다. 가이드라인 위반 시 노출 제한, 광고/프로모션 제한, 판매중지 등제재 대상이 될 수 있으므로 가이드라인에 맞는 올바른 이미지로 수정해 주시기 바랍니다.\n                      \n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                             원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반"
+    },
+    {
+      "cls": "image-defect-reduction-modal__head",
+      "text": "\n                        상품 이미지 수정\n                        \n                            이미지 가이드라인 확인\n                         \n                        이미지 가이드라인을 위반한 상품이 있습니다. 가이드라인 위반 시 노출 제한, 광고/프로모션 제한, 판매중지 등제재 대상이 될 수 있으므로 가이드라인에 맞는 올바른 이미지로 수정해 주시기 바랍니다.\n                     "
+    },
+    {
+      "cls": "image-defect-reduction-modal__content",
+      "text": "\n                        상품 이미지 수정\n                        \n                            이미지 가이드라인 확인\n                         \n                        이미지 가이드라인을 위반한 상품이 있습니다. 가이드라인 위반 시 노출 제한, 광고/프로모션 제한, 판매중지 등제재 대상이 될 수 있으므로 가이드라인에 맞는 올바른 이미지로 수정해 주시기 바랍니다.\n                    "
+    },
+    {
+      "cls": "image-defect-reduction-modal__title",
+      "text": "\n                        상품 이미지 수정\n                        \n                            이미지 가이드라인 확인\n                        "
+    },
+    {
+      "cls": "image-defect-reduction-modal__paragraph",
+      "text": "\n                        이미지 가이드라인을 위반한 상품이 있습니다. 가이드라인 위반 시 노출 제한, 광고/프로모션 제한, 판매중지 등제재 대상이 될 수 있으므로 가이드라인에 맞는 올바른 이미지로 수정해 주시기 바랍니다.\n                    "
+    },
+    {
+      "cls": "image-defect-reduction-modal__buttons",
+      "text": ""
+    },
+    {
+      "cls": "image-defect-reduction-modal__container",
+      "text": "\n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                             원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반드시 확인해주세요. 모든 결함이 수정되지 않았을 경우, 가이드라인에 따라 직접 이미지를 수정해주시기 바랍니다.  1개 1. 15ml × 3개 (소량,테스트용)  1개 2. 15ml × 5개 (가성비 구성)  1개 3. 110ml × 2개 (대용량 기본)  1개 4. 110ml × 4개 (대용량 추천)     \n                                                자동 수정 이미지 생성중\n                                              \n"
+    },
+    {
+      "cls": "image-defect-reduction-modal",
+      "text": "\n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                             원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반드시 확인해주세요. 모든 결함이 수정되지 않았을 경우, 가이드라인에 따라 직접 이미지를 수정해주시기 바랍니다.  1개 1. 15ml × 3개 (소량,테스트용)  1개 2. 15ml × 5개 (가성비 구성)  1개 3. 110ml × 2개 (대용량 기본)  1개 4. 110ml × 4개 (대용량 추천)     \n                                                자동 수정 이미지 생성중\n                                              \n"
+    },
+    {
+      "cls": "image-defect-reduction-modal__header",
+      "text": "\n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                             원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반드시 확인해주세요. 모든 결함이 수정되지 않았을 경우, 가이드라인에 따라 직접 이미지를 수정해주시기 바랍니다."
+    },
+    {
+      "cls": "image-defect-reduction-modal__user-image-list-title",
+      "text": "\n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                            "
+    },
+    {
+      "cls": "image-defect-reduction-modal__header-title",
+      "text": "\n                                가이드라인 위반 옵션\n                            "
+    },
+    {
+      "cls": "image-defect-reduction-modal__header-count",
+      "text": "\n                                1 / 4\n                            "
+    },
+    {
+      "cls": "image-defect-reduction-modal__user-image-title",
+      "text": "원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반드시 확인해주세요. 모든 결함이 수정되지 않았을 경우, 가이드라인에 따라 직접 이미지를 수정해주시기 바랍니다."
+    },
+    {
+      "cls": "image-defect-reduction-modal__user-image-title-middle",
+      "text": "원본 이미지"
+    },
+    {
+      "cls": "image-defect-reduction-modal__user-image-title-last",
+      "text": "제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반드시 확인해주세요. 모든 결함이 수정되지 않았을 경우, 가이드라인에 따라 직접 이미지를 수정해주시기 바랍니다."
+    },
+    {
+      "cls": "image-defect-reduction-modal__content",
+      "text": " 1개 1. 15ml × 3개 (소량,테스트용)  1개 2. 15ml × 5개 (가성비 구성)  1개 3. 110ml × 2개 (대용량 기본)  1개 4. 110ml × 4개 (대용량 추천)     \n                                                자동 수정 이미지 생성중\n                                              \n                                    다른 이미지 등록\n                                     권장 사이즈 : 1,000px x 1,000px (최소 500px 이상)    등록한 이미지는 가이드를 충족하여 자동 수정이 적용되지 않았습니다.       \n                                            자동 수정 이미지 생성중\n                                           "
+    },
+    {
+      "cls": "product-defect-reduction-modal__user_content_list",
+      "text": " 1개 1. 15ml × 3개 (소량,테스트용)  1개 2. 15ml × 5개 (가성비 구성)  1개 3. 110ml × 2개 (대용량 기본)  1개 4. 110ml × 4개 (대용량 추천) "
+    },
+    {
+      "cls": "image-defect-reduction-modal__content_list",
+      "text": " 1개 1. 15ml × 3개 (소량,테스트용)  1개 2. 15ml × 5개 (가성비 구성)  1개 3. 110ml × 2개 (대용량 기본)  1개 4. 110ml × 4개 (대용량 추천) "
+    },
+    {
+      "cls": "product-defect-reduction-modal__user_image_layout",
+      "text": "   \n                                                자동 수정 이미지 생성중\n                                              \n                                    다른 이미지 등록\n                                     권장 사이즈 : 1,000px x 1,000px (최소 500px 이상)    등록한 이미지는 가이드를 충족하여 자동 수정이 적용되지 않았습니다.       \n                                            자동 수정 이미지 생성중\n                                           "
+    },
+    {
+      "cls": "product-defect-reduction-modal__user_image_container",
+      "text": "   \n                                                자동 수정 이미지 생성중\n                                              \n                                    다른 이미지 등록\n                                     권장 사이즈 : 1,000px x 1,000px (최소 500px 이상)   "
+    },
+    {
+      "cls": "product-defect-reduction-modal__corrected_image_container",
+      "text": "등록한 이미지는 가이드를 충족하여 자동 수정이 적용되지 않았습니다.       \n                                            자동 수정 이미지 생성중\n                                           "
+    },
+    {
+      "cls": "popup-wrapper popup-wrapper-left",
+      "text": ""
+    },
+    {
+      "cls": "wing-web-component image-defect-reduction-modal__backdrop-overlay",
+      "text": "\n                        상품 이미지 수정\n                        \n                            이미지 가이드라인 확인\n                         \n                        이미지 가이드라인을 위반한 상품이 있습니다. 가이드라인 위반 시 노출 제한, 광고/프로모션 제한, 판매중지 등제재 대상이 될 수 있으므로 가이드라인에 맞는 올바른 이미지로 수정해 주시기 바랍니다.\n                      \n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                             원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반"
+    },
+    {
+      "cls": "image-defect-reduction-modal",
+      "text": "\n                        상품 이미지 수정\n                        \n                            이미지 가이드라인 확인\n                         \n                        이미지 가이드라인을 위반한 상품이 있습니다. 가이드라인 위반 시 노출 제한, 광고/프로모션 제한, 판매중지 등제재 대상이 될 수 있으므로 가이드라인에 맞는 올바른 이미지로 수정해 주시기 바랍니다.\n                      \n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                             원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반"
+    },
+    {
+      "cls": "image-defect-reduction-modal__head",
+      "text": "\n                        상품 이미지 수정\n                        \n                            이미지 가이드라인 확인\n                         \n                        이미지 가이드라인을 위반한 상품이 있습니다. 가이드라인 위반 시 노출 제한, 광고/프로모션 제한, 판매중지 등제재 대상이 될 수 있으므로 가이드라인에 맞는 올바른 이미지로 수정해 주시기 바랍니다.\n                     "
+    },
+    {
+      "cls": "image-defect-reduction-modal__content",
+      "text": "\n                        상품 이미지 수정\n                        \n                            이미지 가이드라인 확인\n                         \n                        이미지 가이드라인을 위반한 상품이 있습니다. 가이드라인 위반 시 노출 제한, 광고/프로모션 제한, 판매중지 등제재 대상이 될 수 있으므로 가이드라인에 맞는 올바른 이미지로 수정해 주시기 바랍니다.\n                    "
+    },
+    {
+      "cls": "image-defect-reduction-modal__title",
+      "text": "\n                        상품 이미지 수정\n                        \n                            이미지 가이드라인 확인\n                        "
+    },
+    {
+      "cls": "image-defect-reduction-modal__paragraph",
+      "text": "\n                        이미지 가이드라인을 위반한 상품이 있습니다. 가이드라인 위반 시 노출 제한, 광고/프로모션 제한, 판매중지 등제재 대상이 될 수 있으므로 가이드라인에 맞는 올바른 이미지로 수정해 주시기 바랍니다.\n                    "
+    },
+    {
+      "cls": "image-defect-reduction-modal__buttons",
+      "text": ""
+    },
+    {
+      "cls": "image-defect-reduction-modal__container",
+      "text": "\n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                             원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반드시 확인해주세요. 모든 결함이 수정되지 않았을 경우, 가이드라인에 따라 직접 이미지를 수정해주시기 바랍니다.  1개 1. 15ml × 3개 (소량,테스트용)  1개 2. 15ml × 5개 (가성비 구성)  1개 3. 110ml × 2개 (대용량 기본)  1개 4. 110ml × 4개 (대용량 추천)     \n                                                자동 수정 이미지 생성중\n                                              \n"
+    },
+    {
+      "cls": "image-defect-reduction-modal",
+      "text": "\n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                             원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반드시 확인해주세요. 모든 결함이 수정되지 않았을 경우, 가이드라인에 따라 직접 이미지를 수정해주시기 바랍니다.  1개 1. 15ml × 3개 (소량,테스트용)  1개 2. 15ml × 5개 (가성비 구성)  1개 3. 110ml × 2개 (대용량 기본)  1개 4. 110ml × 4개 (대용량 추천)     \n                                                자동 수정 이미지 생성중\n                                              \n"
+    },
+    {
+      "cls": "image-defect-reduction-modal__header",
+      "text": "\n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                             원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반드시 확인해주세요. 모든 결함이 수정되지 않았을 경우, 가이드라인에 따라 직접 이미지를 수정해주시기 바랍니다."
+    },
+    {
+      "cls": "image-defect-reduction-modal__user-image-list-title",
+      "text": "\n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                            "
+    },
+    {
+      "cls": "image-defect-reduction-modal__header-title",
+      "text": "\n                                가이드라인 위반 옵션\n                            "
+    },
+    {
+      "cls": "image-defect-reduction-modal__header-count",
+      "text": "\n                                1 / 4\n                            "
+    },
+    {
+      "cls": "image-defect-reduction-modal__user-image-title",
+      "text": "원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반드시 확인해주세요. 모든 결함이 수정되지 않았을 경우, 가이드라인에 따라 직접 이미지를 수정해주시기 바랍니다."
+    },
+    {
+      "cls": "image-defect-reduction-modal__user-image-title-middle",
+      "text": "원본 이미지"
+    },
+    {
+      "cls": "image-defect-reduction-modal__user-image-title-last",
+      "text": "제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반드시 확인해주세요. 모든 결함이 수정되지 않았을 경우, 가이드라인에 따라 직접 이미지를 수정해주시기 바랍니다."
+    },
+    {
+      "cls": "image-defect-reduction-modal__content",
+      "text": " 1개 1. 15ml × 3개 (소량,테스트용)  1개 2. 15ml × 5개 (가성비 구성)  1개 3. 110ml × 2개 (대용량 기본)  1개 4. 110ml × 4개 (대용량 추천)     \n                                                자동 수정 이미지 생성중\n                                              \n                                    다른 이미지 등록\n                                     권장 사이즈 : 1,000px x 1,000px (최소 500px 이상)    등록한 이미지는 가이드를 충족하여 자동 수정이 적용되지 않았습니다.       \n                                            자동 수정 이미지 생성중\n                                           "
+    },
+    {
+      "cls": "product-defect-reduction-modal__user_content_list",
+      "text": " 1개 1. 15ml × 3개 (소량,테스트용)  1개 2. 15ml × 5개 (가성비 구성)  1개 3. 110ml × 2개 (대용량 기본)  1개 4. 110ml × 4개 (대용량 추천) "
+    },
+    {
+      "cls": "image-defect-reduction-modal__content_list",
+      "text": " 1개 1. 15ml × 3개 (소량,테스트용)  1개 2. 15ml × 5개 (가성비 구성)  1개 3. 110ml × 2개 (대용량 기본)  1개 4. 110ml × 4개 (대용량 추천) "
+    },
+    {
+      "cls": "product-defect-reduction-modal__user_image_layout",
+      "text": "   \n                                                자동 수정 이미지 생성중\n                                              \n                                    다른 이미지 등록\n                                     권장 사이즈 : 1,000px x 1,000px (최소 500px 이상)    등록한 이미지는 가이드를 충족하여 자동 수정이 적용되지 않았습니다.       \n                                            자동 수정 이미지 생성중\n                                           "
+    },
+    {
+      "cls": "product-defect-reduction-modal__user_image_container",
+      "text": "   \n                                                자동 수정 이미지 생성중\n                                              \n                                    다른 이미지 등록\n                                     권장 사이즈 : 1,000px x 1,000px (최소 500px 이상)   "
+    },
+    {
+      "cls": "product-defect-reduction-modal__corrected_image_container",
+      "text": "등록한 이미지는 가이드를 충족하여 자동 수정이 적용되지 않았습니다.       \n                                            자동 수정 이미지 생성중\n                                           "
+    },
+    {
+      "cls": "popup-wrapper popup-wrapper-left",
+      "text": ""
+    },
+    {
+      "cls": "wing-web-component image-defect-reduction-modal__backdrop-overlay",
+      "text": "\n                        상품 이미지 수정\n                        \n                            이미지 가이드라인 확인\n                         \n                        이미지 가이드라인을 위반한 상품이 있습니다. 가이드라인 위반 시 노출 제한, 광고/프로모션 제한, 판매중지 등제재 대상이 될 수 있으므로 가이드라인에 맞는 올바른 이미지로 수정해 주시기 바랍니다.\n                      \n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                             원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반"
+    },
+    {
+      "cls": "image-defect-reduction-modal",
+      "text": "\n                        상품 이미지 수정\n                        \n                            이미지 가이드라인 확인\n                         \n                        이미지 가이드라인을 위반한 상품이 있습니다. 가이드라인 위반 시 노출 제한, 광고/프로모션 제한, 판매중지 등제재 대상이 될 수 있으므로 가이드라인에 맞는 올바른 이미지로 수정해 주시기 바랍니다.\n                      \n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                             원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반"
+    },
+    {
+      "cls": "image-defect-reduction-modal__head",
+      "text": "\n                        상품 이미지 수정\n                        \n                            이미지 가이드라인 확인\n                         \n                        이미지 가이드라인을 위반한 상품이 있습니다. 가이드라인 위반 시 노출 제한, 광고/프로모션 제한, 판매중지 등제재 대상이 될 수 있으므로 가이드라인에 맞는 올바른 이미지로 수정해 주시기 바랍니다.\n                     "
+    },
+    {
+      "cls": "image-defect-reduction-modal__content",
+      "text": "\n                        상품 이미지 수정\n                        \n                            이미지 가이드라인 확인\n                         \n                        이미지 가이드라인을 위반한 상품이 있습니다. 가이드라인 위반 시 노출 제한, 광고/프로모션 제한, 판매중지 등제재 대상이 될 수 있으므로 가이드라인에 맞는 올바른 이미지로 수정해 주시기 바랍니다.\n                    "
+    },
+    {
+      "cls": "image-defect-reduction-modal__title",
+      "text": "\n                        상품 이미지 수정\n                        \n                            이미지 가이드라인 확인\n                        "
+    },
+    {
+      "cls": "image-defect-reduction-modal__paragraph",
+      "text": "\n                        이미지 가이드라인을 위반한 상품이 있습니다. 가이드라인 위반 시 노출 제한, 광고/프로모션 제한, 판매중지 등제재 대상이 될 수 있으므로 가이드라인에 맞는 올바른 이미지로 수정해 주시기 바랍니다.\n                    "
+    },
+    {
+      "cls": "image-defect-reduction-modal__buttons",
+      "text": ""
+    },
+    {
+      "cls": "image-defect-reduction-modal__container",
+      "text": "\n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                             원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반드시 확인해주세요. 모든 결함이 수정되지 않았을 경우, 가이드라인에 따라 직접 이미지를 수정해주시기 바랍니다.  1개 1. 15ml × 3개 (소량,테스트용)  1개 2. 15ml × 5개 (가성비 구성)  1개 3. 110ml × 2개 (대용량 기본)  1개 4. 110ml × 4개 (대용량 추천)     \n                                                자동 수정 이미지 생성중\n                                              \n"
+    },
+    {
+      "cls": "image-defect-reduction-modal",
+      "text": "\n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                             원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반드시 확인해주세요. 모든 결함이 수정되지 않았을 경우, 가이드라인에 따라 직접 이미지를 수정해주시기 바랍니다.  1개 1. 15ml × 3개 (소량,테스트용)  1개 2. 15ml × 5개 (가성비 구성)  1개 3. 110ml × 2개 (대용량 기본)  1개 4. 110ml × 4개 (대용량 추천)     \n                                                자동 수정 이미지 생성중\n                                              \n"
+    },
+    {
+      "cls": "image-defect-reduction-modal__header",
+      "text": "\n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                             원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반드시 확인해주세요. 모든 결함이 수정되지 않았을 경우, 가이드라인에 따라 직접 이미지를 수정해주시기 바랍니다."
+    },
+    {
+      "cls": "image-defect-reduction-modal__user-image-list-title",
+      "text": "\n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                            "
+    },
+    {
+      "cls": "image-defect-reduction-modal__header-title",
+      "text": "\n                                가이드라인 위반 옵션\n                            "
+    },
+    {
+      "cls": "image-defect-reduction-modal__header-count",
+      "text": "\n                                1 / 4\n                            "
+    },
+    {
+      "cls": "image-defect-reduction-modal__user-image-title",
+      "text": "원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반드시 확인해주세요. 모든 결함이 수정되지 않았을 경우, 가이드라인에 따라 직접 이미지를 수정해주시기 바랍니다."
+    },
+    {
+      "cls": "image-defect-reduction-modal__user-image-title-middle",
+      "text": "원본 이미지"
+    },
+    {
+      "cls": "image-defect-reduction-modal__user-image-title-last",
+      "text": "제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반드시 확인해주세요. 모든 결함이 수정되지 않았을 경우, 가이드라인에 따라 직접 이미지를 수정해주시기 바랍니다."
+    },
+    {
+      "cls": "image-defect-reduction-modal__content",
+      "text": " 1개 1. 15ml × 3개 (소량,테스트용)  1개 2. 15ml × 5개 (가성비 구성)  1개 3. 110ml × 2개 (대용량 기본)  1개 4. 110ml × 4개 (대용량 추천)     \n                                                자동 수정 이미지 생성중\n                                              \n                                    다른 이미지 등록\n                                     권장 사이즈 : 1,000px x 1,000px (최소 500px 이상)    등록한 이미지는 가이드를 충족하여 자동 수정이 적용되지 않았습니다.       \n                                            자동 수정 이미지 생성중\n                                           "
+    },
+    {
+      "cls": "product-defect-reduction-modal__user_content_list",
+      "text": " 1개 1. 15ml × 3개 (소량,테스트용)  1개 2. 15ml × 5개 (가성비 구성)  1개 3. 110ml × 2개 (대용량 기본)  1개 4. 110ml × 4개 (대용량 추천) "
+    },
+    {
+      "cls": "image-defect-reduction-modal__content_list",
+      "text": " 1개 1. 15ml × 3개 (소량,테스트용)  1개 2. 15ml × 5개 (가성비 구성)  1개 3. 110ml × 2개 (대용량 기본)  1개 4. 110ml × 4개 (대용량 추천) "
+    },
+    {
+      "cls": "product-defect-reduction-modal__user_image_layout",
+      "text": "   \n                                                자동 수정 이미지 생성중\n                                              \n                                    다른 이미지 등록\n                                     권장 사이즈 : 1,000px x 1,000px (최소 500px 이상)    등록한 이미지는 가이드를 충족하여 자동 수정이 적용되지 않았습니다.       \n                                            자동 수정 이미지 생성중\n                                           "
+    },
+    {
+      "cls": "product-defect-reduction-modal__user_image_container",
+      "text": "   \n                                                자동 수정 이미지 생성중\n                                              \n                                    다른 이미지 등록\n                                     권장 사이즈 : 1,000px x 1,000px (최소 500px 이상)   "
+    },
+    {
+      "cls": "product-defect-reduction-modal__corrected_image_container",
+      "text": "등록한 이미지는 가이드를 충족하여 자동 수정이 적용되지 않았습니다.       \n                                            자동 수정 이미지 생성중\n                                           "
+    },
+    {
+      "cls": "popup-wrapper popup-wrapper-left",
+      "text": ""
+    },
+    {
+      "cls": "wing-web-component image-defect-reduction-modal__backdrop-overlay",
+      "text": "\n                        상품 이미지 수정\n                        \n                            이미지 가이드라인 확인\n                         \n                        이미지 가이드라인을 위반한 상품이 있습니다. 가이드라인 위반 시 노출 제한, 광고/프로모션 제한, 판매중지 등제재 대상이 될 수 있으므로 가이드라인에 맞는 올바른 이미지로 수정해 주시기 바랍니다.\n                      \n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                             원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반"
+    },
+    {
+      "cls": "image-defect-reduction-modal",
+      "text": "\n                        상품 이미지 수정\n                        \n                            이미지 가이드라인 확인\n                         \n                        이미지 가이드라인을 위반한 상품이 있습니다. 가이드라인 위반 시 노출 제한, 광고/프로모션 제한, 판매중지 등제재 대상이 될 수 있으므로 가이드라인에 맞는 올바른 이미지로 수정해 주시기 바랍니다.\n                      \n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                             원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반"
+    },
+    {
+      "cls": "image-defect-reduction-modal__head",
+      "text": "\n                        상품 이미지 수정\n                        \n                            이미지 가이드라인 확인\n                         \n                        이미지 가이드라인을 위반한 상품이 있습니다. 가이드라인 위반 시 노출 제한, 광고/프로모션 제한, 판매중지 등제재 대상이 될 수 있으므로 가이드라인에 맞는 올바른 이미지로 수정해 주시기 바랍니다.\n                     "
+    },
+    {
+      "cls": "image-defect-reduction-modal__content",
+      "text": "\n                        상품 이미지 수정\n                        \n                            이미지 가이드라인 확인\n                         \n                        이미지 가이드라인을 위반한 상품이 있습니다. 가이드라인 위반 시 노출 제한, 광고/프로모션 제한, 판매중지 등제재 대상이 될 수 있으므로 가이드라인에 맞는 올바른 이미지로 수정해 주시기 바랍니다.\n                    "
+    },
+    {
+      "cls": "image-defect-reduction-modal__title",
+      "text": "\n                        상품 이미지 수정\n                        \n                            이미지 가이드라인 확인\n                        "
+    },
+    {
+      "cls": "image-defect-reduction-modal__paragraph",
+      "text": "\n                        이미지 가이드라인을 위반한 상품이 있습니다. 가이드라인 위반 시 노출 제한, 광고/프로모션 제한, 판매중지 등제재 대상이 될 수 있으므로 가이드라인에 맞는 올바른 이미지로 수정해 주시기 바랍니다.\n                    "
+    },
+    {
+      "cls": "image-defect-reduction-modal__buttons",
+      "text": ""
+    },
+    {
+      "cls": "image-defect-reduction-modal__container",
+      "text": "\n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                             원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반드시 확인해주세요. 모든 결함이 수정되지 않았을 경우, 가이드라인에 따라 직접 이미지를 수정해주시기 바랍니다.  1개 1. 15ml × 3개 (소량,테스트용)  1개 2. 15ml × 5개 (가성비 구성)  1개 3. 110ml × 2개 (대용량 기본)  1개 4. 110ml × 4개 (대용량 추천)     \n                                                자동 수정 이미지 생성중\n                                              \n"
+    },
+    {
+      "cls": "image-defect-reduction-modal",
+      "text": "\n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                             원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반드시 확인해주세요. 모든 결함이 수정되지 않았을 경우, 가이드라인에 따라 직접 이미지를 수정해주시기 바랍니다.  1개 1. 15ml × 3개 (소량,테스트용)  1개 2. 15ml × 5개 (가성비 구성)  1개 3. 110ml × 2개 (대용량 기본)  1개 4. 110ml × 4개 (대용량 추천)     \n                                                자동 수정 이미지 생성중\n                                              \n"
+    },
+    {
+      "cls": "image-defect-reduction-modal__header",
+      "text": "\n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                             원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반드시 확인해주세요. 모든 결함이 수정되지 않았을 경우, 가이드라인에 따라 직접 이미지를 수정해주시기 바랍니다."
+    },
+    {
+      "cls": "image-defect-reduction-modal__user-image-list-title",
+      "text": "\n                                가이드라인 위반 옵션\n                             \n                                1 / 4\n                            "
+    },
+    {
+      "cls": "image-defect-reduction-modal__header-title",
+      "text": "\n                                가이드라인 위반 옵션\n                            "
+    },
+    {
+      "cls": "image-defect-reduction-modal__header-count",
+      "text": "\n                                1 / 4\n                            "
+    },
+    {
+      "cls": "image-defect-reduction-modal__user-image-title",
+      "text": "원본 이미지 제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반드시 확인해주세요. 모든 결함이 수정되지 않았을 경우, 가이드라인에 따라 직접 이미지를 수정해주시기 바랍니다."
+    },
+    {
+      "cls": "image-defect-reduction-modal__user-image-title-middle",
+      "text": "원본 이미지"
+    },
+    {
+      "cls": "image-defect-reduction-modal__user-image-title-last",
+      "text": "제안된 자동 수정 이미지   자동 수정 결과에 오류가 있을 수 있으므로, 이미지가 가이드라인에 맞게 정확히 수정되었는지 반드시 확인해주세요. 모든 결함이 수정되지 않았을 경우, 가이드라인에 따라 직접 이미지를 수정해주시기 바랍니다."
+    },
+    {
+      "cls": "image-defect-reduction-modal__content",
+      "text": " 1개 1. 15ml × 3개 (소량,테스트용)  1개 2. 15ml × 5개 (가성비 구성)  1개 3. 110ml × 2개 (대용량 기본)  1개 4. 110ml × 4개 (대용량 추천)     \n                                                자동 수정 이미지 생성중\n                                              \n                                    다른 이미지 등록\n                                     권장 사이즈 : 1,000px x 1,000px (최소 500px 이상)    등록한 이미지는 가이드를 충족하여 자동 수정이 적용되지 않았습니다.       \n                                            자동 수정 이미지 생성중\n                                           "
+    },
+    {
+      "cls": "product-defect-reduction-modal__user_content_list",
+      "text": " 1개 1. 15ml × 3개 (소량,테스트용)  1개 2. 15ml × 5개 (가성비 구성)  1개 3. 110ml × 2개 (대용량 기본)  1개 4. 110ml × 4개 (대용량 추천) "
+    },
+    {
+      "cls": "image-defect-reduction-modal__content_list",
+      "text": " 1개 1. 15ml × 3개 (소량,테스트용)  1개 2. 15ml × 5개 (가성비 구성)  1개 3. 110ml × 2개 (대용량 기본)  1개 4. 110ml × 4개 (대용량 추천) "
+    },
+    {
+      "cls": "product-defect-reduction-modal__user_image_layout",
+      "text": "   \n                                                자동 수정 이미지 생성중\n                                              \n                                    다른 이미지 등록\n                                     권장 사이즈 : 1,000px x 1,000px (최소 500px 이상)    등록한 이미지는 가이드를 충족하여 자동 수정이 적용되지 않았습니다.       \n                                            자동 수정 이미지 생성중\n                                           "
+    },
+    {
+      "cls": "product-defect-reduction-modal__user_image_container",
+      "text": "   \n                                                자동 수정 이미지 생성중\n                                              \n                                    다른 이미지 등록\n                                     권장 사이즈 : 1,000px x 1,000px (최소 500px 이상)   "
+    },
+    {
+      "cls": "product-defect-reduction-modal__corrected_image_container",
+      "text": "등록한 이미지는 가이드를 충족하여 자동 수정이 적용되지 않았습니다.       \n                                            자동 수정 이미지 생성중\n                                           "
+    },
+    {
+      "cls": "popup-wrapper popup-wrapper-left",
+      "text": ""
+    },
+    {
+      "cls": "modal",
+      "text": "이미지 등록     이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              전체 삭제\n               실제크기 축소크기   여러개의 이미지파일을 한번에 끌어다 놓아서 업로드할 수 있습니다. (드래그 앤 드롭)  취소 \n          저장\n        "
+    },
+    {
+      "cls": "modal-wrapper",
+      "text": "이미지 등록     이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              전체 삭제\n               실제크기 축소크기   여러개의 이미지파일을 한번에 끌어다 놓아서 업로드할 수 있습니다. (드래그 앤 드롭)  취소 \n          저장\n        "
+    },
+    {
+      "cls": "modal-dialog",
+      "text": "이미지 등록     이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              전체 삭제\n               실제크기 축소크기   여러개의 이미지파일을 한번에 끌어다 놓아서 업로드할 수 있습니다. (드래그 앤 드롭)  취소 \n          저장\n        "
+    },
+    {
+      "cls": "modal-dialog-section modal-header",
+      "text": "이미지 등록   "
+    },
+    {
+      "cls": "modal-title",
+      "text": "이미지 등록"
+    },
+    {
+      "cls": "modal-close",
+      "text": ""
+    },
+    {
+      "cls": "modal-dialog-section modal-content with-footer",
+      "text": " 이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              전체 삭제\n               실제크기 축소크기   여러개의 이미지파일을 한번에 끌어다 놓아서 업로드할 수 있습니다. (드래그 앤 드롭) "
+    },
+    {
+      "cls": "image-modal",
+      "text": " 이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              전체 삭제\n               실제크기 축소크기   여러개의 이미지파일을 한번에 끌어다 놓아서 업로드할 수 있습니다. (드래그 앤 드롭) "
+    },
+    {
+      "cls": "modal-dialog-section modal-footer",
+      "text": "취소 \n          저장\n        "
+    },
+    {
+      "cls": "image-modal-footer",
+      "text": "취소 \n          저장\n        "
+    },
+    {
+      "cls": "modal",
+      "text": "이미지 등록     이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              전체 삭제\n               실제크기 축소크기   여러개의 이미지파일을 한번에 끌어다 놓아서 업로드할 수 있습니다. (드래그 앤 드롭)  취소 \n          저장\n        "
+    },
+    {
+      "cls": "modal-wrapper",
+      "text": "이미지 등록     이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              전체 삭제\n               실제크기 축소크기   여러개의 이미지파일을 한번에 끌어다 놓아서 업로드할 수 있습니다. (드래그 앤 드롭)  취소 \n          저장\n        "
+    },
+    {
+      "cls": "modal-dialog",
+      "text": "이미지 등록     이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              전체 삭제\n               실제크기 축소크기   여러개의 이미지파일을 한번에 끌어다 놓아서 업로드할 수 있습니다. (드래그 앤 드롭)  취소 \n          저장\n        "
+    },
+    {
+      "cls": "modal-dialog-section modal-header",
+      "text": "이미지 등록   "
+    },
+    {
+      "cls": "modal-title",
+      "text": "이미지 등록"
+    },
+    {
+      "cls": "modal-close",
+      "text": ""
+    },
+    {
+      "cls": "modal-dialog-section modal-content with-footer",
+      "text": " 이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              전체 삭제\n               실제크기 축소크기   여러개의 이미지파일을 한번에 끌어다 놓아서 업로드할 수 있습니다. (드래그 앤 드롭) "
+    },
+    {
+      "cls": "image-modal",
+      "text": " 이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              전체 삭제\n               실제크기 축소크기   여러개의 이미지파일을 한번에 끌어다 놓아서 업로드할 수 있습니다. (드래그 앤 드롭) "
+    },
+    {
+      "cls": "modal-dialog-section modal-footer",
+      "text": "취소 \n          저장\n        "
+    },
+    {
+      "cls": "image-modal-footer",
+      "text": "취소 \n          저장\n        "
+    },
+    {
+      "cls": "modal",
+      "text": "이미지 등록     이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              전체 삭제\n               실제크기 축소크기   여러개의 이미지파일을 한번에 끌어다 놓아서 업로드할 수 있습니다. (드래그 앤 드롭)  취소 \n          저장\n        "
+    },
+    {
+      "cls": "modal-wrapper",
+      "text": "이미지 등록     이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              전체 삭제\n               실제크기 축소크기   여러개의 이미지파일을 한번에 끌어다 놓아서 업로드할 수 있습니다. (드래그 앤 드롭)  취소 \n          저장\n        "
+    },
+    {
+      "cls": "modal-dialog",
+      "text": "이미지 등록     이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              전체 삭제\n               실제크기 축소크기   여러개의 이미지파일을 한번에 끌어다 놓아서 업로드할 수 있습니다. (드래그 앤 드롭)  취소 \n          저장\n        "
+    },
+    {
+      "cls": "modal-dialog-section modal-header",
+      "text": "이미지 등록   "
+    },
+    {
+      "cls": "modal-title",
+      "text": "이미지 등록"
+    },
+    {
+      "cls": "modal-close",
+      "text": ""
+    },
+    {
+      "cls": "modal-dialog-section modal-content with-footer",
+      "text": " 이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              전체 삭제\n               실제크기 축소크기   여러개의 이미지파일을 한번에 끌어다 놓아서 업로드할 수 있습니다. (드래그 앤 드롭) "
+    },
+    {
+      "cls": "image-modal",
+      "text": " 이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              전체 삭제\n               실제크기 축소크기   여러개의 이미지파일을 한번에 끌어다 놓아서 업로드할 수 있습니다. (드래그 앤 드롭) "
+    },
+    {
+      "cls": "modal-dialog-section modal-footer",
+      "text": "취소 \n          저장\n        "
+    },
+    {
+      "cls": "image-modal-footer",
+      "text": "취소 \n          저장\n        "
+    },
+    {
+      "cls": "modal",
+      "text": "이미지 등록     이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              전체 삭제\n               실제크기 축소크기   여러개의 이미지파일을 한번에 끌어다 놓아서 업로드할 수 있습니다. (드래그 앤 드롭)  취소 \n          저장\n        "
+    },
+    {
+      "cls": "modal-wrapper",
+      "text": "이미지 등록     이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              전체 삭제\n               실제크기 축소크기   여러개의 이미지파일을 한번에 끌어다 놓아서 업로드할 수 있습니다. (드래그 앤 드롭)  취소 \n          저장\n        "
+    },
+    {
+      "cls": "modal-dialog",
+      "text": "이미지 등록     이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              전체 삭제\n               실제크기 축소크기   여러개의 이미지파일을 한번에 끌어다 놓아서 업로드할 수 있습니다. (드래그 앤 드롭)  취소 \n          저장\n        "
+    },
+    {
+      "cls": "modal-dialog-section modal-header",
+      "text": "이미지 등록   "
+    },
+    {
+      "cls": "modal-title",
+      "text": "이미지 등록"
+    },
+    {
+      "cls": "modal-close",
+      "text": ""
+    },
+    {
+      "cls": "modal-dialog-section modal-content with-footer",
+      "text": " 이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              전체 삭제\n               실제크기 축소크기   여러개의 이미지파일을 한번에 끌어다 놓아서 업로드할 수 있습니다. (드래그 앤 드롭) "
+    },
+    {
+      "cls": "image-modal",
+      "text": " 이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              전체 삭제\n               실제크기 축소크기   여러개의 이미지파일을 한번에 끌어다 놓아서 업로드할 수 있습니다. (드래그 앤 드롭) "
+    },
+    {
+      "cls": "modal-dialog-section modal-footer",
+      "text": "취소 \n          저장\n        "
+    },
+    {
+      "cls": "image-modal-footer",
+      "text": "취소 \n          저장\n        "
+    },
+    {
+      "cls": "modal",
+      "text": "상세설명 QC View    \n    삭제\n     \n    추가\n     \n    메모\n     \n    저장\n      컨텐츠 로딩중... 컨텐츠 없음.  "
+    },
+    {
+      "cls": "modal-wrapper",
+      "text": "상세설명 QC View    \n    삭제\n     \n    추가\n     \n    메모\n     \n    저장\n      컨텐츠 로딩중... 컨텐츠 없음.  "
+    },
+    {
+      "cls": "modal-dialog",
+      "text": "상세설명 QC View    \n    삭제\n     \n    추가\n     \n    메모\n     \n    저장\n      컨텐츠 로딩중... 컨텐츠 없음.  "
+    },
+    {
+      "cls": "modal-dialog-section modal-header",
+      "text": "상세설명 QC View   "
+    },
+    {
+      "cls": "modal-title",
+      "text": "상세설명 QC View"
+    },
+    {
+      "cls": "modal-close",
+      "text": ""
+    },
+    {
+      "cls": "modal-dialog-section modal-content",
+      "text": "\n    삭제\n     \n    추가\n     \n    메모\n     \n    저장\n      컨텐츠 로딩중... 컨텐츠 없음. "
+    },
+    {
+      "cls": "qc-image-annotation-modal-header",
+      "text": "\n    삭제\n     \n    추가\n     \n    메모\n     \n    저장\n    "
+    },
+    {
+      "cls": "qc-image-annotation-modal-body",
+      "text": "컨텐츠 로딩중... 컨텐츠 없음. "
+    },
+    {
+      "cls": "barcode-modal__container",
+      "text": ""
+    },
+    {
+      "cls": "modal",
+      "text": "    상품등록이 완료되었습니다.    상품목록 새로운 상품등록 "
+    },
+    {
+      "cls": "modal-wrapper",
+      "text": "    상품등록이 완료되었습니다.    상품목록 새로운 상품등록 "
+    },
+    {
+      "cls": "modal-dialog",
+      "text": "    상품등록이 완료되었습니다.    상품목록 새로운 상품등록 "
+    },
+    {
+      "cls": "modal-dialog-section modal-header",
+      "text": "   "
+    },
+    {
+      "cls": "modal-title",
+      "text": ""
+    },
+    {
+      "cls": "modal-close",
+      "text": ""
+    },
+    {
+      "cls": "modal-dialog-section modal-content",
+      "text": "상품등록이 완료되었습니다.    상품목록 새로운 상품등록"
+    },
+    {
+      "cls": "wing-modal-status-image",
+      "text": ""
+    },
+    {
+      "cls": "wing-modal-title wing-layout-large-text bold",
+      "text": ""
+    },
+    {
+      "cls": "wing-layout-btn-default wing-modal-dismiss-trigger",
+      "text": "취소"
+    },
+    {
+      "cls": "wing-layout-btn-primary wing-modal-confirm-trigger",
+      "text": "확인"
+    },
+    {
+      "cls": "layout-wuic-modal layout-wuic-component layout-wuic-hide",
+      "text": " 닫기"
+    },
+    {
+      "cls": "go-to-market-modal",
+      "text": "쿠팡 윙 모바일 앱으로 더욱 편리하게 이용하세요.카메라로 QR코드를 스캔하여 앱 설치 페이지로 이동할 수 있습니다. Google PlayApp Store"
+    },
+    {
+      "cls": "status-history-modal",
+      "text": ""
+    }
+  ],
+  "enabled_inputs": [
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "",
+      "disabled": false,
+      "ph": "검색어를 입력해주세요.",
+      "visible": false,
+      "ctx": "   검색"
+    },
+    {
+      "tag": "TEXTAREA",
+      "type": "textarea",
+      "value": "",
+      "disabled": false,
+      "ph": "의견을 적어주세요.",
+      "visible": false,
+      "ctx": "      소중한 의견 감사합니다."
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "B7000 투명 다용도 접착제 스마트폰 수리 본드",
+      "disabled": false,
+      "ph": "상품명을 입력해주세요.",
+      "visible": true,
+      "ctx": "27 / 100"
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "",
+      "disabled": false,
+      "ph": "카테고리명 입력",
+      "visible": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "",
+      "disabled": false,
+      "ph": "옵션값 입력",
+      "visible": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "",
+      "disabled": false,
+      "ph": "숫자만 입력",
+      "visible": true,
+      "ctx": "개\n "
+    },
+    {
+      "tag": "INPUT",
+      "type": "file",
+      "value": "",
+      "disabled": false,
+      "ph": "",
+      "visible": false,
+      "ctx": " 이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              "
+    },
+    {
+      "tag": "INPUT",
+      "type": "file",
+      "value": "",
+      "disabled": false,
+      "ph": "",
+      "visible": false,
+      "ctx": " 이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              "
+    },
+    {
+      "tag": "INPUT",
+      "type": "file",
+      "value": "",
+      "disabled": false,
+      "ph": "",
+      "visible": false,
+      "ctx": " 이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              "
+    },
+    {
+      "tag": "INPUT",
+      "type": "file",
+      "value": "",
+      "disabled": false,
+      "ph": "",
+      "visible": false,
+      "ctx": " 이미지 추가\n         텍스트(HTML) 추가\n          컨텐츠의 순서를 바꾸시려면 왼쪽의\n            \n            를 원하는 위치로 끌어다 놓으세요.(드래그 앤 드롭)\n             전체 다운로드 \n              "
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "S0037076287500",
+      "disabled": false,
+      "ph": "바코드 입력",
+      "visible": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "S0037076287502",
+      "disabled": false,
+      "ph": "바코드 입력",
+      "visible": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "S0037076287503",
+      "disabled": false,
+      "ph": "바코드 입력",
+      "visible": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "S0037076287504",
+      "disabled": false,
+      "ph": "바코드 입력",
+      "visible": true,
+      "ctx": ""
+    },
+    {
+      "tag": "TEXTAREA",
+      "type": "textarea",
+      "value": "",
+      "disabled": false,
+      "ph": "현재 페이지에 대한 피드백을 적어주세요.",
+      "visible": true,
+      "ctx": "현재 페이지에 대한 여러분의 피드백이 시스템 개선에 큰 도움이 됩니다.\n\n소중한 의견 감사합니다.\n\n* 보내주신 글에는 답변을 드리지 않습니다. 문의는 온라인문의 를 이용해주세요."
+    },
+    {
+      "tag": "INPUT",
+      "type": "file",
+      "value": "",
+      "disabled": false,
+      "ph": "",
+      "visible": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "file",
+      "value": "",
+      "disabled": false,
+      "ph": "",
+      "visible": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "file",
+      "value": "",
+      "disabled": false,
+      "ph": "",
+      "visible": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "file",
+      "value": "",
+      "disabled": false,
+      "ph": "",
+      "visible": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "file",
+      "value": "",
+      "disabled": false,
+      "ph": "",
+      "visible": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "file",
+      "value": "",
+      "disabled": false,
+      "ph": "",
+      "visible": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "file",
+      "value": "",
+      "disabled": false,
+      "ph": "",
+      "visible": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "file",
+      "value": "",
+      "disabled": false,
+      "ph": "",
+      "visible": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "file",
+      "value": "",
+      "disabled": false,
+      "ph": "",
+      "visible": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "file",
+      "value": "",
+      "disabled": false,
+      "ph": "",
+      "visible": true,
+      "ctx": ""
+    }
+  ],
+  "visible_buttons": [
+    {
+      "text": "옵션수정",
+      "disabled": false,
+      "visible": true
+    },
+    {
+      "text": "수정",
+      "disabled": false,
+      "visible": true
+    },
+    {
+      "text": "수정",
+      "disabled": false,
+      "visible": true
+    },
+    {
+      "text": "수정",
+      "disabled": false,
+      "visible": true
+    },
+    {
+      "text": "수정",
+      "disabled": false,
+      "visible": true
+    },
+    {
+      "text": "확인",
+      "disabled": true,
+      "visible": true
+    },
+    {
+      "text": "확인",
+      "disabled": true,
+      "visible": true
+    },
+    {
+      "text": "확인",
+      "disabled": true,
+      "visible": true
+    },
+    {
+      "text": "확인",
+      "disabled": true,
+      "visible": true
+    },
+    {
+      "text": "취소",
+      "disabled": false,
+      "visible": true
+    },
+    {
+      "text": "수정 및 검수 요청",
+      "disabled": false,
+      "visible": true
+    }
+  ]
+}

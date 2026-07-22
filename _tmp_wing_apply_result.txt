@@ -1,0 +1,2 @@
+True
+price set to 10,290

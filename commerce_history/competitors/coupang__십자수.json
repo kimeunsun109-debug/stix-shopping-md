@@ -1,0 +1,100 @@
+[
+  {
+    "date": "2026-07-17",
+    "marketplace": "coupang",
+    "keyword": "십자수",
+    "items": [
+      {
+        "rank": null,
+        "title": "(스팃스) LA FRAISE - 딸기 실 십자수 패키지 (도안+원단+실+바늘)",
+        "price": null,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "십자수",
+          "도안",
+          "스팃스",
+          "LA",
+          "FRAISE",
+          "딸기",
+          "패키지",
+          "원단",
+          "바늘"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "(일본서적) 꽃과 과일의 십자수 - 2",
+        "price": null,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "십자수",
+          "꽃",
+          "일본서적",
+          "꽃과",
+          "과일의"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "(일본서적) 시나몬롤과 폼폼 푸딩의 십자수북",
+        "price": null,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "십자수",
+          "일본서적",
+          "시나몬롤과",
+          "폼폼",
+          "푸딩의",
+          "십자수북"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "(일본서적) 십자수로 만드는 귀여운 생활 잡화",
+        "price": null,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "십자수",
+          "일본서적",
+          "십자수로",
+          "만드는",
+          "귀여운",
+          "생활",
+          "잡화"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "(일본서적) 십자수로 즐기는 12개월 계절의 리스 자수",
+        "price": null,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "십자수",
+          "일본서적",
+          "십자수로",
+          "즐기는",
+          "개월",
+          "계절의",
+          "리스",
+          "자수"
+        ]
+      }
+    ],
+    "repeating": [
+      "십자수",
+      "일본서적",
+      "십자수로"
+    ],
+    "ts": "2026-07-17T16:20:00"
+  }
+]

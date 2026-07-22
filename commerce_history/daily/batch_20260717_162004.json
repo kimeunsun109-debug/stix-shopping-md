@@ -1,0 +1,322 @@
+{
+  "date": "2026-07-17",
+  "analyzed": 60,
+  "errors": 0,
+  "requested": 60,
+  "avg_commerce_score": 55.5,
+  "avg_revenue_score": 54.2,
+  "avg_seo_score": 40.9,
+  "expected_revenue_lift_avg": 10.0,
+  "top_must_do": [
+    {
+      "product_id": "1945408886",
+      "title": "DMC 5번사 펄코튼 꼰사 자수실 25M (318색 풀세트)",
+      "action": "상품명 변경",
+      "confidence": 96.0,
+      "expected_effect": "CTR +5% / 매출 +12%",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "1945408886",
+      "title": "DMC 5번사 펄코튼 꼰사 자수실 25M (318색 풀세트)",
+      "action": "대표이미지 교체",
+      "confidence": 86.0,
+      "expected_effect": "CTR +15% / 매출 +6%",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "1945408886",
+      "title": "DMC 5번사 펄코튼 꼰사 자수실 25M (318색 풀세트)",
+      "action": "Golden Keyword 반영",
+      "confidence": 92.0,
+      "expected_effect": "커버리지 71%->90%+",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "1945408886",
+      "title": "DMC 5번사 펄코튼 꼰사 자수실 25M (318색 풀세트)",
+      "action": "가격 변경",
+      "confidence": 84.0,
+      "expected_effect": "CVR +10% / 판매량 +20% / 마진 +0.0%p",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "9400922489",
+      "title": "스팃스 DMC 자수실 5번사 펄코튼 25M 318색 풀세트",
+      "action": "상품명 변경",
+      "confidence": 92.0,
+      "expected_effect": "CTR +5% / 매출 +12%",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "9400922489",
+      "title": "스팃스 DMC 자수실 5번사 펄코튼 25M 318색 풀세트",
+      "action": "대표이미지 교체",
+      "confidence": 86.0,
+      "expected_effect": "CTR +15% / 매출 +6%",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "9400922489",
+      "title": "스팃스 DMC 자수실 5번사 펄코튼 25M 318색 풀세트",
+      "action": "Golden Keyword 반영",
+      "confidence": 88.0,
+      "expected_effect": "커버리지 71%->90%+",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "9400922489",
+      "title": "스팃스 DMC 자수실 5번사 펄코튼 25M 318색 풀세트",
+      "action": "가격 변경",
+      "confidence": 84.0,
+      "expected_effect": "CVR +10% / 판매량 +20% / 마진 +0.0%p",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "9400886698",
+      "title": "스팃스 DMC 자수실 울사 태피스트리 입체자수 풀세트 414색상",
+      "action": "상품명 변경",
+      "confidence": 89.0,
+      "expected_effect": "CTR +5% / 매출 +12%",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "9400886698",
+      "title": "스팃스 DMC 자수실 울사 태피스트리 입체자수 풀세트 414색상",
+      "action": "대표이미지 교체",
+      "confidence": 83.0,
+      "expected_effect": "CTR +15% / 매출 +6%",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "9400886698",
+      "title": "스팃스 DMC 자수실 울사 태피스트리 입체자수 풀세트 414색상",
+      "action": "Golden Keyword 반영",
+      "confidence": 85.0,
+      "expected_effect": "커버리지 56%->90%+",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "9400886698",
+      "title": "스팃스 DMC 자수실 울사 태피스트리 입체자수 풀세트 414색상",
+      "action": "가격 변경",
+      "confidence": 81.0,
+      "expected_effect": "CVR +10% / 판매량 +20% / 마진 +0.0%p",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "2045872716",
+      "title": "DMC 자수실 4번사[89번사]285색상 풀세트",
+      "action": "상품명 변경",
+      "confidence": 93.0,
+      "expected_effect": "CTR +5% / 매출 +11%",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "2045872716",
+      "title": "DMC 자수실 4번사[89번사]285색상 풀세트",
+      "action": "대표이미지 교체",
+      "confidence": 83.0,
+      "expected_effect": "CTR +15% / 매출 +6%",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "2045872716",
+      "title": "DMC 자수실 4번사[89번사]285색상 풀세트",
+      "action": "Golden Keyword 반영",
+      "confidence": 89.0,
+      "expected_effect": "커버리지 67%->90%+",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "2462279680",
+      "title": "45-135 크로바 장인 타쿠미 대바늘 세트 2",
+      "action": "상품명 변경",
+      "confidence": 93.0,
+      "expected_effect": "CTR +5% / 매출 +12%",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "2462279680",
+      "title": "45-135 크로바 장인 타쿠미 대바늘 세트 2",
+      "action": "대표이미지 교체",
+      "confidence": 83.0,
+      "expected_effect": "CTR +15% / 매출 +6%",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "2462279680",
+      "title": "45-135 크로바 장인 타쿠미 대바늘 세트 2",
+      "action": "Golden Keyword 반영",
+      "confidence": 89.0,
+      "expected_effect": "커버리지 40%->90%+",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "2462279680",
+      "title": "45-135 크로바 장인 타쿠미 대바늘 세트 2",
+      "action": "가격 변경",
+      "confidence": 81.0,
+      "expected_effect": "CVR +10% / 판매량 +20% / 마진 +0.0%p",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "9400906695",
+      "title": "스팃스 45 135 크로바 장인 타쿠미 대바늘 세트 2",
+      "action": "상품명 변경",
+      "confidence": 93.0,
+      "expected_effect": "CTR +5% / 매출 +12%",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "9400906695",
+      "title": "스팃스 45 135 크로바 장인 타쿠미 대바늘 세트 2",
+      "action": "대표이미지 교체",
+      "confidence": 83.0,
+      "expected_effect": "CTR +15% / 매출 +6%",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "9400906695",
+      "title": "스팃스 45 135 크로바 장인 타쿠미 대바늘 세트 2",
+      "action": "Golden Keyword 반영",
+      "confidence": 89.0,
+      "expected_effect": "커버리지 25%->90%+",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "9400906695",
+      "title": "스팃스 45 135 크로바 장인 타쿠미 대바늘 세트 2",
+      "action": "가격 변경",
+      "confidence": 81.0,
+      "expected_effect": "CVR +10% / 판매량 +20% / 마진 +0.0%p",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "1901075562",
+      "title": "DMC 자수실 25번 면사 십자수실 200색 세트",
+      "action": "상품명 변경",
+      "confidence": 87.0,
+      "expected_effect": "CTR +5% / 매출 +12%",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "1901075562",
+      "title": "DMC 자수실 25번 면사 십자수실 200색 세트",
+      "action": "대표이미지 교체",
+      "confidence": 86.0,
+      "expected_effect": "CTR +15% / 매출 +6%",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "1901075562",
+      "title": "DMC 자수실 25번 면사 십자수실 200색 세트",
+      "action": "가격 변경",
+      "confidence": 84.0,
+      "expected_effect": "CVR +10% / 판매량 +20% / 마진 +0.0%p",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "9400854071",
+      "title": "스팃스 DMC 자수실 25번 면사 프랑스 자수 실 세트 200색 십자수 ",
+      "action": "상품명 변경",
+      "confidence": 92.0,
+      "expected_effect": "CTR +5% / 매출 +12%",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "9400854071",
+      "title": "스팃스 DMC 자수실 25번 면사 프랑스 자수 실 세트 200색 십자수 ",
+      "action": "대표이미지 교체",
+      "confidence": 86.0,
+      "expected_effect": "CTR +15% / 매출 +6%",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "9400854071",
+      "title": "스팃스 DMC 자수실 25번 면사 프랑스 자수 실 세트 200색 십자수 ",
+      "action": "Golden Keyword 반영",
+      "confidence": 88.0,
+      "expected_effect": "커버리지 80%->90%+",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    },
+    {
+      "product_id": "9400854071",
+      "title": "스팃스 DMC 자수실 25번 면사 프랑스 자수 실 세트 200색 십자수 ",
+      "action": "가격 변경",
+      "confidence": 84.0,
+      "expected_effect": "CVR +10% / 판매량 +20% / 마진 +0.0%p",
+      "evidence": "유사 성공 사례 부족 — 기본 휴리스틱 사용"
+    }
+  ],
+  "low_seo": [
+    {
+      "product_id": "82436139",
+      "title": "(일본 자수서적) 원 포인트 자수 도안집",
+      "seo_score": 26,
+      "commerce_score": 49
+    },
+    {
+      "product_id": "4704234076",
+      "title": "PRYM 미니 스팀다리미",
+      "seo_score": 29,
+      "commerce_score": 50
+    },
+    {
+      "product_id": "P0000BSB",
+      "title": "LED 라이트 박스 20인치",
+      "seo_score": 29,
+      "commerce_score": 50
+    },
+    {
+      "product_id": "P0000BSA",
+      "title": "LED 라이트박스 15인치",
+      "seo_score": 29,
+      "commerce_score": 50
+    },
+    {
+      "product_id": "P0000BSR",
+      "title": "독일 구터만 메탈릭롤 7종 세트",
+      "seo_score": 29,
+      "commerce_score": 50
+    },
+    {
+      "product_id": "573107022",
+      "title": "(일본서적) 양모펠트의 기초테크닉 BOOK",
+      "seo_score": 29,
+      "commerce_score": 50
+    },
+    {
+      "product_id": "538686047",
+      "title": "(일본서적) 양모펠트의 작은 액세서리2",
+      "seo_score": 29,
+      "commerce_score": 50
+    },
+    {
+      "product_id": "P0000BOZ",
+      "title": "PRYM 미니 스팀다리미 휴대용 핸디 스팀다리미 소형 다림질 여행용 수예용 다리미",
+      "seo_score": 30,
+      "commerce_score": 51
+    },
+    {
+      "product_id": "P0000CIB",
+      "title": "원목 탁상형 자수 수틀 받침대 후프 거치대 높이조절 작업 스탠드 (수틀미포함)",
+      "seo_score": 30,
+      "commerce_score": 51
+    },
+    {
+      "product_id": "430161289",
+      "title": "(일본니들펠트서적) 양모펠트 꽃브로치-사계절 사랑스러운 꽃",
+      "seo_score": 30,
+      "commerce_score": 51
+    }
+  ],
+  "platforms": {
+    "11번가": 10,
+    "로켓그로스": 10,
+    "스마트스토어": 10,
+    "지마켓/옥션": 10,
+    "카페24": 10,
+    "쿠팡": 10
+  }
+}

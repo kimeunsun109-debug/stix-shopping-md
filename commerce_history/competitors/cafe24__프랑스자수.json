@@ -1,0 +1,101 @@
+[
+  {
+    "date": "2026-07-17",
+    "marketplace": "cafe24",
+    "keyword": "프랑스자수",
+    "items": [
+      {
+        "rank": null,
+        "title": "DMC 자수실 489색 풀세트 + DMC 24호 바늘세트 증정 / 프랑스자수 십자수 자수실세트",
+        "price": 530000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "십자수",
+          "DMC",
+          "자수실",
+          "풀세트",
+          "바늘세트",
+          "프랑스자수",
+          "자수실세트"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "DMC 면사 자수실 200색 세트 크로스스티치 프랑스자수 자수실",
+        "price": 220000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "DMC",
+          "면사",
+          "자수실",
+          "크로스스티치",
+          "프랑스자수"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "프랑스자수 자수실 447색 풀세트 대용량 컬러 자수실 세트",
+        "price": 60000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "프랑스자수",
+          "자수실",
+          "풀세트",
+          "대용량",
+          "컬러"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "크로바 57-550 대형 수틀 30cm 자수틀 프랑스자수 십자수 원단 고정 틀",
+        "price": 45500,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "십자수",
+          "30cm",
+          "크로바",
+          "대형",
+          "수틀",
+          "자수틀",
+          "프랑스자수",
+          "원단",
+          "고정"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "독일 앵커 자수실 60색 세트 | Anchor 면사 프랑스자수 십자수 자수실",
+        "price": 42000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "십자수",
+          "독일",
+          "앵커",
+          "자수실",
+          "Anchor",
+          "면사",
+          "프랑스자수"
+        ]
+      }
+    ],
+    "repeating": [
+      "프랑스자수",
+      "자수실",
+      "십자수",
+      "풀세트",
+      "DMC",
+      "면사"
+    ],
+    "ts": "2026-07-17T16:02:37"
+  }
+]

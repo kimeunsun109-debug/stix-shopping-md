@@ -22,7 +22,10 @@ SKIP_NAMES = re.compile(r"배송비|배송료|기본배송|추가배송|도서�
 
 
 def clean(s) -> str:
-    return re.sub(r"\s+", " ", str(s or "").strip())
+    if s is None or (isinstance(s, float) and pd.isna(s)):
+        return ""
+    t = re.sub(r"\s+", " ", str(s).strip())
+    return "" if t.lower() == "nan" else t
 
 
 def num(v, default=0.0) -> float:
@@ -94,6 +97,9 @@ def read_coupang(files: list[Path]) -> dict:
     for p in files:
         df = pd.read_excel(p)
         for _, row in df.iterrows():
+            opt = clean(row.get("옵션 ID", ""))
+            if "배송" in opt:
+                continue
             name = clean(row.get("상품명", ""))
             if skip_product(name):
                 continue

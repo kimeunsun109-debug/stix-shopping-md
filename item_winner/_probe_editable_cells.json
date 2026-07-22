@@ -1,0 +1,258 @@
+{
+  "header": [
+    "9349553166",
+    "94705203391",
+    "아이템위너",
+    "원",
+    "원",
+    "",
+    "원",
+    "원",
+    "판매중 판매중 판매중지",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "allHeaderRows": [
+    [
+      "9349553166",
+      "94705203391",
+      "아이템위너",
+      "원",
+      "원",
+      "",
+      "원",
+      "원",
+      "판매중 판매중 판매중지",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "9437199288",
+      "94705203392",
+      "아이템위너",
+      "원",
+      "원",
+      "",
+      "17,000 원",
+      "원",
+      "판매중 판매중 판매중지",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "9351979625",
+      "94705203395",
+      "-",
+      "원",
+      "원",
+      "",
+      "원",
+      "원",
+      "판매중 판매중 판매중지",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "rows": [
+    {
+      "text": "9349553166 94705203391 아이템위너 원 원 원 원 판매중 판매중 판매중지",
+      "className": "selected-item",
+      "cells": [
+        {
+          "cellText": "",
+          "value": "0",
+          "disabled": false,
+          "tdIndex": 3
+        },
+        {
+          "cellText": "",
+          "value": "13,690",
+          "disabled": false,
+          "tdIndex": 4
+        },
+        {
+          "cellText": "",
+          "value": "10,090",
+          "disabled": false,
+          "tdIndex": 6
+        },
+        {
+          "cellText": "",
+          "value": "13,690",
+          "disabled": true,
+          "tdIndex": 7
+        },
+        {
+          "cellText": "",
+          "value": "",
+          "disabled": false,
+          "tdIndex": 10
+        },
+        {
+          "cellText": "",
+          "value": "",
+          "disabled": false,
+          "tdIndex": 11
+        },
+        {
+          "cellText": "",
+          "value": "S0037076287500",
+          "disabled": true,
+          "tdIndex": 12
+        }
+      ]
+    },
+    {
+      "text": "9437199288 94705203392 아이템위너 원 원 17,000 원 원 판매중 판매중 판매중지",
+      "className": "",
+      "cells": [
+        {
+          "cellText": "",
+          "value": "0",
+          "disabled": false,
+          "tdIndex": 3
+        },
+        {
+          "cellText": "",
+          "value": "17,900",
+          "disabled": false,
+          "tdIndex": 4
+        },
+        {
+          "cellText": "17,000",
+          "value": null,
+          "disabled": null,
+          "tdIndex": 6
+        },
+        {
+          "cellText": "",
+          "value": "17,900",
+          "disabled": true,
+          "tdIndex": 7
+        },
+        {
+          "cellText": "",
+          "value": "",
+          "disabled": false,
+          "tdIndex": 10
+        },
+        {
+          "cellText": "",
+          "value": "",
+          "disabled": false,
+          "tdIndex": 11
+        },
+        {
+          "cellText": "",
+          "value": "S0037076287502",
+          "disabled": true,
+          "tdIndex": 12
+        }
+      ]
+    },
+    {
+      "text": "9351979625 94705203395 - 원 원 원 원 판매중 판매중 판매중지",
+      "className": "",
+      "cells": [
+        {
+          "cellText": "",
+          "value": "0",
+          "disabled": false,
+          "tdIndex": 3
+        },
+        {
+          "cellText": "",
+          "value": "13,800",
+          "disabled": false,
+          "tdIndex": 4
+        },
+        {
+          "cellText": "",
+          "value": "13,200",
+          "disabled": false,
+          "tdIndex": 6
+        },
+        {
+          "cellText": "",
+          "value": "13,800",
+          "disabled": true,
+          "tdIndex": 7
+        },
+        {
+          "cellText": "",
+          "value": "",
+          "disabled": false,
+          "tdIndex": 10
+        },
+        {
+          "cellText": "",
+          "value": "",
+          "disabled": false,
+          "tdIndex": 11
+        },
+        {
+          "cellText": "",
+          "value": "S0037076287503",
+          "disabled": true,
+          "tdIndex": 12
+        }
+      ]
+    },
+    {
+      "text": "9351979625 94705203393 아이템위너 원 원 22,700 원 원 판매중 판매중 판매중지",
+      "className": "",
+      "cells": [
+        {
+          "cellText": "",
+          "value": "0",
+          "disabled": false,
+          "tdIndex": 3
+        },
+        {
+          "cellText": "",
+          "value": "23,900",
+          "disabled": false,
+          "tdIndex": 4
+        },
+        {
+          "cellText": "22,700",
+          "value": null,
+          "disabled": null,
+          "tdIndex": 6
+        },
+        {
+          "cellText": "",
+          "value": "23,900",
+          "disabled": true,
+          "tdIndex": 7
+        },
+        {
+          "cellText": "",
+          "value": "",
+          "disabled": false,
+          "tdIndex": 10
+        },
+        {
+          "cellText": "",
+          "value": "",
+          "disabled": false,
+          "tdIndex": 11
+        },
+        {
+          "cellText": "",
+          "value": "S0037076287504",
+          "disabled": true,
+          "tdIndex": 12
+        }
+      ]
+    }
+  ]
+}

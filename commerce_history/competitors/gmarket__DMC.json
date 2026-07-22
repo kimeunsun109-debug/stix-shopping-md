@@ -1,0 +1,103 @@
+[
+  {
+    "date": "2026-07-17",
+    "marketplace": "gmarket",
+    "keyword": "DMC",
+    "items": [
+      {
+        "rank": null,
+        "title": "DMC 자수실 5번사 펄코튼 꼰사 태팅실 25M (318색 풀세트)",
+        "price": 920000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "DMC",
+          "자수실",
+          "번사",
+          "펄코튼",
+          "꼰사",
+          "태팅실",
+          "25M",
+          "풀세트"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "DMC 자수실 울사 태피스트리 입체자수 굵은울사 풀세트 (414색상)",
+        "price": 786000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "DMC",
+          "자수실",
+          "울사",
+          "태피스트리",
+          "입체자수",
+          "굵은울사",
+          "풀세트",
+          "색상"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "DMC 자수실 4번사 285색상 풀세트",
+        "price": 541000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "DMC",
+          "자수실",
+          "번사",
+          "색상",
+          "풀세트"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "DMC 자수실 5번사 꼰사 펄코튼 베리에이션 (56색 세트)",
+        "price": 291000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "DMC",
+          "자수실",
+          "번사",
+          "꼰사",
+          "펄코튼",
+          "베리에이션"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "DMC 자수실 에코비타/얇은 울사 60색 풀세트",
+        "price": 114000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "DMC",
+          "자수실",
+          "에코비타",
+          "얇은",
+          "울사",
+          "풀세트"
+        ]
+      }
+    ],
+    "repeating": [
+      "자수실",
+      "DMC",
+      "풀세트",
+      "번사",
+      "펄코튼",
+      "꼰사",
+      "울사",
+      "색상"
+    ],
+    "ts": "2026-07-17T16:20:02"
+  }
+]

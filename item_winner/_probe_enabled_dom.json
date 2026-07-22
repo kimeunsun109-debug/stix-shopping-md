@@ -1,0 +1,116 @@
+[
+  {
+    "value": "13,690",
+    "type": "text",
+    "readOnly": false,
+    "cls": "",
+    "name": "",
+    "id": "",
+    "rect": {
+      "x": 1187.5,
+      "y": 410.0625,
+      "w": 135.625,
+      "h": 56
+    },
+    "parentClass": "editable-cell",
+    "cellClass": "editable-cell",
+    "cellText": "",
+    "rowText": "9349553166 94705203391 아이템위너 원 원 원 원 판매중 판매중 판매중지",
+    "path": "INPUT < DIV.editable-cell < DIV.container < TD.table-cell < TR.selected-item < TBODY"
+  },
+  {
+    "value": "10,090",
+    "type": "text",
+    "readOnly": false,
+    "cls": "",
+    "name": "",
+    "id": "",
+    "rect": {
+      "x": 1487.5,
+      "y": 410.0625,
+      "w": 85.625,
+      "h": 56
+    },
+    "parentClass": "editable-cell",
+    "cellClass": "editable-cell",
+    "cellText": "",
+    "rowText": "9349553166 94705203391 아이템위너 원 원 원 원 판매중 판매중 판매중지",
+    "path": "INPUT < DIV.editable-cell < DIV.container < TD.table-cell < TR.selected-item < TBODY"
+  },
+  {
+    "value": "17,900",
+    "type": "text",
+    "readOnly": false,
+    "cls": "",
+    "name": "",
+    "id": "",
+    "rect": {
+      "x": 1187.5,
+      "y": 485.0625,
+      "w": 135.625,
+      "h": 56
+    },
+    "parentClass": "editable-cell",
+    "cellClass": "editable-cell",
+    "cellText": "",
+    "rowText": "9437199288 94705203392 아이템위너 원 원 17,000 원 원 판매중 판매중 판매중지",
+    "path": "INPUT < DIV.editable-cell < DIV.container < TD.table-cell < TR < TBODY"
+  },
+  {
+    "value": "13,800",
+    "type": "text",
+    "readOnly": false,
+    "cls": "",
+    "name": "",
+    "id": "",
+    "rect": {
+      "x": 1187.5,
+      "y": 560.0625,
+      "w": 135.625,
+      "h": 56
+    },
+    "parentClass": "editable-cell",
+    "cellClass": "editable-cell",
+    "cellText": "",
+    "rowText": "9351979625 94705203395 - 원 원 원 원 판매중 판매중 판매중지",
+    "path": "INPUT < DIV.editable-cell < DIV.container < TD.table-cell < TR < TBODY"
+  },
+  {
+    "value": "13,200",
+    "type": "text",
+    "readOnly": false,
+    "cls": "",
+    "name": "",
+    "id": "",
+    "rect": {
+      "x": 1487.5,
+      "y": 560.0625,
+      "w": 85.625,
+      "h": 56
+    },
+    "parentClass": "editable-cell",
+    "cellClass": "editable-cell",
+    "cellText": "",
+    "rowText": "9351979625 94705203395 - 원 원 원 원 판매중 판매중 판매중지",
+    "path": "INPUT < DIV.editable-cell < DIV.container < TD.table-cell < TR < TBODY"
+  },
+  {
+    "value": "23,900",
+    "type": "text",
+    "readOnly": false,
+    "cls": "",
+    "name": "",
+    "id": "",
+    "rect": {
+      "x": 1187.5,
+      "y": 635.0625,
+      "w": 135.625,
+      "h": 56
+    },
+    "parentClass": "editable-cell",
+    "cellClass": "editable-cell",
+    "cellText": "",
+    "rowText": "9351979625 94705203393 아이템위너 원 원 22,700 원 원 판매중 판매중 판매중지",
+    "path": "INPUT < DIV.editable-cell < DIV.container < TD.table-cell < TR < TBODY"
+  }
+]

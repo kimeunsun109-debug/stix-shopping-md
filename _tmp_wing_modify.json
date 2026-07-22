@@ -1,0 +1,669 @@
+{
+  "url": "https://wing.coupang.com/tenants/seller-web/vendor-inventory/modify?vendorInventoryId=16020715295",
+  "has10560": true,
+  "has159ml": true,
+  "input_count": 94,
+  "inputs": [
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "check-box_0_1784190264054",
+      "disabled": false,
+      "ctx": "판매자배송\n\n내가 직접 배송하고 관리해요. 판매 수수료만 발생해요."
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "check-box_1_1784190264055",
+      "disabled": true,
+      "ctx": "로켓그로스\n더 알아보기\n\n쿠팡이 직접 배송하고 물류를 관리해요. 지금 로켓그로스 상품을 등록하고, 나중에 판매할 때 시간을 절약하세요."
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "B7000 투명 다용도 접착제 스마트폰 수리 본드",
+      "ph": "상품명을 입력해주세요.",
+      "name": "InputWithCounter_2",
+      "id": "",
+      "disabled": false,
+      "ctx": "27 / 100"
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "value": "on",
+      "ph": "",
+      "name": "tab-category",
+      "id": "tab-category-0",
+      "disabled": true,
+      "ctx": "카테고리 검색\n카테고리 선택"
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "value": "on",
+      "ph": "",
+      "name": "tab-category",
+      "id": "tab-category-1",
+      "disabled": true,
+      "ctx": "카테고리 검색\n카테고리 선택"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": false,
+      "ctx": "자동생성옵션 보기"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": false,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "0",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": true,
+      "ctx": ""
+    },
+    {
+      "tag": "TEXTAREA",
+      "type": "textarea",
+      "value": "판매중",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "10,030",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "S0037076287500",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "0",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": true,
+      "ctx": ""
+    },
+    {
+      "tag": "TEXTAREA",
+      "type": "textarea",
+      "value": "판매중",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "17,000",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "S0037076287502",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "0",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": true,
+      "ctx": ""
+    },
+    {
+      "tag": "TEXTAREA",
+      "type": "textarea",
+      "value": "판매중",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "13,200",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "S0037076287503",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "0",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": true,
+      "ctx": ""
+    },
+    {
+      "tag": "TEXTAREA",
+      "type": "textarea",
+      "value": "판매중",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "22,700",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "S0037076287504",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": true,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "value": "on",
+      "ph": "",
+      "name": "tab-product-image-pane",
+      "id": "tab-product-image-pane-0",
+      "disabled": false,
+      "ctx": "기본 등록\n옵션별 등록"
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "value": "on",
+      "ph": "",
+      "name": "tab-product-image-pane",
+      "id": "tab-product-image-pane-1",
+      "disabled": false,
+      "ctx": "기본 등록\n옵션별 등록"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": false,
+      "ctx": "\t옵션명\n\t대표이미지\t추가이미지 (최대 9장)\n노출 순서를 바꾸시려면 이미지를 원하는 곳에 끌어다놓으세요. (드래그&드롭)\t이미지 URL주소로 등록"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": false,
+      "ctx": "\t1개 1. 15ml × 3개 (소량,테스트용)\t\n\t\n\t\n이미지 URL 입력"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": false,
+      "ctx": "\t1개 2. 15ml × 5개 (가성비 구성)\t\n\t\n\t\n이미지 URL 입력"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": false,
+      "ctx": "\t1개 3. 110ml × 2개 (대용량 기본)\t\n\t\n\t\n이미지 URL 입력"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": false,
+      "ctx": "\t1개 4. 110ml × 4개 (대용량 추천)\t\n\t\n\t\n이미지 URL 입력"
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "value": "on",
+      "ph": "",
+      "name": "tab-content-level",
+      "id": "tab-content-level-0",
+      "disabled": false,
+      "ctx": "기본 등록\n옵션별 등록"
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "value": "on",
+      "ph": "",
+      "name": "tab-content-level",
+      "id": "tab-content-level-1",
+      "disabled": false,
+      "ctx": "기본 등록\n옵션별 등록"
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "value": "on",
+      "ph": "",
+      "name": "tab-content",
+      "id": "tab-content-0",
+      "disabled": false,
+      "ctx": "이미지 업로드\n에디터 작성\nHTML 작성"
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "value": "on",
+      "ph": "",
+      "name": "tab-content",
+      "id": "tab-content-1",
+      "disabled": false,
+      "ctx": "이미지 업로드\n에디터 작성\nHTML 작성"
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "value": "on",
+      "ph": "",
+      "name": "tab-content",
+      "id": "tab-content-2",
+      "disabled": false,
+      "ctx": "이미지 업로드\n에디터 작성\nHTML 작성"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": false,
+      "ctx": "\t옵션명\t이미지\t등록/수정"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": false,
+      "ctx": "\t1개 1. 15ml × 3개 (소량,테스트용)\t\ncheck_circle 등록된 이미지가 있습니다\n\t\n수정하기"
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "value": "on",
+      "ph": "",
+      "name": "tab-image-size-switch_0",
+      "id": "tab-image-size-switch_0-0",
+      "disabled": false,
+      "ctx": " 실제크기 축소크기"
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "value": "on",
+      "ph": "",
+      "name": "tab-image-size-switch_0",
+      "id": "tab-image-size-switch_0-1",
+      "disabled": false,
+      "ctx": " 실제크기 축소크기"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": false,
+      "ctx": "\t1개 2. 15ml × 5개 (가성비 구성)\t\ncheck_circle 등록된 이미지가 있습니다\n\t\n수정하기"
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "value": "on",
+      "ph": "",
+      "name": "tab-image-size-switch_1",
+      "id": "tab-image-size-switch_1-0",
+      "disabled": false,
+      "ctx": " 실제크기 축소크기"
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "value": "on",
+      "ph": "",
+      "name": "tab-image-size-switch_1",
+      "id": "tab-image-size-switch_1-1",
+      "disabled": false,
+      "ctx": " 실제크기 축소크기"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": false,
+      "ctx": "\t1개 3. 110ml × 2개 (대용량 기본)\t\ncheck_circle 등록된 이미지가 있습니다\n\t\n수정하기"
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "value": "on",
+      "ph": "",
+      "name": "tab-image-size-switch_2",
+      "id": "tab-image-size-switch_2-0",
+      "disabled": false,
+      "ctx": " 실제크기 축소크기"
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "value": "on",
+      "ph": "",
+      "name": "tab-image-size-switch_2",
+      "id": "tab-image-size-switch_2-1",
+      "disabled": false,
+      "ctx": " 실제크기 축소크기"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "",
+      "disabled": false,
+      "ctx": "\t1개 4. 110ml × 4개 (대용량 추천)\t\ncheck_circle 등록된 이미지가 있습니다\n\t\n수정하기"
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "value": "on",
+      "ph": "",
+      "name": "tab-image-size-switch_3",
+      "id": "tab-image-size-switch_3-0",
+      "disabled": false,
+      "ctx": " 실제크기 축소크기"
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "value": "on",
+      "ph": "",
+      "name": "tab-image-size-switch_3",
+      "id": "tab-image-size-switch_3-1",
+      "disabled": false,
+      "ctx": " 실제크기 축소크기"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "check-box_0_1784190264149",
+      "disabled": true,
+      "ctx": "\t옵션 정보\t\n상품 바코드 정보 \n\t\n상세 정보\n일괄 입력\n기본 입력\n옵션별로 입력"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "check-box_1_1784190264152",
+      "disabled": true,
+      "ctx": "\t\n1개 1. 15ml × 3개 (소량,테스트용)\n\t\n확인\n 상품 바코드가 없어요\n\n\t\n물류입고용 상품명\nB7000 투명 다용도 접착제 스마트폰 수리 본드\n/ 1개 1. 15ml "
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "S0037076287500",
+      "ph": "바코드 입력",
+      "name": "",
+      "id": "",
+      "disabled": false,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "check-box_2_1784190264153",
+      "disabled": true,
+      "ctx": " 상품 바코드가 없어요"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "check-box_3_1784190264161",
+      "disabled": true,
+      "ctx": "\t\n1개 2. 15ml × 5개 (가성비 구성)\n\t\n확인\n 상품 바코드가 없어요\n\n\t\n물류입고용 상품명\nB7000 투명 다용도 접착제 스마트폰 수리 본드\n/ 1개 2. 15ml ×"
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "S0037076287502",
+      "ph": "바코드 입력",
+      "name": "",
+      "id": "",
+      "disabled": false,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "check-box_4_1784190264162",
+      "disabled": true,
+      "ctx": " 상품 바코드가 없어요"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "check-box_5_1784190264166",
+      "disabled": true,
+      "ctx": "\t\n1개 3. 110ml × 2개 (대용량 기본)\n\t\n확인\n 상품 바코드가 없어요\n\n\t\n물류입고용 상품명\nB7000 투명 다용도 접착제 스마트폰 수리 본드\n/ 1개 3. 110ml"
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "S0037076287503",
+      "ph": "바코드 입력",
+      "name": "",
+      "id": "",
+      "disabled": false,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "check-box_6_1784190264167",
+      "disabled": true,
+      "ctx": " 상품 바코드가 없어요"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "check-box_7_1784190264170",
+      "disabled": true,
+      "ctx": "\t\n1개 4. 110ml × 4개 (대용량 추천)\n\t\n확인\n 상품 바코드가 없어요\n\n\t\n물류입고용 상품명\nB7000 투명 다용도 접착제 스마트폰 수리 본드\n/ 1개 4. 110ml"
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "value": "S0037076287504",
+      "ph": "바코드 입력",
+      "name": "",
+      "id": "",
+      "disabled": false,
+      "ctx": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "",
+      "id": "check-box_8_1784190264171",
+      "disabled": true,
+      "ctx": " 상품 바코드가 없어요"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "value": "on",
+      "ph": "",
+      "name": "checkedRodTerms",
+      "id": "checkedRodTerms",
+      "disabled": false,
+      "ctx": "판매 요청 전, 로켓그로스로 판매가 불가능한 상품이 아닌지 확인해주세요!\n\n쿠팡풀필먼트서비스(CFS) 창고 입고 후 상품이 아래 기준을 준수하지 않을 경우, 해당 상품 전체가 회송"
+    }
+  ],
+  "body_snip": "15ml × 3개 (소량,테스트용)\n2. 15ml × 5개 (가성비 구성)\n3. 110ml × 2개 (대용량 기본)\n4. 110ml × 4개 (대용량 추천)\n수량 \n \n개\n \n1개, 2개, 3개 등\n가이드\n추가\n1개\n옵션 목록 (총 4 개)\n옵션수정\n삭제\n판매가 일괄입력\n재고수량 일괄입력\n자동생성옵션 보기\n옵션명 \n노출상태\n 정상가 (원) \n\n 판매가 (원) \n 판매상태\n판매자 자동가격조정 \n최저가\n설정 가격\n 판매자상품코드 \n 모델 번호 \n\n 상품 바코드 \n수정/\n삭제 \n1. 15ml × 3개 (소량,테스트용), 1개 \n아이템위너\n10,560\n10,560\n수정\n2. 15ml × 5개 (가성비 구성), 1개 \n아이템위너\n17,900\n17,900\n수정\n3. 110ml × 2개 (대용량 기본), 1개 \n아이템위너\n13,800\n13,800\n수정\n4. 110ml × 4개 (대용량 추천), 1개 \n아이템위너\n23,900\n23,900\n수정\n 낱개보다 로켓그로스 번들로 판매할 때 판매량이 43%p 더 늘었어요 \n 이 옵션으로 번들 만들기\n실제 판매페이지에 표시될 상품명은 아래와 같습니다.\n- B7000 투명 다용도 접착제 스마트폰 수리 본드, 1개, 1. 15ml × 3개 (소량,테스트용) 목록 더보기(3)\n상품이미지\n도움말\n물류센터 입고 후 검수 단계에서 회송될 수 있으니 반드시 확인해주세요!\n옵션 이미지는 옵션별로 실제 상품과 일치하도록 업로드해주세요. 상품 옵션별로 색상이나 외형이 다를 경우 반드시 각각의 옵션 이미지를 등록하셔야 합니다.\n상품 외관이 다름에도 옵션별로 같은 이미지를 등록할 경우 물류센터에서 상품 확인 시 문제가 될 수 있습니다.\n위 사항을 준수하지 않을 경우 물류센터에 입고할 수 없으며, 입고 시 판매자 과실로 회송 조치됩니다.\n옵션 이미지 반려 사례 보기\n기본 등록\n옵션별 등록\n이미지 권장 크기 : 1,000px x 1,000px (최소 500px 이상) / 10MB 이하의 JPG, PNG 파일\n대표이미지 일괄등록 \n추가이미지 일괄등록 \n이미지 URL주소로 일괄등록\n 추가이미지 일괄삭제\n옵션검색 켜기\n\t옵션명\n\t대표이미지\t추가이미지 (최대 9장)\n노출 순서를 바꾸시려면 이미지를 원하는 곳에 끌어다놓으세요. (드래그&드롭)\t이미지 URL주소로 등록\n\n\t1개 1. 15ml × 3개 (소량,테스트용)\t\n\t\n\t\n이미지 URL 입력\n\n\n\t1개 2. 15ml × 5개 (가성비 구성)\t\n\t\n\t\n이미지 URL 입력\n\n\n\t1개 3. 110ml × 2개 (대용량 기본)\t\n\t\n\t\n이미지 URL 입력\n\n\n\t1개 4. 110ml × 4개 (대용량 추천)\t\n\t\n\t\n이미지 URL 입력\n상세설명\n도움말\n기본 등록\n옵션별 등록\n이미지 업로드\n에디터 작성\nHTML 작성\n이미지 권장 크기 : 780px x 5,000px / 10MB 이하의 JPG, PNG 파일\n0개 선택됨 이미지 일괄등록\n\t옵션명\t이미지\t등록/수정\n\n\t1개 1. 15ml × 3개 (소량,테스트용)\t\ncheck_circle 등록된 이미지가 있습니다\n\t\n수정하기\n\n\n\t1개 2. 15ml × 5개 (가성비 구성)\t\ncheck_circle 등록된 이미지가 있습니다\n\t\n수정하기\n\n\n\t1개 3. 110ml × 2개 (대용량 기본)\t\ncheck_circle 등록된 이미지가 있습니다\n\t\n수정하기\n\n\n\t1개 4. 110ml × 4개 (대용량 추천)\t\ncheck_circle 등록된 이미지가 있습니다\n\t\n수정하기\n상품 주요 정보\n도움말\nSUXUN / Shenzhen Suxun New Material Co., Ltd / 상세페이지 별도표기 / 병행수입 아님 / 구매 연령 전체 연령 / 인당 최대구매수량 설정함 / 판매기간 설정안함 / 부가세 과세\n검색어\n도움말\n 검색어로 노출 끌어올리기 \n#B7000 #B7000 글루 #B7000 본드 #B7000 접착제 #DIY 접착제 #E6000 #강력 접착제 #공예용 접착제 #다용도 접착제 #보석 접착제 #순간접착제 #스마트폰 본드 #액정 접착제 #오공본드 #큐빅 접착제 #투명 접착제 #투명본드 #핸드폰 수리 접착제 #핸드폰수리본드 #휴대폰 접착제\n검"
+}

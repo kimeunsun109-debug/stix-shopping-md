@@ -1,0 +1,92 @@
+[
+  {
+    "date": "2026-07-17",
+    "marketplace": "11st",
+    "keyword": "크로바",
+    "items": [
+      {
+        "rank": null,
+        "title": "45-135 크로바 장인 타쿠미 대바늘 세트 2",
+        "price": 240000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "크로바",
+          "장인",
+          "타쿠미",
+          "대바늘"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "57 336 크로바 New 크래프트 확대경그레이 1.6배 2배 세트 수예용 돋보기",
+        "price": 130000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "크로바",
+          "New",
+          "크래프트",
+          "확대경그레이",
+          "수예용",
+          "돋보기"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "57-335 크로바 New 크래프트 확대경-핑크 1.6배&2배 세트",
+        "price": 130000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "크로바",
+          "New",
+          "크래프트",
+          "확대경",
+          "핑크"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "57-336 크로바 New 크래프트 확대경-그레이 1.6배&2배 세트",
+        "price": 130000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "크로바",
+          "New",
+          "크래프트",
+          "확대경",
+          "그레이"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "스팃스 74 544 크로바 가정용 제봉 바느질상자 패키지",
+        "price": 104400,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "스팃스",
+          "크로바",
+          "가정용",
+          "제봉",
+          "바느질상자",
+          "패키지"
+        ]
+      }
+    ],
+    "repeating": [
+      "크로바",
+      "New",
+      "크래프트",
+      "확대경"
+    ],
+    "ts": "2026-07-17T16:20:00"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "ok": false,
+  "steps": [
+    "list price: True",
+    "edit url: https://wing.coupang.com/tenants/seller-web/vendor-inventory/modify?vendorInventoryId=16020715295&searchKeywordType=ALL&searchKeywords=94705203391&exposureStatus=ALL&salesMethod=ALL&productStatus=ALL&stockSearchType=ALL&shippingFeeSearchType=ALL&displayCategoryCodes=&listingStartTime=null&listingEndTime=null&saleEndDateSearchType=ALL&bundledShippingSearchType=ALL&upBundling=ALL&displayDeletedProduct=false&shippingMethod=ALL&locale=ko_KR&sortMethod=SORT_BY_ITEM_LEVEL_UNIT_SOLD&countPerPage=50&page=1",
+    "has 10560: True"
+  ],
+  "fill": {
+    "changed": 0,
+    "mode": "fallback"
+  },
+  "verified_10290": false,
+  "still_10560": true,
+  "price_snip": "B7000 투명 다용도 접착제 스마트폰 수리 본드\n로켓그로스\n|\n등록상품ID 16020715295\n\t\n415개\n내 판매량 413개\n\t\n아이템위너\n\t\n10,560원~\n무료배송\n\t\n판매중\n\t\n196개\n\t\n상품수정\n1\n페이지 별점을 주세요!\n현재 페이지에 대한 여러분의 피드백이 시스템 개선에 큰 도움이 됩니다.\n\n소중한 의견 감사합니다.\n\n* 보내주신 글에는 답변을 드리지 않습니다. 문의는 온라인문의 를 이용해주세요.\n\n닫기\n등록\n쿠팡 주식회사\n대표이사 로저스 해롤드 린(Rogers Harold Lynn)\n서울시 송파구 송파대로 570\n통신판매업신고 2017 - 서울송파 - 0680\n사업자등록번호 120-88-00767\n판매자 개인정보 처리방침\n© Coupang Corp.\n페이지 별점주기"
+}

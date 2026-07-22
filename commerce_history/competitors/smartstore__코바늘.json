@@ -1,0 +1,94 @@
+[
+  {
+    "date": "2026-07-17",
+    "marketplace": "smartstore",
+    "keyword": "코바늘",
+    "items": [
+      {
+        "rank": null,
+        "title": "스팃스 튤립 에띠모 로즈 모사용 코바늘 레이스바늘 세트",
+        "price": 185000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "튤립",
+          "스팃스",
+          "에띠모",
+          "로즈",
+          "모사용",
+          "코바늘",
+          "레이스바늘"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "스팃스 튤립 에띠모 레이스 코바늘 블루 세트",
+        "price": 105000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "튤립",
+          "스팃스",
+          "에띠모",
+          "레이스",
+          "코바늘",
+          "블루"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "스팃스 43 606 크로바 모사용 코바늘 펜E 세트",
+        "price": 87000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "스팃스",
+          "크로바",
+          "모사용",
+          "코바늘"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "스팃스 43 405 크로바 크로스 바 코바늘 10종 세트 뜨개바늘세트",
+        "price": 72000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "스팃스",
+          "크로바",
+          "크로스",
+          "코바늘",
+          "뜨개바늘세트"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "스팃스 43 321 크로바 아뮤레 코바늘 8종 세트",
+        "price": 58000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "스팃스",
+          "크로바",
+          "아뮤레",
+          "코바늘"
+        ]
+      }
+    ],
+    "repeating": [
+      "스팃스",
+      "코바늘",
+      "크로바",
+      "튤립",
+      "에띠모",
+      "모사용"
+    ],
+    "ts": "2026-07-17T16:20:01"
+  }
+]

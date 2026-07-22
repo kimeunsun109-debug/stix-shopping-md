@@ -1,0 +1,767 @@
+{
+  "before": {
+    "names": [
+      "1.15mlx3개(소량,테스트용),1개",
+      "2.15mlx5개(가성비구성),1개",
+      "3.110mlx2개(대용량기본),1개",
+      "4.110mlx4개(대용량추천),1개"
+    ],
+    "cellCount": 65
+  },
+  "15mlx3": {
+    "clicked": false,
+    "idx": -1,
+    "inputs": [],
+    "allInputs": [
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "B7000 투명 다용도 접착제 스마트폰 수리 본드",
+        "name": "InputWithCounter_2",
+        "cls": "sc-common-input"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "name": "",
+        "cls": "sc-common-input"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "name": "tab-product-image-pane",
+        "cls": ""
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "name": "tab-product-image-pane",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "name": "tab-content-level",
+        "cls": ""
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "name": "tab-content-level",
+        "cls": ""
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "name": "tab-content",
+        "cls": ""
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "name": "tab-content",
+        "cls": ""
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "name": "tab-content",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "S0037076287500",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "S0037076287502",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "S0037076287503",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "S0037076287504",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "checkedRodTerms",
+        "cls": ""
+      },
+      {
+        "type": "file",
+        "value": "",
+        "name": "",
+        "cls": "dz-hidden-input"
+      },
+      {
+        "type": "file",
+        "value": "",
+        "name": "",
+        "cls": "dz-hidden-input"
+      },
+      {
+        "type": "file",
+        "value": "",
+        "name": "",
+        "cls": "dz-hidden-input"
+      },
+      {
+        "type": "file",
+        "value": "",
+        "name": "",
+        "cls": "dz-hidden-input"
+      },
+      {
+        "type": "file",
+        "value": "",
+        "name": "",
+        "cls": "dz-hidden-input"
+      },
+      {
+        "type": "file",
+        "value": "",
+        "name": "",
+        "cls": "dz-hidden-input"
+      },
+      {
+        "type": "file",
+        "value": "",
+        "name": "",
+        "cls": "dz-hidden-input"
+      },
+      {
+        "type": "file",
+        "value": "",
+        "name": "",
+        "cls": "dz-hidden-input"
+      },
+      {
+        "type": "file",
+        "value": "",
+        "name": "",
+        "cls": "dz-hidden-input"
+      },
+      {
+        "type": "file",
+        "value": "",
+        "name": "",
+        "cls": "dz-hidden-input"
+      }
+    ]
+  },
+  "110mlx2": {
+    "clicked": true,
+    "idx": 2,
+    "inputs": [
+      {
+        "type": "text",
+        "value": "0",
+        "disabled": true,
+        "readOnly": false,
+        "name": "",
+        "placeholder": "",
+        "cls": "sc-common-input",
+        "cellText": ""
+      },
+      {
+        "type": "text",
+        "value": "13,200",
+        "disabled": true,
+        "readOnly": false,
+        "name": "",
+        "placeholder": "",
+        "cls": "sc-common-input",
+        "cellText": ""
+      },
+      {
+        "type": "text",
+        "value": "",
+        "disabled": true,
+        "readOnly": false,
+        "name": "",
+        "placeholder": "",
+        "cls": "sc-common-input",
+        "cellText": ""
+      },
+      {
+        "type": "text",
+        "value": "",
+        "disabled": true,
+        "readOnly": false,
+        "name": "",
+        "placeholder": "",
+        "cls": "sc-common-input",
+        "cellText": ""
+      },
+      {
+        "type": "text",
+        "value": "S0037076287503",
+        "disabled": true,
+        "readOnly": false,
+        "name": "",
+        "placeholder": "",
+        "cls": "sc-common-input",
+        "cellText": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "disabled": true,
+        "readOnly": false,
+        "name": "",
+        "placeholder": "",
+        "cls": "",
+        "cellText": ""
+      }
+    ],
+    "allInputs": [
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "B7000 투명 다용도 접착제 스마트폰 수리 본드",
+        "name": "InputWithCounter_2",
+        "cls": "sc-common-input"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "name": "",
+        "cls": "sc-common-input"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "name": "tab-product-image-pane",
+        "cls": ""
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "name": "tab-product-image-pane",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "name": "tab-content-level",
+        "cls": ""
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "name": "tab-content-level",
+        "cls": ""
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "name": "tab-content",
+        "cls": ""
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "name": "tab-content",
+        "cls": ""
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "name": "tab-content",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "S0037076287500",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "S0037076287502",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "S0037076287503",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "S0037076287504",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "checkedRodTerms",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "0",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "10,190",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "10,030",
+        "name": "",
+        "cls": ""
+      }
+    ]
+  },
+  "p1_single": {
+    "editBtns": [
+      {
+        "around": "상품 구성 \n동일한 상품으로 구성됨\n \n다양한 상품이 혼합되어 구성됨\n \n수정\n판매수수료 조회",
+        "parent": ""
+      },
+      {
+        "around": "노출상품명\t상품 상세정보 \t노출상태\t정상가 (원) \t판매가 (원)  \t단위당가격(원) \t판매자 자동가격조정 \t재고수량 \t판매상태\t판매자\n상품코드 \t모델 번호 \t바코드 \t수정/\n삭제 \n\n색상\n\t\n수량\n\t최저가\t설정 가격\n\nB7000 투명 다용도 접착제 치약본드 15ml\n\t\n\t\n개\n \n\t\n아이템위너\n\t\n원\n\t\n원\n\t1개당 1,650\t\n1,560\n\t\n1,650\n",
+        "parent": ""
+      }
+    ],
+    "allInputs": [
+      {
+        "type": "checkbox",
+        "value": "on",
+        "disabled": true,
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "checkbox",
+        "value": "on",
+        "disabled": false,
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "B7000 투명 다용도 접착제 치약본드 15ml",
+        "disabled": false,
+        "name": "InputWithCounter_2",
+        "cls": "sc-common-input"
+      },
+      {
+        "type": "text",
+        "value": "B7000 투명 다용도 접착제 치약본드 15ml",
+        "disabled": false,
+        "name": "InputWithCounter_3",
+        "cls": "sc-common-input"
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "disabled": true,
+        "name": "tab-category",
+        "cls": ""
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "disabled": true,
+        "name": "tab-category",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "",
+        "disabled": false,
+        "name": "",
+        "cls": "sc-common-input"
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "disabled": true,
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "disabled": true,
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "투명",
+        "disabled": true,
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "1",
+        "disabled": true,
+        "name": "",
+        "cls": ""
+      },
+      {
+        "type": "text",
+        "value": "0",
+        "disabled": true,
+        "name": "",
+        "cls": "unit sc-common-input"
+      },
+      {
+        "type": "text",
+        "value": "1,650",
+        "disabled": true,
+        "name": "",
+        "cls": "unit sc-common-input"
+      },
+      {
+        "type": "text",
+        "value": "99,355",
+        "disabled": true,
+        "name": "",
+        "cls": "sc-common-input"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "disabled": true,
+        "name": "",
+        "cls": "sc-common-input"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "disabled": true,
+        "name": "",
+        "cls": "sc-common-input"
+      },
+      {
+        "type": "text",
+        "value": "",
+        "disabled": true,
+        "name": "",
+        "cls": "sc-common-input"
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "disabled": false,
+        "name": "tab-product-image-pane",
+        "cls": ""
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "disabled": false,
+        "name": "tab-product-image-pane",
+        "cls": ""
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "disabled": false,
+        "name": "tab-content-level",
+        "cls": ""
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "disabled": false,
+        "name": "tab-content-level",
+        "cls": ""
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "disabled": false,
+        "name": "tab-content",
+        "cls": ""
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "disabled": false,
+        "name": "tab-content",
+        "cls": ""
+      },
+      {
+        "type": "radio",
+        "value": "on",
+        "disabled": false,
+        "name": "tab-content",
+        "cls": ""
+      },
+      {
+        "type": "file",
+        "value": "",
+        "disabled": false,
+        "name": "",
+        "cls": "dz-hidden-input"
+      },
+      {
+        "type": "file",
+        "value": "",
+        "disabled": false,
+        "name": "",
+        "cls": "dz-hidden-input"
+      }
+    ],
+    "labels": [
+      "가격관리",
+      "가격관리",
+      "가격관리",
+      "판매가 (원)",
+      "단위당가격(원)",
+      "단위당가격(원)",
+      "판매자 자동가격조정",
+      "설정 가격"
+    ],
+    "body": "Coupang Wing\n판매자교육\n|\n온라인문의\n|\n도움말\n|\n4\n김은선\n님\n상품관리\n상품 등록\n상품 일괄등록\n통합솔루션으로 상품등록(무료)\n상품 조회/수정\n컴플라이언스 센터\n카탈로그 매칭관리\n로켓그로스 배지관리\n상품 알림\n브랜드 관리\n판매 성장\n가격관리\n로켓그로스\n주문/배송\n정산\n셀러월렛 빠른정산\n문의/리뷰\n마이샵\n프로모션\n광고센터\n라이브 & 숏츠\n비즈니스 인사이트\n판매자정보\n공지사항\n온라인문의\n관련사이트\n쿠팡 마켓플레이스 \n쿠팡 로켓그로스 \n쿠팡광고 \n쿠팡 라이브 \n윤리경영제보 \n기타 서비스\n쿠팡 API \n모바일 앱 다운로드 \nDownload for Android Download for iOS\n\n상품 등록필수항목\n상품등록 매뉴얼 \n공산품/식품 상품등록 가이드\n동영상 가이드\n\n현재 상품 승인이 완료되었습니다.\n변경이력 보기\n쿠팡에서 어떻게 판매할까요?\n\n중복선택 가능해요\n\n판매자배송\n\n내가 직접 배송하고 관리해요. 판매 수수료만 발생해요.\n\n로켓그로스\n더 알아보기\n\n쿠팡이 직접 배송하고 물류를 관리해요. 지금 로켓그로스 상품을 등록하고, 나중에 판매할 때 시간을 절약하세요.\n\n노출상품명\n도움말\n26 / 100\n판매 상품과 직접 관련이 없거나 중복된 정보가 적힌 상품명은 쿠팡에 의해 변경될 수 있습니다. \n등록상품명(판매자관리용)  \n26 / 100\n카테고리\n도움말\n카테고리 검색\n카테고리 선택\n선택한 카테고리 : 가구/홈데코>수선/수예도구>수선/재단도구>섬유접착제/수선풀 \n재선택\n 판매수수료 : 10.8 %, (VAT 별도, 정률)\n 판매하려는 상품에 맞는 카테고리를 선택해주세요\n• 상품과 맞지 않는 카테고리를 선택할 경우 적절히 수정될 수 있고, 수수료율, 판매 조건 등 관련 정책도 변경됩니다.\n• 정확한 카테고리 등록 및 법령 준수의 의무와 책임은 판매자에게 있으며 이로 인해 발생하는 손해와 법적 책임 역시 판매자에게 귀속됩니다.\n옵션\n도움말\n상품 구성 \n동일한 상품으로 구성됨\n \n다양한 상품이 혼합되어 구성됨\n \n수정\n판매수수료 조회\n노출상품명\t상품 상세정보 \t노출상태\t정상가 (원) \t판매가 (원)  \t단위당가격(원) \t판매자 자동가격조정 \t재고수량 \t판매상태\t판매자\n상품코드 \t모델 번호 \t바코드 \t수정/\n삭제 \n\n색상\n\t\n수량\n\t최저가\t설정 가격\n\nB7000 투명 다용도 접착제 치약본드 15ml\n\t\n\t\n개\n \n\t\n아이템위너\n\t\n원\n\t\n원\n\t1개당 1,650\t\n1,560\n\t\n1,650\n\t\n\t\n\t\n\t\n\t\n\t"
+  }
+}

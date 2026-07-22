@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>스팃스 · 보석십자수 30x40 튜립 — 교체용 상세페이지</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1c1915;
+      --mute: #5c564c;
+      --paper: #f7f3ec;
+      --sand: #e8dfd0;
+      --bloom: #c45c6a;
+      --leaf: #3d6b4f;
+      --gold: #c9a227;
+      --line: rgba(28, 25, 21, 0.12);
+      --max: 720px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Noto Sans KR", system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #fff8ef 0%, transparent 55%),
+        radial-gradient(900px 500px at 100% 20%, #eef5f0 0%, transparent 50%),
+        linear-gradient(180deg, #faf6f0 0%, var(--paper) 40%, #f3eee4 100%);
+      line-height: 1.55;
+    }
+    .wrap { max-width: var(--max); margin: 0 auto; }
+    .meta-bar {
+      padding: 14px 18px;
+      font-size: 12px;
+      color: var(--mute);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .meta-bar strong { color: var(--ink); font-weight: 700; }
+
+    /* —— Hero: full-bleed visual plane —— */
+    .hero {
+      position: relative;
+      min-height: min(92vh, 820px);
+      display: grid;
+      align-content: end;
+      color: #fff;
+      overflow: hidden;
+      background: #2a2520 center/cover no-repeat;
+      animation: heroIn 1.1s ease both;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(20, 16, 12, 0.15) 0%,
+        rgba(20, 16, 12, 0.25) 45%,
+        rgba(20, 16, 12, 0.78) 100%
+      );
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 36px 22px 48px;
+      max-width: var(--max);
+      margin: 0 auto;
+      width: 100%;
+    }
+    .brand {
+      font-family: Outfit, "Noto Sans KR", sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.4rem, 9vw, 3.6rem);
+      letter-spacing: 0.04em;
+      line-height: 0.95;
+      text-transform: uppercase;
+      animation: rise 0.9s 0.15s ease both;
+    }
+    .brand span {
+      display: block;
+      font-family: "Noto Sans KR", sans-serif;
+      font-size: 0.38em;
+      letter-spacing: 0.28em;
+      font-weight: 700;
+      opacity: 0.9;
+      margin-top: 8px;
+    }
+    .hero h1 {
+      margin-top: 18px;
+      font-size: clamp(1.25rem, 4.2vw, 1.65rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      max-width: 18em;
+      animation: rise 0.9s 0.28s ease both;
+    }
+    .hero p {
+      margin-top: 12px;
+      font-size: 0.98rem;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 28em;
+      animation: rise 0.9s 0.4s ease both;
+    }
+    .cta-row {
+      margin-top: 22px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      animation: rise 0.9s 0.52s ease both;
+    }
+    .btn {
+      appearance: none;
+      border: 0;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 700;
+      padding: 14px 22px;
+      border-radius: 2px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--bloom); color: #fff; }
+    .btn-ghost {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+    }
+
+    section {
+      padding: 56px 22px;
+      border-bottom: 1px solid var(--line);
+    }
+    section h2 {
+      font-family: Outfit, "Noto Sans KR", sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--leaf);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    section .title {
+      font-size: clamp(1.35rem, 4vw, 1.75rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+      max-width: 16em;
+    }
+    section .lead {
+      color: var(--mute);
+      max-width: 36em;
+      margin-bottom: 22px;
+    }
+
+    .story {
+      display: grid;
+      gap: 18px;
+    }
+    .story-block {
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+      animation: fadeUp 0.7s ease both;
+    }
+    .story-block:nth-child(1) { animation-delay: 0.05s; }
+    .story-block:nth-child(2) { animation-delay: 0.12s; }
+    .story-block:nth-child(3) { animation-delay: 0.19s; }
+    .story-block:nth-child(4) { animation-delay: 0.26s; }
+    .story-block:nth-child(5) { animation-delay: 0.33s; }
+    .story-k {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: var(--bloom);
+      margin-bottom: 6px;
+    }
+
+    .points {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px 18px;
+      list-style: none;
+      counter-reset: sp;
+    }
+    .points li {
+      counter-increment: sp;
+      padding: 12px 0 12px 0;
+      border-bottom: 1px solid var(--line);
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 8px;
+      align-items: baseline;
+    }
+    .points li::before {
+      content: counter(sp, decimal-leading-zero);
+      font-family: Outfit, sans-serif;
+      font-weight: 800;
+      color: var(--gold);
+      font-size: 0.85rem;
+    }
+
+    .media {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: var(--sand);
+    }
+    .media-wide {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #2a2520;
+    }
+
+    .steps {
+      list-style: none;
+      display: grid;
+      gap: 16px;
+    }
+    .steps li {
+      display: grid;
+      grid-template-columns: 2.4rem 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+    .steps .n {
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      background: var(--leaf);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-family: Outfit, sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+    .steps strong { display: block; margin-bottom: 4px; }
+
+    .checklist {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    .checklist li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px dashed var(--line);
+    }
+    .checklist li::before {
+      content: "";
+      width: 1.05rem;
+      height: 1.05rem;
+      margin-top: 3px;
+      border: 2px solid var(--leaf);
+      border-radius: 2px;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, transparent 45%, var(--leaf) 45%);
+    }
+
+    .faq details {
+      border-bottom: 1px solid var(--line);
+      padding: 14px 0;
+    }
+    .faq summary {
+      cursor: pointer;
+      font-weight: 700;
+      list-style: none;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq p {
+      margin-top: 8px;
+      color: var(--mute);
+      font-size: 0.95rem;
+    }
+
+    .kw {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .kw i {
+      font-style: normal;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 6px 10px;
+      background: rgba(61, 107, 79, 0.1);
+      color: var(--leaf);
+      border-radius: 2px;
+    }
+
+    .thumb-compare {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    @media (min-width: 640px) {
+      .thumb-compare { grid-template-columns: 220px 1fr; align-items: start; }
+      .points { grid-template-columns: repeat(2, 1fr); }
+    }
+    .thumb-frame {
+      width: min(220px, 100%);
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: #ddd;
+      box-shadow: 0 18px 40px rgba(28, 25, 21, 0.12);
+    }
+    .thumb-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .sticky-mini {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247, 243, 236, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--mute);
+      padding: 10px 22px;
+      transform: translateY(-100%);
+      transition: transform 0.25s ease;
+    }
+    .sticky-mini.show { transform: translateY(0); }
+
+    .closing {
+      background: linear-gradient(160deg, #2f4a3a 0%, #1c1915 70%);
+      color: #fff;
+      border: 0;
+      text-align: left;
+    }
+    .closing .title { color: #fff; }
+    .closing .lead { color: rgba(255, 255, 255, 0.78); }
+    .note {
+      margin-top: 28px;
+      padding: 18px 22px 40px;
+      font-size: 12px;
+      color: var(--mute);
+    }
+    .note code {
+      font-family: ui-monospace, Consolas, monospace;
+      font-size: 11px;
+      background: rgba(0, 0, 0, 0.05);
+      padding: 1px 5px;
+    }
+
+    @keyframes heroIn {
+      from { opacity: 0; transform: scale(1.03); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="meta-bar wrap">
+    <span><strong>교체용 미리보기</strong> · SEO Recovery 기반 · 보석십자수 30x40 튜립</span>
+    <span>추천 상품명 #5 · 키워드: 집콕 / 액자 / 취미 / 인테리어 / 도안</span>
+  </div>
+
+  <div class="sticky-mini" id="mini">스팃스 · 보석십자수 · 만드는 과정 → 완성 → 구성 → FAQ</div>
+
+  <!-- 1) 첫 화면 -->
+  <header class="hero" id="top" style="background-image: url('stix_jewel_crossstitch_tulip_detail_hero.png');">
+    <div class="hero-inner">
+      <div class="brand">STIX<span>스팃스</span></div>
+      <h1>십자수 키트 보석십자수 DIY 초보 선물 집콕</h1>
+      <p>초보도 쉽게 가능 · 완성 만족감 · 인테리어까지 — 30×40 튜립 키트</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#kit">구성품 확인하기</a>
+        <a class="btn btn-ghost" href="#how">만드는 방법 보기</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- 상단 카피: 문제→공감→핵심→신뢰→CTA -->
+    <section id="story">
+      <h2>Why this kit</h2>
+      <p class="title">집에서도 제대로 된 취미를 시작할 수 있습니다</p>
+      <div class="story">
+        <div class="story-block">
+          <div class="story-k">PROBLEM</div>
+          <p>집에서도 제대로 된 취미를 시작하기 어려우셨나요?</p>
+        </div>
+        <div class="story-block">
+          <div class="story-k">EMPATHY</div>
+          <p>바쁜 일상 속에서도 <strong>집콕</strong>으로 나만의 시간을 갖고 싶은 분들이 많습니다.</p>
+        </div>
+        <div class="story-block">
+          <div class="story-k">CORE</div>
+          <p><strong>스팃스 보석십자수 30×40 튜립 키트 DIY</strong> — 초보도 쉽게 가능, 완성 만족감.</p>
+        </div>
+        <div class="story-block">
+          <div class="story-k">TRUST</div>
+          <p>실제 구매 후기에서 가장 많이 언급된 포인트(쉬움 · 예쁨 · 선물) 중심으로 구성했습니다.</p>
+        </div>
+        <div class="story-block">
+          <div class="story-k">CTA</div>
+          <p>지금 구성품 확인하고, 오늘부터 천천히 완성해보세요.</p>
+        </div>
+      </div>
+      <div class="kw" aria-label="SEO keywords">
+        <i>집콕</i><i>취미</i><i>액자</i><i>액자형</i><i>인테리어</i><i>도안</i><i>보석십자수</i><i>DIY</i>
+      </div>
+    </section>
+
+    <!-- 2) 셀링포인트 -->
+    <section id="points">
+      <h2>Selling points</h2>
+      <p class="title">핵심 장점 TOP 10</p>
+      <p class="lead">검색·후기에서 반복되는 언어를 셀링포인트로 정렬했습니다.</p>
+      <ol class="points">
+        <li>초보도 쉽게 가능</li>
+        <li>완성 만족감</li>
+        <li>인테리어 효과</li>
+        <li>선물 추천</li>
+        <li>집중력 향상</li>
+        <li>스트레스 해소</li>
+        <li>아이와 함께</li>
+        <li>집콕 취미</li>
+        <li>구성품 알참</li>
+        <li>가성비</li>
+      </ol>
+    </section>
+
+    <!-- 3) 실사용·완성 -->
+    <section id="finish" style="padding-top: 0; padding-bottom: 0; border: 0;">
+      <img class="media-wide" src="stix_jewel_crossstitch_tulip_detail_hero.png" alt="완성된 튜립 보석십자수와 집콕 취미 분위기" />
+    </section>
+
+    <!-- 썸네일 교체안 -->
+    <section id="thumb">
+      <h2>Thumbnail replace</h2>
+      <p class="title">대표이미지 교체안</p>
+      <p class="lead">완성본 + 키트 구성이 한 장에 보이도록 구성. 검색 카드 CTR용.</p>
+      <div class="thumb-compare">
+        <div class="thumb-frame">
+          <img src="stix_jewel_crossstitch_tulip_thumbnail.png" alt="교체용 대표 썸네일" />
+        </div>
+        <div>
+          <p><strong>적용 가이드</strong></p>
+          <ul style="margin: 10px 0 0 1.1em; color: var(--mute);">
+            <li>앞 15자: <code>십자수 키트 보석십자수</code></li>
+            <li>배경 노이즈 ↓ · 제품 대비 ↑</li>
+            <li>텍스트/뱃지 오버레이 없음 (쿠팡 썸네일 정책 친화)</li>
+            <li>파일: <code>stix_jewel_crossstitch_tulip_thumbnail.png</code> (1:1)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4) 후기 하이라이트 -->
+    <section id="reviews">
+      <h2>Reviews</h2>
+      <p class="title">고객 후기 하이라이트</p>
+      <p class="lead">상단 신뢰 블록에 바로 붙일 수 있는 인용 3개 (실제 등록 후기로 교체 권장).</p>
+      <div class="story">
+        <div class="story-block">
+          <div class="story-k">REVIEW 01</div>
+          <p>“초보인데도 설명대로 하니까 금방 감이 왔어요. 집콕 취미로 딱입니다.”</p>
+        </div>
+        <div class="story-block">
+          <div class="story-k">REVIEW 02</div>
+          <p>“완성하고 액자에 넣으니 인테리어 소품처럼 예뻐요. 선물용으로도 추천.”</p>
+        </div>
+        <div class="story-block">
+          <div class="story-k">REVIEW 03</div>
+          <p>“구성이 알차고 도안이 선명해서 헤매지 않았습니다.”</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5) 사용방법 -->
+    <section id="how">
+      <h2>How to</h2>
+      <p class="title">초보 기준 5 STEP</p>
+      <ol class="steps">
+        <li>
+          <span class="n">1</span>
+          <div><strong>구성품 펼치기</strong>캔버스·큐빅(비즈)·펜·왁스·핀셋을 확인합니다.</div>
+        </li>
+        <li>
+          <span class="n">2</span>
+          <div><strong>도안 구역 잡기</strong>작은 색 구역부터 붙이면 초보도 실패가 적습니다.</div>
+        </li>
+        <li>
+          <span class="n">3</span>
+          <div><strong>펜에 왁스 → 큐빅 픽업</strong>한 칸씩 붙여 나가며 리듬을 만듭니다.</div>
+        </li>
+        <li>
+          <span class="n">4</span>
+          <div><strong>중간 점검</strong>빛에 비춰 빈칸을 채우고 가장자리를 정리합니다.</div>
+        </li>
+        <li>
+          <span class="n">5</span>
+          <div><strong>완성 → 액자</strong>액자형 옵션으로 인테리어·선물 마무리를 합니다.</div>
+        </li>
+      </ol>
+      <div class="cta-row" style="margin-top: 28px;">
+        <a class="btn btn-primary" href="#kit">구성 체크리스트 보기</a>
+      </div>
+    </section>
+
+    <!-- 6) 구성품 -->
+    <section id="kit">
+      <h2>Kit checklist</h2>
+      <p class="title">구성품 체크리스트</p>
+      <p class="lead">구성 누락 불안을 줄이기 위한 체크 + 실사 컷.</p>
+      <img class="media" src="stix_jewel_crossstitch_kit_contents.png" alt="키트 구성품 플랫레이" style="margin-bottom: 22px;" />
+      <ul class="checklist">
+        <li>30×40 튜립 도안 캔버스</li>
+        <li>색상별 큐빅(비즈) 패키지</li>
+        <li>붙이기용 펜 + 왁스</li>
+        <li>핀셋 / 정리 트레이(구성에 따라)</li>
+        <li>사용 가이드(초보용 요약)</li>
+        <li>선택: 액자형 마감 / 선물 포장 안내</li>
+      </ul>
+    </section>
+
+    <!-- 7) FAQ -->
+    <section class="faq" id="faq">
+      <h2>FAQ</h2>
+      <p class="title">배송 · 난이도 · 구성</p>
+      <details open>
+        <summary>초보도 할 수 있나요? 소요 시간은?</summary>
+        <p>초보 기준으로 설계했습니다. 하루 30~60분씩 나눠 하면 며칠 안에 완성하는 경우가 많습니다. (개인 속도 차이 있음)</p>
+      </details>
+      <details>
+        <summary>구성품이 빠지진 않나요?</summary>
+        <p>출고 전 구성 체크리스트로 확인합니다. 누락 시 문의 경로로 빠르게 보완해 드립니다.</p>
+      </details>
+      <details>
+        <summary>액자·선물 포장이 가능한가요?</summary>
+        <p>완성 후 액자형 마감·선물용 안내를 상세에 포함했습니다. 옵션명을 확인해주세요.</p>
+      </details>
+      <details>
+        <summary>교환·품질 문의는 어디로 하나요?</summary>
+        <p>쿠팡 문의하기 → 판매자 연락. 사진과 함께 남겨주시면 품질/구성 이슈를 우선 확인합니다.</p>
+      </details>
+    </section>
+  </main>
+
+  <!-- 8) 구매 CTA -->
+  <section class="closing" id="buy">
+    <div class="wrap">
+      <h2 style="color: var(--gold);">Ready</h2>
+      <p class="title">오늘부터 천천히, 집콕 취미를 완성하세요</p>
+      <p class="lead">스팃스 보석십자수 30×40 튜립 — 초보도 쉽게, 완성 후 인테리어·선물까지.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#top">옵션 선택하고 구매</a>
+        <a class="btn btn-ghost" href="#faq">FAQ 다시 보기</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="note wrap">
+    <p><strong>MD 적용 메모</strong> (승인 후 수동 반영)</p>
+    <p style="margin-top:8px;">
+      상품명 후보:
+      <code>십자수 키트 보석십자수 DIY 초보 선물 집콕</code> /
+      <code>십자수 키트 보석십자수 DIY 초보 스팃스 30x40</code><br />
+      삭제 검토: <code>튜립</code> (검색 노이즈) — 옵션명·상세에는 유지 가능<br />
+      이미지 파일: 같은 폴더의 PNG 3종을 쿠팡 대표/상세에 업로드
+    </p>
+  </div>
+
+  <script>
+    const mini = document.getElementById("mini");
+    const sections = [
+      ["story", "스토리 · 문제→공감→핵심"],
+      ["points", "핵심 장점"],
+      ["thumb", "썸네일 교체안"],
+      ["reviews", "후기"],
+      ["how", "만드는 방법"],
+      ["kit", "구성품"],
+      ["faq", "FAQ"],
+      ["buy", "구매 CTA"],
+    ];
+    const onScroll = () => {
+      mini.classList.toggle("show", window.scrollY > 280);
+      let label = "스팃스 · 보석십자수";
+      for (const [id, text] of sections) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const top = el.getBoundingClientRect().top;
+        if (top <= 120) label = "스팃스 · " + text;
+      }
+      mini.textContent = label;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  </script>
+</body>
+</html>

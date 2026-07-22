@@ -12,13 +12,23 @@ BASE = Path(__file__).parent
 SRC = BASE / "쇼핑몰별 전체상품"
 SALES_SRC = BASE / "쇼핑몰별 매출주문"
 
+
+def _find_catalog(*patterns: str) -> Path:
+    """로컬 export 파일명 변형(공백·날짜 접미) 자동 매칭."""
+    for pat in patterns:
+        hits = sorted(SRC.glob(pat))
+        if hits:
+            return hits[0]
+    return SRC / patterns[-1]
+
+
 PLATFORM_FILES: dict[str, Path] = {
-    "쿠팡": SRC / "쿠팡.xlsx",
-    "로켓그로스": SRC / "로켓배송.로켓그로스.xlsx",
-    "지마켓/옥션": SRC / "지마켓,옥션.xlsx",
-    "스마트스토어": SRC / "스마트스토어.csv",
-    "11번가": SRC / "11번가.xlsx",
-    "카페24": SRC / "카페24.자사몰.xlsx",
+    "쿠팡": _find_catalog("쿠팡*전체상품*.xlsx", "쿠팡.xlsx"),
+    "로켓그로스": _find_catalog("로켓배송*로켓그로스*.xlsx", "로켓배송.로켓그로스.xlsx"),
+    "지마켓/옥션": _find_catalog("지마켓,옥션.xlsx"),
+    "스마트스토어": _find_catalog("스마트스토어*전체상품*.csv", "스마트스토어.csv"),
+    "11번가": _find_catalog("11번가*전체상품*.xlsx", "11번가.xlsx"),
+    "카페24": _find_catalog("카페24*자사몰*.xlsx", "카페24.자사몰.xlsx"),
 }
 
 NAME_KEYS = (
@@ -67,21 +77,51 @@ def get_field(row: dict, *keys: str) -> str:
     return ""
 
 
+def _pick_xlsx_sheet(wb):
+    """Prefer data sheets (e.g. Coupang Template) over Help/안내."""
+    preferred = ("Template", "상품", "전체상품", "Sheet1", "시트1")
+    for name in preferred:
+        if name in wb.sheetnames:
+            return wb[name]
+    for name in wb.sheetnames:
+        low = name.lower()
+        if low in {"help", "hidden", "안내"}:
+            continue
+        return wb[name]
+    return wb.active
+
+
 def read_xlsx(path: Path) -> list[dict]:
     wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
-    rows = list(wb.active.iter_rows(values_only=True))
+    ws = _pick_xlsx_sheet(wb)
+    rows = list(ws.iter_rows(values_only=True))
     wb.close()
     if not rows:
         return []
     hdr_i = 0
-    for i, row in enumerate(rows[:12]):
+    best_score = -1
+    for i, row in enumerate(rows[:40]):
         cells = [clean(c) for c in row if c]
-        if any(
-            kw in c for c in cells
-            for kw in ("등록상품명", "상품명", "ProductName", "판매가", "재고")
-        ):
+        score = sum(
+            1
+            for c in cells
+            for kw in (
+                "등록상품명",
+                "쿠팡 노출상품명",
+                "상품명",
+                "ProductName",
+                "판매가",
+                "재고",
+                "등록상품ID",
+            )
+            if kw in c
+        )
+        # skip long help banners
+        if any(len(c) > 80 for c in cells[:2]):
+            continue
+        if score > best_score:
+            best_score = score
             hdr_i = i
-            break
     headers = [clean(h) for h in rows[hdr_i]]
     out = []
     for row in rows[hdr_i + 1 :]:

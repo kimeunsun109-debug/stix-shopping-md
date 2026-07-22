@@ -1,0 +1,22 @@
+[
+  {
+    "step": "login",
+    "ok": true,
+    "msg": "already logged in"
+  },
+  {
+    "step": "p2",
+    "ok": true,
+    "msg": "price set to 10,090"
+  },
+  {
+    "step": "p3",
+    "ok": false,
+    "msg": "verify failed — list may still show old price"
+  },
+  {
+    "step": "p1",
+    "ok": false,
+    "msg": "verify failed — list may still show old price"
+  }
+]

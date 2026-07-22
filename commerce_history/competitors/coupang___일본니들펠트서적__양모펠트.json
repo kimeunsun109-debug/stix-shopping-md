@@ -1,0 +1,99 @@
+[
+  {
+    "date": "2026-07-17",
+    "marketplace": "coupang",
+    "keyword": "(일본니들펠트서적) 양모펠트",
+    "items": [
+      {
+        "rank": null,
+        "title": "(스팃스) LA FRAISE - 딸기 실 십자수 패키지 (도안+원단+실+바늘)",
+        "price": null,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "십자수",
+          "도안",
+          "스팃스",
+          "LA",
+          "FRAISE",
+          "딸기",
+          "패키지",
+          "원단",
+          "바늘"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "(일본 자수서적) 원 포인트 자수 도안집",
+        "price": null,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "도안",
+          "일본",
+          "자수서적",
+          "포인트",
+          "자수",
+          "도안집"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "(일본니들펠트서적) 양모 펠트로 만드는 작은 동물 잡화",
+        "price": null,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "일본니들펠트서적",
+          "양모",
+          "펠트로",
+          "만드는",
+          "작은",
+          "동물",
+          "잡화"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "(일본서적) annas의 맛있는 자수-CAFE&SWEETS",
+        "price": null,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "일본서적",
+          "annas",
+          "맛있는",
+          "자수",
+          "CAFE",
+          "SWEETS"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "(일본서적) 꽃과 과일의 십자수 - 2",
+        "price": null,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "십자수",
+          "꽃",
+          "일본서적",
+          "꽃과",
+          "과일의"
+        ]
+      }
+    ],
+    "repeating": [
+      "십자수",
+      "도안",
+      "자수",
+      "일본서적"
+    ],
+    "ts": "2026-07-17T16:20:04"
+  }
+]

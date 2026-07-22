@@ -1,0 +1,91 @@
+[
+  {
+    "date": "2026-07-17",
+    "marketplace": "gmarket",
+    "keyword": "프랑스자수",
+    "items": [
+      {
+        "rank": null,
+        "title": "100% 울 자수실 54색 프랑스자수 자수실세트",
+        "price": 73000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "자수실",
+          "프랑스자수",
+          "자수실세트"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "프랑스자수 기초 패키지 96색 (자수실+부자재)",
+        "price": 39000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "프랑스자수",
+          "기초",
+          "패키지",
+          "자수실",
+          "부자재"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "(일본서적)프랑스자수와도안 메르헨꽃과귀여운친구들",
+        "price": 29200,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "꽃",
+          "도안",
+          "일본서적",
+          "프랑스자수와도안",
+          "메르헨꽃과귀여운친구들"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "24색 울사A / 프랑스자수 야생화 생활자수 자수실세트",
+        "price": 23900,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "울사",
+          "프랑스자수",
+          "야생화",
+          "생활자수",
+          "자수실세트"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "24색 울사B / 프랑스자수 야생화 생활자수 자수실세트",
+        "price": 23900,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "울사",
+          "프랑스자수",
+          "야생화",
+          "생활자수",
+          "자수실세트"
+        ]
+      }
+    ],
+    "repeating": [
+      "프랑스자수",
+      "자수실세트",
+      "자수실",
+      "야생화",
+      "울사",
+      "생활자수"
+    ],
+    "ts": "2026-07-17T16:20:03"
+  }
+]

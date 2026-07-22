@@ -1,4 +1,11 @@
+# Commerce AI core (required)
 openpyxl>=3.1.0
+fastapi>=0.110.0
+uvicorn>=0.27.0
+
+# Catalog / sales analysis scripts (root md_*.py — keep for non-commerce tools)
 pandas>=2.0.0
 xlrd>=2.0.1
+
+# Optional: CDP / marketplace collectors
 playwright>=1.40.0

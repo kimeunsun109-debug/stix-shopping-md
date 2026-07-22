@@ -1,0 +1,96 @@
+[
+  {
+    "date": "2026-07-17",
+    "marketplace": "11st",
+    "keyword": "십자수",
+    "items": [
+      {
+        "rank": null,
+        "title": "DMC 자수실 25번 면사 십자수실 200색 세트",
+        "price": 215000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "십자수",
+          "DMC",
+          "자수실",
+          "면사",
+          "십자수실"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "DMC 자수실 25번 면사 십자수실 100색 세트",
+        "price": 110000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "십자수",
+          "DMC",
+          "자수실",
+          "면사",
+          "십자수실"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "스팃스 DMC 자수실 25번 면사 십자수실 100색 세트",
+        "price": 110000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "십자수",
+          "스팃스",
+          "DMC",
+          "자수실",
+          "면사",
+          "십자수실"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "DMC 25번 면사 자수실 십자수실 견본북",
+        "price": 98000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "십자수",
+          "DMC",
+          "면사",
+          "자수실",
+          "십자수실",
+          "견본북"
+        ]
+      },
+      {
+        "rank": null,
+        "title": "면사 십자수실 447색 풀세트 프랑스자수실 세트 자수실 패키지",
+        "price": 60000,
+        "brand": "",
+        "reviews": null,
+        "rating": null,
+        "tokens": [
+          "십자수",
+          "면사",
+          "십자수실",
+          "풀세트",
+          "프랑스자수실",
+          "자수실",
+          "패키지"
+        ]
+      }
+    ],
+    "repeating": [
+      "십자수실",
+      "면사",
+      "십자수",
+      "자수실",
+      "DMC"
+    ],
+    "ts": "2026-07-17T16:20:00"
+  }
+]
