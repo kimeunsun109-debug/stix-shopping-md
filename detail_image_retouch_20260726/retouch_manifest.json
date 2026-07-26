@@ -1,0 +1,155 @@
+{
+  "refs": [
+    {
+      "brand": "ANCHOR",
+      "product": "Stranded Cotton Mouliné 444 solid colours",
+      "verify_url": "https://anchorcrafts.com/products/anchor-stranded-cotton-mouline-5",
+      "same_product_note": "공식: 444 solid + 16 ombre. 자사 판매명 '444색 풀세트'와 동일 라인 확인.",
+      "saved": null,
+      "status": "page_verified_image_download_failed"
+    },
+    {
+      "brand": "ANCHOR",
+      "product": "Embroidery Thread Shade Card (CA-4546)",
+      "verify_url": "https://anchorcrafts.com/products/anchor-embroidery-thread-shade-card",
+      "same_product_note": "공식 셰이드카드 — 444 solid 실물 샘플. 상세 컬러차트 톤 레퍼런스.",
+      "saved": null,
+      "status": "page_verified_image_download_failed"
+    },
+    {
+      "brand": "CLOVER",
+      "product": "57-550 대형 수틀 30cm (JAN 4901316575502)",
+      "verify_url": "https://eshop.needleworkclub.com/product-13539",
+      "same_product_note": "JAN 4901316575502 = Clover 57-550 확인. 공식영문 라인은 Art.8812(18cm) 등 동일 구조 수틀.",
+      "saved": "_official_refs\\clover_57-550_same_sku_ref.jpg",
+      "status": "downloaded",
+      "image_url": "https://eshop.needleworkclub.com/image/product/13539/1.jpg"
+    },
+    {
+      "brand": "CLOVER",
+      "product": "Official Embroidery Hoop series (wood hoop family)",
+      "verify_url": "https://www.clover-mfg.com/en/products/embroidery/embroidery-hoop/clover-embroidery-hoop/",
+      "same_product_note": "공식 수틀 시리즈(내외측 이중링·나사조임) — 자사 57-550과 동일 제품군 구조 확인.",
+      "saved": null,
+      "status": "page_verified_image_download_failed"
+    },
+    {
+      "brand": "ANCHOR",
+      "product": "Google/마켓 동일제품 박스 세트 이미지",
+      "verify_url": "https://www.google.com/search?q=ANCHOR+자수실+444색+풀세트&tbm=isch",
+      "same_product_note": "동일 제품명 검색으로 박스형 풀세트 존재 확인. 색감 재보정 허용 근거.",
+      "saved": null,
+      "status": "verified_page_only"
+    },
+    {
+      "brand": "CLOVER",
+      "product": "네이버/구글 동일 SKU 검색용 (실패 가능)",
+      "verify_url": "https://www.google.com/search?q=크로바+57-550+수틀+30cm&tbm=isch",
+      "same_product_note": "구글 이미지 '크로바 57-550' 동일제품 검색 허용.",
+      "saved": "_official_refs\\clover_google_same_57-550.jpg",
+      "status": "downloaded",
+      "image_url": "https://shopping-phinf.pstatic.net/main_8221234/82212344719.jpg"
+    }
+  ],
+  "results": [
+    {
+      "product": "프랑스자수 자수실 447색 풀세트 대용량 컬러 자수실 세트",
+      "code": "P00000GG",
+      "page": "https://makehomedeco.co.kr/product/detail.html?product_no=163",
+      "before": "면사447색_풀세트\\01_원본_before_curated\\447_detail_01_FULLSET201.png",
+      "after": "면사447색_풀세트\\02_보정_after\\447_detail_01_FULLSET201.png",
+      "mode": "photo_composite",
+      "note": "상세 메인(정렬 촬영 컷 포함)"
+    },
+    {
+      "product": "프랑스자수 자수실 447색 풀세트 대용량 컬러 자수실 세트",
+      "code": "P00000GG",
+      "page": "https://makehomedeco.co.kr/product/detail.html?product_no=163",
+      "before": "면사447색_풀세트\\01_원본_before_curated\\447_detail_02_FULLSET202.png",
+      "after": "면사447색_풀세트\\02_보정_after\\447_detail_02_FULLSET202.png",
+      "mode": "photo_composite",
+      "note": "상세 하단(정렬 촬영+배송안내)"
+    },
+    {
+      "product": "프랑스자수 자수실 447색 풀세트 대용량 컬러 자수실 세트",
+      "code": "P00000GG",
+      "page": "https://makehomedeco.co.kr/product/detail.html?product_no=163",
+      "before": "면사447색_풀세트\\01_원본_before_curated\\447_catalog_main.jpg",
+      "after": "면사447색_풀세트\\02_보정_after\\447_catalog_main.jpg",
+      "mode": "catalog",
+      "note": "대표이미지"
+    },
+    {
+      "product": "ANCHOR 독일 앵커 자수실 444색 풀세트 십자수 자수실 올인원 프리미엄 공예 세트",
+      "code": "P0000BJO",
+      "page": "https://makehomedeco.co.kr/product/detail.html?product_no=924",
+      "before": "앵커444색_풀세트\\01_원본_before_curated\\anchor_detail_01_colorchart.jpg",
+      "after": "앵커444색_풀세트\\02_보정_after\\anchor_detail_01_colorchart.jpg",
+      "mode": "color_chart",
+      "note": "컬러차트(조명 좌우 불균일)"
+    },
+    {
+      "product": "ANCHOR 독일 앵커 자수실 444색 풀세트 십자수 자수실 올인원 프리미엄 공예 세트",
+      "code": "P0000BJO",
+      "page": "https://makehomedeco.co.kr/product/detail.html?product_no=924",
+      "before": "앵커444색_풀세트\\01_원본_before_curated\\anchor_detail_02_anc1.jpg",
+      "after": "앵커444색_풀세트\\02_보정_after\\anchor_detail_02_anc1.jpg",
+      "mode": "photo_composite",
+      "note": "상세 anc1"
+    },
+    {
+      "product": "ANCHOR 독일 앵커 자수실 444색 풀세트 십자수 자수실 올인원 프리미엄 공예 세트",
+      "code": "P0000BJO",
+      "page": "https://makehomedeco.co.kr/product/detail.html?product_no=924",
+      "before": "앵커444색_풀세트\\01_원본_before_curated\\anchor_detail_03_anc2.jpg",
+      "after": "앵커444색_풀세트\\02_보정_after\\anchor_detail_03_anc2.jpg",
+      "mode": "photo_composite",
+      "note": "상세 anc2"
+    },
+    {
+      "product": "ANCHOR 독일 앵커 자수실 444색 풀세트 십자수 자수실 올인원 프리미엄 공예 세트",
+      "code": "P0000BJO",
+      "page": "https://makehomedeco.co.kr/product/detail.html?product_no=924",
+      "before": "앵커444색_풀세트\\01_원본_before_curated\\anchor_detail_04_anc3.jpg",
+      "after": "앵커444색_풀세트\\02_보정_after\\anchor_detail_04_anc3.jpg",
+      "mode": "photo_composite",
+      "note": "상세 anc3"
+    },
+    {
+      "product": "ANCHOR 독일 앵커 자수실 444색 풀세트 십자수 자수실 올인원 프리미엄 공예 세트",
+      "code": "P0000BJO",
+      "page": "https://makehomedeco.co.kr/product/detail.html?product_no=924",
+      "before": "앵커444색_풀세트\\01_원본_before_curated\\anchor_catalog_main.jpg",
+      "after": "앵커444색_풀세트\\02_보정_after\\anchor_catalog_main.jpg",
+      "mode": "catalog",
+      "note": "대표이미지"
+    },
+    {
+      "product": "크로바 57-550 대형 수틀 30cm 자수틀 프랑스자수 십자수 원단 고정 틀",
+      "code": "P0000CIX",
+      "page": "https://makehomedeco.co.kr/product/detail.html?product_no=1583",
+      "before": "크로바_대형수틀_57-550\\01_원본_before_curated\\clover_detail_01_57-550.jpg",
+      "after": "크로바_대형수틀_57-550\\02_보정_after\\clover_detail_01_57-550.jpg",
+      "mode": "product_pack",
+      "note": "상세(패키지 촬영 2컷)"
+    },
+    {
+      "product": "크로바 57-550 대형 수틀 30cm 자수틀 프랑스자수 십자수 원단 고정 틀",
+      "code": "P0000CIX",
+      "page": "https://makehomedeco.co.kr/product/detail.html?product_no=1583",
+      "before": "크로바_대형수틀_57-550\\01_원본_before_curated\\clover_catalog_main.jpg",
+      "after": "크로바_대형수틀_57-550\\02_보정_after\\clover_catalog_main.jpg",
+      "mode": "catalog",
+      "note": "대표이미지"
+    },
+    {
+      "product": "크로바 57-550 대형 수틀 30cm 자수틀 프랑스자수 십자수 원단 고정 틀",
+      "code": "P0000CIX",
+      "page": "https://makehomedeco.co.kr/product/detail.html?product_no=1583",
+      "before": "크로바_대형수틀_57-550\\01_원본_before_curated\\clover_catalog_list.jpg",
+      "after": "크로바_대형수틀_57-550\\02_보정_after\\clover_catalog_list.jpg",
+      "mode": "catalog",
+      "note": "목록이미지"
+    }
+  ]
+}
