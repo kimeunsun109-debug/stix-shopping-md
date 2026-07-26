@@ -20,10 +20,16 @@ from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 
-from item_winner.config import B7000_TARGETS, INTERVAL_SEC
+from item_winner.config import B7000_TARGETS, GLOBAL_APPLY_ENABLED, INTERVAL_SEC, SKU_MAX_PRICE
 from item_winner.coupang_api import update_vendor_item_price
 from item_winner.decision import PriceInput, decide
 from item_winner.env_util import cdp_port, load_env
+from item_winner.notify import send_telegram
+from item_winner.safety import (
+    block_and_log,
+    check_price_change,
+    record_successful_apply,
+)
 from item_winner.scraper import observe_sku
 from item_winner.wing_apply import ApplyResult, ensure_wing_login, set_vendor_item_price
 
@@ -125,6 +131,7 @@ def run_cycle(port: int, apply_prices: bool = True) -> None:
                 target_price=sku.target_price,
                 hold_price=sku.hold_price,
                 reactive_lower_only=sku.reactive_lower_only,
+                defend_winner_only=sku.defend_winner_only,
             )
             dec = decide(inp)
             log(
@@ -134,11 +141,58 @@ def run_cycle(port: int, apply_prices: bool = True) -> None:
 
             applied = False
             apply_msg = ""
-            if apply_prices and dec.action != "HOLD" and dec.recommended_price != obs.my_price:
-                applied, apply_msg = apply_price(
-                    wing, sku.vendor_item_id, dec.recommended_price, env, wing_ready
+            want = dec.recommended_price
+            would_apply = (
+                GLOBAL_APPLY_ENABLED
+                and sku.apply_enabled
+                and apply_prices
+                and dec.action != "HOLD"
+                and want != obs.my_price
+            )
+
+            if not GLOBAL_APPLY_ENABLED:
+                apply_msg = "GLOBAL_APPLY_ENABLED=False (paused 2026-07-26)"
+                if dec.action != "HOLD" and want != obs.my_price:
+                    log(f"{sku.key} apply=SKIP: {apply_msg} (would {dec.action} {want:,})")
+            elif not sku.apply_enabled:
+                apply_msg = "apply paused (apply_enabled=False)"
+                if dec.action != "HOLD" and want != obs.my_price:
+                    log(f"{sku.key} apply=SKIP: {apply_msg} (would {dec.action} {want:,})")
+            elif would_apply:
+                gate = check_price_change(
+                    sku=sku.key,
+                    current_price=obs.my_price,
+                    new_price=want,
+                    min_price=sku.min_price,
+                    max_price=SKU_MAX_PRICE.get(sku.key),
                 )
-                log(f"{sku.key} apply={'OK' if applied else 'FAIL'}: {apply_msg}")
+                if not gate.ok:
+                    apply_msg = f"SAFETY BLOCK: {gate.reason}"
+                    block_and_log(
+                        sku=sku.key,
+                        current_price=obs.my_price,
+                        new_price=want,
+                        reason=gate.reason,
+                        extra={"action": dec.action},
+                    )
+                    log(f"{sku.key} apply=BLOCKED: {gate.reason}")
+                    send_telegram(
+                        f"⛔ STIX 가격변경 차단\n{sku.label}\n"
+                        f"{obs.my_price:,} → {want:,}\n{gate.reason}",
+                        env,
+                    )
+                else:
+                    applied, apply_msg = apply_price(
+                        wing, sku.vendor_item_id, want, env, wing_ready
+                    )
+                    log(f"{sku.key} apply={'OK' if applied else 'FAIL'}: {apply_msg}")
+                    if applied:
+                        record_successful_apply(sku.key)
+                    send_telegram(
+                        f"{'✅' if applied else '❌'} STIX 가격변경\n{sku.label}\n"
+                        f"{obs.my_price:,} → {want:,}\n{apply_msg}",
+                        env,
+                    )
 
             append_history(
                 {

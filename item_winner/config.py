@@ -16,6 +16,8 @@ class SkuTarget:
     target_price: int | None = None
     hold_price: int | None = None  # 유지가 (reactive_lower_only 시)
     reactive_lower_only: bool = False  # 경쟁자 인하 시에만 추격, 동가·인상 시 유지
+    defend_winner_only: bool = False  # 위너면 유지, 위너 상실 시에만 마지노선 내 추격
+    apply_enabled: bool = True  # False면 관찰만 (가격 반영 중지)
     competitor_name: str = ""
     bundled: bool = False  # same PDP — scrape competitor from modal
 
@@ -29,6 +31,8 @@ B7000_TARGETS: list[SkuTarget] = [
         vendor_item_id="94214344499",
         min_price=1290,
         target_price=1500,
+        defend_winner_only=True,
+        apply_enabled=False,  # 1페이지 이탈 — 가격조정 일시중지 (재개 시 True)
         competitor_name="빙고",
         bundled=True,
     ),
@@ -41,6 +45,7 @@ B7000_TARGETS: list[SkuTarget] = [
         min_price=9790,
         target_price=9990,
         competitor_name="온라인",
+        apply_enabled=False,  # 2026-07-26 pause
     ),
     SkuTarget(
         key="p3_110mlx2",
@@ -53,8 +58,19 @@ B7000_TARGETS: list[SkuTarget] = [
         hold_price=13800,
         reactive_lower_only=True,
         competitor_name="온라인",
+        apply_enabled=False,  # 2026-07-26 pause
     ),
 ]
 
 INTERVAL_SEC = 30 * 60
 MONITOR_UNTIL: str | None = None  # None = 종료일 없이 계속 모니터링
+
+# 2026-07-26: P1 가격 폭주 사고 후 — 전역 가격반영 OFF (관찰만). 재개 시 True + safety 통과 필요.
+GLOBAL_APPLY_ENABLED = False
+
+# SKU별 절대 상한 (안전장치). 없으면 safety.DEFAULT_MAX_PRICE
+SKU_MAX_PRICE: dict[str, int] = {
+    "p1_15mlx1": 3_000,
+    "p2_15mlx3": 20_000,
+    "p3_110mlx2": 25_000,
+}

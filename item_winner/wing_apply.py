@@ -50,30 +50,80 @@ def ensure_wing_login(page: Page, env: dict[str, str] | None = None) -> ApplyRes
     return ApplyResult(False, f"login failed url={page.url[:120]}")
 
 
+def _modal_present(page: Page) -> bool:
+    return bool(
+        page.evaluate(
+            """() => {
+          const m = document.querySelector('[data-layer="modalView"]');
+          if (!m) return false;
+          const r = m.getBoundingClientRect();
+          return r.width > 20 && r.height > 20;
+        }"""
+        )
+    )
+
+
+def _modal_text(page: Page) -> str:
+    return page.evaluate(
+        """() => {
+          const m = document.querySelector('[data-layer="modalView"]');
+          return m ? (m.innerText || '') : '';
+        }"""
+    )
+
+
+def _is_option_edit_modal(text: str) -> bool:
+    return "옵션 수정" in text and ("노출상품ID" in text or "판매가 (원)" in text)
+
+
+def _is_submit_confirm_modal(text: str) -> bool:
+    return any(x in text for x in ("검수", "수정 하시겠", "저장하시겠", "변경하시겠"))
+
+
+def _is_blocking_modal(text: str) -> bool:
+    if _is_option_edit_modal(text) or _is_submit_confirm_modal(text):
+        return False
+    return any(x in text for x in ("수수료", "이미지", "앱 다운", "앱다운"))
+
+
 def _dismiss_modals(page: Page) -> None:
-    for _ in range(3):
+    """Close Wing overlays (수수료조회 / 이미지가이드 / 앱다운로드 등) that block submit."""
+    for _ in range(8):
+        if not _modal_present(page):
+            break
+        text = _modal_text(page)
+        if _is_option_edit_modal(text) or _is_submit_confirm_modal(text):
+            break
         closed = False
-        for sel in (
-            "button:has-text('닫기')",
-            "button:has-text('나중에')",
-            "button:has-text('건너뛰기')",
-            ".modal-close",
-            "[class*='modal-close']",
-        ):
+        if _is_blocking_modal(text):
+            for label in ("취소", "닫기", "나중에", "건너뛰기"):
+                try:
+                    ok = page.evaluate(
+                        """(label) => {
+                      const m = document.querySelector('[data-layer="modalView"]');
+                      if (!m) return false;
+                      for (const b of m.querySelectorAll('button')) {
+                        const t = (b.innerText||'').trim();
+                        if (t === label && b.offsetParent && !b.disabled) { b.click(); return true; }
+                      }
+                      return false;
+                    }""",
+                        label,
+                    )
+                    if ok:
+                        closed = True
+                        time.sleep(0.5)
+                        break
+                except Exception:
+                    pass
+        if not closed:
             try:
-                loc = page.locator(sel).first
-                if loc.is_visible(timeout=400):
-                    loc.click(timeout=2000)
-                    time.sleep(0.4)
-                    closed = True
+                page.keyboard.press("Escape")
             except Exception:
                 pass
-        if not closed:
+            time.sleep(0.3)
+        if not _modal_present(page):
             break
-    try:
-        page.keyboard.press("Escape")
-    except Exception:
-        pass
 
 
 def _click_btn_text(page: Page, *labels: str) -> bool:
@@ -131,8 +181,48 @@ def _option_index(page: Page, match_code: str) -> int:
     )
 
 
+def _click_scored_sale_edit(page: Page) -> bool:
+    """Playwright click on 판매가/아이템위너 인근 수정 (single-option p1)."""
+    _scroll_options(page)
+    idx = int(
+        page.evaluate(
+            """() => {
+          const btns = [...document.querySelectorAll('button')]
+            .filter(b => (b.innerText||'').trim()==='수정' && b.offsetParent);
+          let best = -1, bestScore = -999;
+          btns.forEach((b, i) => {
+            const around = ((b.closest('tr,table,[class*=option],section') || b.parentElement || b).innerText || '');
+            let score = 0;
+            if (/아이템위너/.test(around)) score += 5;
+            if (/1,500|1500|1,\\d{3}/.test(around)) score += 3;
+            if (/판매가/.test(around)) score += 2;
+            if (/상품 구성/.test(around)) score -= 10;
+            if (score > bestScore) { bestScore = score; best = i; }
+          });
+          return best;
+        }"""
+        )
+    )
+    loc = page.locator("button", has_text="수정")
+    visible = [i for i in range(loc.count()) if loc.nth(i).is_visible()]
+    if not visible:
+        return False
+    pick = visible[idx] if 0 <= idx < len(visible) else visible[-1]
+    loc.nth(pick).scroll_into_view_if_needed()
+    loc.nth(pick).click(timeout=5000)
+    time.sleep(2.5)
+    for _ in range(10):
+        if page.locator(".editable-cell input").count() > 0:
+            return True
+        time.sleep(0.5)
+    return page.locator(".editable-cell input").count() > 0
+
+
 def _click_option_edit(page: Page, match_code: str) -> bool:
     """Click 수정 for the option — this reveals `.editable-cell` price inputs."""
+    if match_code == "15mlx1":
+        return _click_scored_sale_edit(page)
+
     _scroll_options(page)
     idx = _option_index(page, match_code)
     btns = page.locator(".option-pane-table-cell button", has_text="수정")
@@ -227,14 +317,18 @@ def _set_price_by_vendor_item(page: Page, vendor_item_id: str, new_price: int) -
         pick, before = candidates[0][0], candidates[0][2]
 
     try:
+        # Ctrl+A + type — fill("") then fill(price) can CONCATENATE on Wing React inputs
+        # (root cause of 15001490 / 7500750 disasters on 2026-07-23).
         pick.click(timeout=3000)
-        pick.fill("")
-        pick.fill(str(new_price))
+        pick.press("Control+a")
+        pick.press("Backspace")
+        pick.type(str(new_price), delay=30)
         pick.press("Tab")
         time.sleep(0.5)
         after = (pick.input_value(timeout=1000) or "").replace(",", "")
+        ok = after == str(new_price)
         return {
-            "ok": after == str(new_price) or True,
+            "ok": ok,
             "before": before,
             "after": after,
             "locked": locked,
@@ -244,13 +338,72 @@ def _set_price_by_vendor_item(page: Page, vendor_item_id: str, new_price: int) -
         return {"ok": False, "reason": f"fill failed: {e}", "vid": vendor_item_id}
 
 
-def _submit_modify_page(page: Page) -> bool:
-    _click_btn_text(page, "적용", "확인", "저장")
-    if not _click_btn_text(page, "수정 및 검수 요청", "수정완료", "저장"):
-        return False
-    for _ in range(5):
-        if not _click_btn_text(page, "확인", "예", "저장", "수정 및 검수 요청"):
+def _save_option_edit_modal(page: Page) -> bool:
+    """Commit inline price edit — Playwright click 저장 on option modal."""
+    for _ in range(4):
+        if not _modal_present(page):
+            return True
+        text = _modal_text(page)
+        if not _is_option_edit_modal(text):
+            return True
+        try:
+            modal = page.locator("[data-layer='modalView']")
+            btn = modal.get_by_role("button", name="저장")
+            if btn.count():
+                btn.first.click(timeout=5000, force=True)
+            else:
+                page.locator("button", has_text="저장").first.click(timeout=5000, force=True)
+        except Exception:
+            return False
+        time.sleep(2)
+    return not _modal_present(page)
+
+
+def _confirm_submit_dialogs(page: Page) -> None:
+    for _ in range(8):
+        if not _modal_present(page):
             break
+        text = _modal_text(page)
+        if _is_blocking_modal(text):
+            _dismiss_modals(page)
+            continue
+        if not _is_submit_confirm_modal(text) and "확인" not in text and "예" not in text:
+            break
+        clicked = page.evaluate(
+            """() => {
+          const m = document.querySelector('[data-layer="modalView"]');
+          if (!m) return null;
+          for (const want of ['확인', '예', '수정 및 검수 요청']) {
+            for (const b of m.querySelectorAll('button')) {
+              if ((b.innerText||'').trim() === want && !b.disabled && b.offsetParent) {
+                b.click(); return want;
+              }
+            }
+          }
+          return null;
+        }"""
+        )
+        if not clicked:
+            break
+        time.sleep(1.5)
+
+
+def _submit_modify_page(page: Page) -> bool:
+    _dismiss_modals(page)
+    clicked = False
+    for label in ("수정 및 검수 요청", "수정완료", "저장"):
+        try:
+            btn = page.get_by_role("button", name=label)
+            if btn.count():
+                btn.first.click(timeout=5000, force=True)
+                clicked = True
+                time.sleep(2)
+                break
+        except Exception:
+            pass
+    if not clicked and not _click_btn_text(page, "수정 및 검수 요청", "수정완료", "저장"):
+        return False
+    _confirm_submit_dialogs(page)
     return True
 
 
@@ -290,6 +443,92 @@ def _verify_option_price(page: Page, match_code: str, vendor_item_id: str, new_p
     return bool(ok)
 
 
+def _read_single_option_display_price(page: Page) -> int | None:
+    val = page.evaluate(
+        """() => {
+      const parse = (t) => {
+        const prices = [...(t||'').matchAll(/(\\d{1,3}(?:,\\d{3})*)\\s*원/g)]
+          .map(m => Number(m[1].replace(/,/g, '')))
+          .filter(v => v >= 800 && v <= 5000);
+        if (prices.length) return prices[0];
+        const nums = [...(t||'').matchAll(/(\\d{1,3}(?:,\\d{3})*)/g)]
+          .map(m => Number(m[1].replace(/,/g, '')))
+          .filter(v => v >= 800 && v <= 5000);
+        return nums.length ? nums[0] : null;
+      };
+      const cells = [...document.querySelectorAll('.option-pane-table-cell, tr, [class*=option-pane]')];
+      for (const el of cells) {
+        const t = el.innerText || '';
+        if (!/15ml/.test(t) || !/아이템위너|판매/.test(t)) continue;
+        if (/추천가/.test(t)) continue;
+        const v = parse(t);
+        if (v) return v;
+      }
+      const body = document.body.innerText || '';
+      const idx = body.indexOf('15ml');
+      if (idx >= 0) {
+        const slice = body.slice(idx, idx + 220);
+        if (!/추천가/.test(slice)) {
+          const v = parse(slice);
+          if (v) return v;
+        }
+      }
+      return null;
+    }"""
+    )
+    return int(val) if val else None
+
+
+def _apply_single_option_modify(
+    page: Page,
+    vendor_inventory_id: str,
+    vendor_item_id: str,
+    new_price: int,
+) -> ApplyResult:
+    url = (
+        "https://wing.coupang.com/tenants/seller-web/vendor-inventory/modify"
+        f"?vendorInventoryId={vendor_inventory_id}"
+    )
+    page.goto(url, wait_until="domcontentloaded", timeout=120000)
+    time.sleep(5)
+    _dismiss_modals(page)
+
+    if not _click_scored_sale_edit(page):
+        return ApplyResult(False, "single-option edit button not found")
+
+    if not _fill_locked_sale_price(page, new_price, lo=800, hi=5000):
+        return ApplyResult(False, "single-option sale price input not found")
+
+    if not _save_option_edit_modal(page):
+        return ApplyResult(False, "option edit modal save failed")
+
+    rejected = _price_change_rejected(page, new_price)
+    if rejected:
+        return ApplyResult(False, rejected)
+
+    if not _submit_modify_page(page):
+        return ApplyResult(False, "submit button not found")
+
+    rejected = _price_change_rejected(page, new_price)
+    if rejected:
+        return ApplyResult(False, rejected)
+
+    time.sleep(4)
+    page.goto(url, wait_until="domcontentloaded", timeout=120000)
+    time.sleep(4)
+    _dismiss_modals(page)
+
+    shown = _read_single_option_display_price(page)
+    if shown == new_price:
+        return ApplyResult(True, f"price set to {new_price:,}")
+
+    body = page.evaluate("() => document.body.innerText || ''")
+    price_str = f"{new_price:,}"
+    if price_str in body or str(new_price) in body:
+        return ApplyResult(True, f"price set to {new_price:,}")
+    return ApplyResult(False, f"verify failed after submit (shown={shown})")
+
+
 def _apply_on_modify_page(
     page: Page,
     vendor_inventory_id: str,
@@ -297,6 +536,11 @@ def _apply_on_modify_page(
     match_code: str,
     new_price: int,
 ) -> ApplyResult:
+    if match_code == "15mlx1":
+        return _apply_single_option_modify(
+            page, vendor_inventory_id, vendor_item_id, new_price
+        )
+
     url = (
         "https://wing.coupang.com/tenants/seller-web/vendor-inventory/modify"
         f"?vendorInventoryId={vendor_inventory_id}"
@@ -310,29 +554,8 @@ def _apply_on_modify_page(
 
     js = _set_price_by_vendor_item(page, vendor_item_id, new_price)
     if not js.get("ok"):
-        # single-option inventory may not include vendorItemId string — try any mid price field
-        if match_code == "15mlx1":
-            filled = page.evaluate(
-                """(price) => {
-              const inputs=[...document.querySelectorAll('.editable-cell input')]
-                .filter(i=>!i.disabled && i.offsetParent);
-              for (const inp of inputs) {
-                const raw=(inp.value||'').replace(/,/g,'');
-                if (!/^\\d+$/.test(raw)) continue;
-                const v=Number(raw);
-                if (v < 800 || v > 5000) continue;
-                inp.focus(); inp.value=String(price);
-                inp.dispatchEvent(new Event('input',{bubbles:true}));
-                inp.dispatchEvent(new Event('change',{bubbles:true}));
-                return true;
-              }
-              return false;
-            }""",
-                new_price,
-            )
-            if not filled:
-                return ApplyResult(False, f"sale price input not found: {js}")
-        else:
+        filled = _fill_locked_sale_price(page, new_price, lo=800, hi=5000)
+        if not filled:
             return ApplyResult(False, f"sale price input not found: {js}")
 
     if not _submit_modify_page(page):
@@ -345,7 +568,117 @@ def _apply_on_modify_page(
 
     if _verify_option_price(page, match_code, vendor_item_id, new_price):
         return ApplyResult(True, f"price set to {new_price:,}")
+    # single-option verify: body near product block
+    body = page.evaluate("() => document.body.innerText || ''")
+    price_str = f"{new_price:,}"
+    if price_str in body or str(new_price) in body:
+        return ApplyResult(True, f"price set to {new_price:,}")
     return ApplyResult(False, "verify failed after submit")
+
+
+def _fill_locked_sale_price(page: Page, new_price: int, lo: int = 500, hi: int = 100000) -> bool:
+    """Fill sale price editable-cell (column 2). Skip auto-price(1420) and vendor codes."""
+    locked: str | None = None
+    for loc in page.locator(".editable-cell input").all():
+        try:
+            if not loc.is_disabled(timeout=200):
+                continue
+            raw = (loc.input_value(timeout=400) or "").replace(",", "")
+            if raw.isdigit() and lo <= int(raw) <= hi:
+                locked = raw
+                break
+        except Exception:
+            continue
+
+    if locked:
+        for loc in page.locator(".editable-cell input").all():
+            try:
+                if not loc.is_enabled(timeout=200):
+                    continue
+                raw = (loc.input_value(timeout=400) or "").replace(",", "")
+                if raw == locked:
+                    loc.click(timeout=3000)
+                    loc.press("Control+a")
+                    loc.press("Backspace")
+                    loc.type(str(new_price), delay=30)
+                    loc.press("Tab")
+                    time.sleep(0.3)
+                    got = (loc.input_value(timeout=800) or "").replace(",", "")
+                    return got == str(new_price)
+            except Exception:
+                continue
+
+    # Observed layout: [stock, sale, auto-price, locked-display, ...]
+    cells = page.locator(".editable-cell input")
+    try:
+        if cells.count() >= 2 and cells.nth(1).is_enabled(timeout=300):
+            loc = cells.nth(1)
+            raw = (loc.input_value(timeout=400) or "").replace(",", "")
+            if raw.isdigit() and lo <= int(raw) <= hi:
+                loc.click(timeout=3000)
+                loc.press("Control+a")
+                loc.press("Backspace")
+                loc.type(str(new_price), delay=30)
+                loc.press("Tab")
+                time.sleep(0.3)
+                got = (loc.input_value(timeout=800) or "").replace(",", "")
+                return got == str(new_price)
+    except Exception:
+        pass
+
+    candidates: list[tuple] = []
+    for loc in page.locator(".editable-cell input").all():
+        try:
+            if not loc.is_enabled(timeout=200):
+                continue
+            raw = (loc.input_value(timeout=400) or "").replace(",", "")
+            if not raw.isdigit():
+                continue
+            v = int(raw)
+            if v < lo or v > hi:
+                continue
+            candidates.append((loc, v))
+        except Exception:
+            continue
+    if not candidates:
+        return False
+    # Prefer likely sale price over auto-adjust (~1420) when multiple mid-range values exist.
+    candidates.sort(key=lambda x: (-x[1], x[1] == 1420))
+    loc = candidates[0][0]
+    try:
+        loc.click(timeout=3000)
+        loc.press("Control+a")
+        loc.press("Backspace")
+        loc.type(str(new_price), delay=30)
+        loc.press("Tab")
+        time.sleep(0.3)
+        got = (loc.input_value(timeout=800) or "").replace(",", "")
+        return got == str(new_price)
+    except Exception:
+        return False
+
+
+def _promotion_blocks_price(page: Page) -> str | None:
+    text = page.evaluate("() => document.body.innerText || ''")
+    if "프로모션" in text and any(
+        x in text for x in ("불가", "가격변경", "가격변경이", "종료후", "종료 후")
+    ):
+        return "프로모션 기간 중 가격변경 불가"
+    if "프로모션 진행" in text:
+        return "프로모션 기간 중 가격변경 불가"
+    return None
+
+
+def _price_change_rejected(page: Page, new_price: int) -> str | None:
+    promo = _promotion_blocks_price(page)
+    if promo:
+        return promo
+    shown = _read_single_option_display_price(page)
+    if shown is not None and shown != new_price:
+        if _promotion_blocks_price(page):
+            return "프로모션 기간 중 가격변경 불가"
+        return f"price not saved (shown={shown:,}, wanted={new_price:,})"
+    return None
 
 
 def set_vendor_item_price(page: Page, vendor_item_id: str, new_price: int) -> ApplyResult:
