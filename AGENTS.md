@@ -40,3 +40,15 @@
 ## 출력 파일
 - `SEO_RECOVERY_*.txt`, `seo_history/*.json`
 - `STIX_*.xlsx`, `MD_*.txt` — 스크립트 실행 시 루트에 생성
+
+## Cursor Cloud specific instructions
+
+단일 Python(3.12) 제품: **STIX Commerce AI** — 멀티몰 MD 분석 엔진 + FastAPI 웹 Operations Center. 진입점은 `md_commerce_ai.py`. 표준 명령은 `README.md`, `.cursor/cloud-install.sh` 참고.
+
+- **의존성**: Ubuntu 24.04 시스템 파이썬(PEP 668)이라 `pip3 install --break-system-packages ...` 필요. 콘솔 스크립트(`uvicorn`/`playwright`)는 `~/.local/bin`(PATH 밖)에 설치되므로 직접 부르지 말고 `python3 md_commerce_ai.py ...` 또는 `python3 -m ...`로 실행.
+- **웹 실행**: `python3 md_commerce_ai.py --web` → http://localhost:3000/md (Operations Center). API 전용은 `--api` → :8088. 주요 엔드포인트: `/health`, `/api/md/ops`, `/api/md/report/daily`, `POST /api/md/daily`.
+- **테스트**: `python3 -m unittest discover -s commerce_ai/tests` (또는 `python3 md_commerce_ai.py --test`). API 스모크 테스트가 Starlette `TestClient`를 쓰므로 `httpx`가 필요 (requirements.txt 테스트 섹션에 포함). 최신 Starlette가 "install httpx2" deprecation 경고를 내지만 `httpx`로 정상 동작.
+- **린트**: 저장소에 린트 도구/설정 없음. 문법 점검은 `python3 -m compileall commerce_ai seo_engine item_winner *.py`.
+- **데이터**: `쇼핑몰별 전체상품/` 엑셀이 Git에 포함되어 clone 즉시 분석 가능(~7,853 상품). Cloud에서 별도 업로드 불필요.
+- **Playwright 브라우저**: `playwright install chromium`(브라우저 바이너리)은 로컬 CDP 스크래핑(Chrome 9233) 전용. Cloud의 웹/분석/리포트에는 불필요하므로 기동 속도를 위해 건너뛰어도 됨(규칙 #3 참고).
+- **런타임 산출물 주의**: `--batch`/`--autonomous`/`--daily-report` 실행 시 `commerce_history/`의 추적 파일들(jsonl/json)이 수정되고 `commerce_history/daily/`에 리포트가 생성됨. 커밋 전 `git checkout -- .` 및 `git clean -fd commerce_history/daily`로 정리할 것.

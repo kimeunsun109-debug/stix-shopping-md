@@ -9,3 +9,6 @@ xlrd>=2.0.1
 
 # Optional: CDP / marketplace collectors
 playwright>=1.40.0
+
+# Test-only: FastAPI/Starlette TestClient (commerce_ai/tests API smoke test)
+httpx>=0.27.0
