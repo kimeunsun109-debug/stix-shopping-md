@@ -40,3 +40,9 @@
 ## 출력 파일
 - `SEO_RECOVERY_*.txt`, `seo_history/*.json`
 - `STIX_*.xlsx`, `MD_*.txt` — 스크립트 실행 시 루트에 생성
+
+## 스마트스토어 등록정보 (태그·브랜드)
+- 엑셀 생성: `python md_smartstore_registration_review.py`
+- 태그 반영(CDP 9233): `python md_smartstore_registration_apply.py --mode tags --start 30`
+- 1→2→3 일괄: `python md_smartstore_tags_run_123.py` (로컬 CDP 필수)
+- 30건 대조: `python md_smartstore_tag_reconcile.py --live`
