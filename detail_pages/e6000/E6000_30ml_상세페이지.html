@@ -8,135 +8,44 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --ink: #141414;
-      --mute: #5a5a5a;
-      --paper: #f7f7f8;
-      --line: rgba(20, 20, 20, 0.1);
-      --red: #d71920;
-      --max: 860px;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: "Noto Sans KR", system-ui, sans-serif;
-      color: var(--ink);
-      background: #fff;
-      line-height: 1.6;
-    }
-    .detail-wrap { max-width: var(--max); margin: 0 auto; }
-    .capture-area { overflow: hidden; }
-    .section-title {
-      font-family: Outfit, "Noto Sans KR", sans-serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--red);
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    .hero {
-      position: relative;
-      background: linear-gradient(180deg, #f3f3f5 0%, #e8e8ec 100%);
-      padding: 44px 28px 0;
-      text-align: center;
-    }
-    .hero .badge {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.22em;
-      color: var(--red);
-      border: 2px solid var(--red);
-      padding: 5px 14px;
-      margin-bottom: 18px;
-    }
-    .hero h1 {
-      font-size: clamp(1.5rem, 5vw, 2rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      line-height: 1.25;
-      margin-bottom: 10px;
-    }
-    .hero .sub { color: var(--mute); font-size: 0.98rem; margin-bottom: 24px; }
-    .hero img { width: 100%; display: block; }
-    .panel { padding: 44px 28px; border-bottom: 1px solid var(--line); }
-    .panel h2 {
-      font-size: clamp(1.2rem, 3.5vw, 1.55rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 14px;
-    }
-    .panel .lead { color: var(--mute); margin-bottom: 22px; }
-    .size-card {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      text-align: center;
-    }
-    .size-card div {
-      padding: 18px 10px;
-      border: 1px solid var(--line);
-      border-radius: 4px;
-    }
-    .size-card .active {
-      border-color: var(--red);
-      background: rgba(215, 25, 32, 0.04);
-    }
-    .size-card strong {
-      display: block;
-      font-family: Outfit, sans-serif;
-      font-size: 1.2rem;
-      margin-bottom: 4px;
-    }
-    .size-card span { font-size: 0.82rem; color: var(--mute); font-weight: 600; }
-    .media { width: 100%; display: block; border-radius: 4px; background: var(--paper); }
-    .points {
-      list-style: none;
-      display: grid;
-      gap: 12px;
-    }
-    .points li {
-      display: grid;
-      grid-template-columns: 2rem 1fr;
-      gap: 10px;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--line);
-      font-weight: 600;
-    }
-    .points li span {
-      font-family: Outfit, sans-serif;
-      font-weight: 800;
-      color: var(--red);
-    }
-    .spec-grid {
-      display: grid;
-      grid-template-columns: 110px 1fr;
-      gap: 0;
-      border-top: 1px solid var(--line);
-      font-size: 0.95rem;
-    }
-    .spec-grid div { padding: 12px 0; border-bottom: 1px solid var(--line); }
-    .spec-grid dt { font-weight: 700; color: var(--mute); }
-    .spec-grid dd { font-weight: 600; }
-    .faq details { border-bottom: 1px solid var(--line); padding: 14px 0; }
-    .faq summary { cursor: pointer; font-weight: 700; list-style: none; }
-    .faq summary::-webkit-details-marker { display: none; }
-    .faq p { margin-top: 8px; color: var(--mute); font-size: 0.95rem; }
-    .closing {
-      background: linear-gradient(160deg, #1a1a1a 0%, #2a2a2a 100%);
-      color: #fff;
-      text-align: center;
-    }
-    .closing h2 { color: #fff; margin-bottom: 10px; }
-    .closing p { color: rgba(255,255,255,0.75); }
-    .brand-foot {
-      margin-top: 20px;
-      font-family: Outfit, sans-serif;
-      font-weight: 800;
-      letter-spacing: 0.2em;
-      font-size: 0.85rem;
-      color: var(--red);
-    }
+    :root { --ink:#141414; --mute:#5a5a5a; --paper:#f7f7f8; --line:rgba(20,20,20,.1); --red:#d71920; --max:860px; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:"Noto Sans KR",system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+    .detail-wrap{max-width:var(--max);margin:0 auto}
+    .capture-area{overflow:hidden}
+    .section-title{font-family:Outfit,"Noto Sans KR",sans-serif;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:10px}
+    .hero{background:linear-gradient(180deg,#f3f3f5 0%,#e8e8ec 100%);padding:44px 28px 0;text-align:center}
+    .hero .badge{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.22em;color:var(--red);border:2px solid var(--red);padding:5px 14px;margin-bottom:18px}
+    .hero h1{font-size:clamp(1.5rem,5vw,2rem);font-weight:800;letter-spacing:-.02em;line-height:1.25;margin-bottom:10px}
+    .hero .sub{color:var(--mute);font-size:.98rem;margin-bottom:24px}
+    .hero img{width:100%;display:block}
+    .panel{padding:44px 28px;border-bottom:1px solid var(--line)}
+    .panel h2{font-size:clamp(1.2rem,3.5vw,1.55rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+    .panel .lead{color:var(--mute);margin-bottom:22px}
+    .size-card{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center}
+    .size-card div{padding:18px 10px;border:1px solid var(--line);border-radius:4px}
+    .size-card .active{border-color:var(--red);background:rgba(215,25,32,.04)}
+    .size-card strong{display:block;font-family:Outfit,sans-serif;font-size:1.2rem;margin-bottom:4px}
+    .size-card span{font-size:.82rem;color:var(--mute);font-weight:600}
+    .media{width:100%;display:block;border-radius:4px;background:var(--paper);margin-bottom:14px}
+    .use-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .use-grid img{width:100%;display:block;border-radius:4px}
+    .use-caption{margin-top:14px;font-size:.9rem;color:var(--mute);font-weight:600;text-align:center}
+    .points{list-style:none;display:grid;gap:12px}
+    .points li{display:grid;grid-template-columns:2rem 1fr;gap:10px;padding:14px 0;border-bottom:1px solid var(--line);font-weight:600}
+    .points li span{font-family:Outfit,sans-serif;font-weight:800;color:var(--red)}
+    .spec-grid{display:grid;grid-template-columns:110px 1fr;border-top:1px solid var(--line);font-size:.95rem}
+    .spec-grid div{padding:12px 0;border-bottom:1px solid var(--line)}
+    .spec-grid dt{font-weight:700;color:var(--mute)}
+    .spec-grid dd{font-weight:600}
+    .faq details{border-bottom:1px solid var(--line);padding:14px 0}
+    .faq summary{cursor:pointer;font-weight:700;list-style:none}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq p{margin-top:8px;color:var(--mute);font-size:.95rem}
+    .closing{background:linear-gradient(160deg,#1a1a1a 0%,#2a2a2a 100%);color:#fff;text-align:center}
+    .closing h2{color:#fff;margin-bottom:10px}
+    .closing p{color:rgba(255,255,255,.75)}
+    .brand-foot{margin-top:20px;font-family:Outfit,sans-serif;font-weight:800;letter-spacing:.2em;font-size:.85rem;color:var(--red)}
   </style>
 </head>
 <body>
@@ -146,13 +55,13 @@
     <div class="badge">DETAIL SIZE · 30ML</div>
     <h1>E6000 다용도 접착제<br>30ml 소용량</h1>
     <p class="sub">29.7ml / 1 fl.oz. · 디테일·테스트·소량 작업용</p>
-    <img src="images/e6000-30ml-lifestyle.jpg" alt="E6000 30ml 소용량 접착제 제품사진" />
+    <img src="images/e6000-30ml-front.jpg" alt="E6000 30ml 소용량 정면 제품사진" />
   </section>
 
   <section class="capture-area panel" id="sec-02">
     <p class="section-title">Size Guide</p>
     <h2>좁은 틈새·소량 작업엔<br>30ml가 딱 맞습니다</h2>
-    <p class="lead">보석십자수 큐빅 고정, 파츠·비즈·소품 수리처럼 정밀하게 쓰는 작업에 적합한 소용량입니다. 처음 써보거나 테스트할 때도 부담 없는 사이즈입니다.</p>
+    <p class="lead">보석십자수 큐빅 고정, 파츠·비즈·소품 수리처럼 정밀하게 쓰는 작업에 적합한 소용량입니다.</p>
     <div class="size-card">
       <div class="active"><strong>30ml</strong><span>디테일·테스트</span></div>
       <div><strong>110ml</strong><span>일반·대용량</span></div>
@@ -162,23 +71,35 @@
 
   <section class="capture-area panel" id="sec-03">
     <p class="section-title">Product Shot</p>
-    <h2>깔끔한 제품사진</h2>
-    <img class="media" src="images/e6000-30ml-white-hero.jpg" alt="E6000 30ml 화이트 배경 제품사진" style="margin-bottom:16px" />
-    <img class="media" src="images/e6000-30ml-thumb-1000.jpg" alt="E6000 30ml 썸네일용 제품사진" />
+    <h2>제품 사진</h2>
+    <img class="media" src="images/e6000-30ml-angle.jpg" alt="E6000 30ml 각도 제품사진" />
   </section>
 
   <section class="capture-area panel" id="sec-04">
+    <p class="section-title">Use Case</p>
+    <h2>실생활 활용</h2>
+    <p class="lead">소용량이라도 110ml와 동일한 Clear · Self-Leveling 성능으로 다양한 수리·공예에 활용됩니다.</p>
+    <div class="use-grid">
+      <img src="images/e6000-30ml-use-01.jpg" alt="E6000 30ml 도자기 수리" />
+      <img src="images/e6000-30ml-use-02.jpg" alt="E6000 30ml 신발 보수" />
+      <img src="images/e6000-30ml-use-03.jpg" alt="E6000 30ml 핸드메이드" />
+      <img src="images/e6000-30ml-use-04.jpg" alt="E6000 30ml DIY" />
+    </div>
+    <p class="use-caption">도자기 · 신발 · 핸드메이드 · DIY</p>
+  </section>
+
+  <section class="capture-area panel" id="sec-05">
     <p class="section-title">Why 30ml</p>
     <h2>소용량이 유리한 이유</h2>
     <ul class="points">
-      <li><span>01</span>노즐이 가늘어 좁은 틈·작은 부위 도포가 편함</li>
-      <li><span>02</span>한 번에 조금만 쓰는 작업 — 남은 양이 굳어도 아깝지 않음</li>
+      <li><span>01</span>노즐이 가늘어 좁은 틈새·작은 부위 도포가 편함</li>
+      <li><span>02</span>한 번에 조금만 쓰는 작업 — 남은 양이 굳어도 부담 없음</li>
       <li><span>03</span>여행·수업·키트 동봉용으로 가볍고 컴팩트</li>
       <li><span>04</span>110ml와 동일한 Clear · Self-Leveling 성능</li>
     </ul>
   </section>
 
-  <section class="capture-area panel" id="sec-05">
+  <section class="capture-area panel" id="sec-06">
     <p class="section-title">Specification</p>
     <h2>제품 사양</h2>
     <dl class="spec-grid">
@@ -192,20 +113,20 @@
     </dl>
   </section>
 
-  <section class="capture-area panel" id="sec-06">
+  <section class="capture-area panel" id="sec-07">
     <p class="section-title">FAQ</p>
     <h2>자주 묻는 질문</h2>
     <div class="faq">
       <details><summary>29.7ml와 30ml 표기가 다른 이유는?</summary>
-        <p>제품 라벨에 29.7ml (1 fl.oz.)로 표기되며, 판매 시 30ml로 안내하는 경우가 많습니다. 동일 제품입니다.</p></details>
+        <p>제품 라벨에 29.7ml (1 fl.oz.)로 표기되며, 판매 시 30ml로 안내하는 경우가 많습니다.</p></details>
       <details><summary>한 번 열면 얼마나 쓸 수 있나요?</summary>
-        <p>작업량에 따라 다르지만, 큐빅·파츠 소량 접착 기준으로 수십 회 사용 가능합니다. 개봉 후 뚜껑을 꼭 닫아 보관하세요.</p></details>
+        <p>큐빅·파츠 소량 접착 기준으로 수십 회 사용 가능합니다. 개봉 후 뚜껑을 꼭 닫아 보관하세요.</p></details>
       <details><summary>어린이 공예용으로 괜찮나요?</summary>
-        <p>휘발성 성분이 있어 환기가 필요합니다. 어린이 단독 사용은 권장하지 않으며, 보호자 동반·환기된 공간에서 사용해 주세요.</p></details>
+        <p>휘발성 성분이 있어 환기가 필요합니다. 보호자 동반·환기된 공간에서 사용해 주세요.</p></details>
     </div>
   </section>
 
-  <section class="capture-area panel closing" id="sec-07">
+  <section class="capture-area panel closing" id="sec-08">
     <h2>스팃스 STIX · E6000 30ml</h2>
     <p>소용량 다용도 접착제 · 디테일 작업 최적</p>
     <p class="brand-foot">STIX</p>

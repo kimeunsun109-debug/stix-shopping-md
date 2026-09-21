@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""E6000 상세페이지용 제품사진 정리 · HTML 출력 경로 확인."""
+"""상세페이지 필요 폴더 원본 → 보정 JPG 변환."""
 from __future__ import annotations
 
 from pathlib import Path
@@ -7,106 +7,119 @@ from pathlib import Path
 from PIL import Image, ImageEnhance, ImageFilter, ImageOps
 
 ROOT = Path(__file__).resolve().parent
-ASSETS = Path(r"C:\Users\user\.cursor\projects\C-Users-user-stix-shopping-md\assets")
+SRC_ROOT = Path(r"C:\Users\user\OneDrive\Desktop\상세페이지사진\상세페이지 필요")
 OUT = ROOT / "detail_pages" / "e6000" / "images"
 
-SOURCES = {
-    "usa_e6000": ASSETS / "99538466-B1C8-454A-BC13-8150695B8263_L0_001.jpg",
-    "e6000_110ml": ASSETS / "CE924CD2-86BD-4EC6-A46F-C5A7A30F77FB_L0_001.jpg",
-    "e6000_30ml": ASSETS / "72D8B26D-CA7C-4779-BFAB-EB963F265EB2_L0_001.jpg",
-}
+MAX_WIDTH = 1400
+THUMB_SIZE = 1000
+JPG_QUALITY = 93
 
 
-def _enhance(img: Image.Image) -> Image.Image:
-    rgb = img.convert("RGB")
-    rgb = ImageEnhance.Contrast(rgb).enhance(1.06)
+def _to_rgb(img: Image.Image, bg: tuple[int, int, int] = (255, 255, 255)) -> Image.Image:
+    if img.mode in ("RGBA", "LA") or (img.mode == "P" and "transparency" in img.info):
+        base = Image.new("RGB", img.size, bg)
+        rgba = img.convert("RGBA")
+        base.paste(rgba, mask=rgba.split()[-1])
+        return base
+    return img.convert("RGB")
+
+
+def _retouch(img: Image.Image, *, rotate: int = 0) -> Image.Image:
+    rgb = _to_rgb(img)
+    if rotate:
+        rgb = rgb.rotate(rotate, expand=True)
+    rgb = ImageOps.autocontrast(rgb, cutoff=1)
+    rgb = ImageEnhance.Brightness(rgb).enhance(1.02)
+    rgb = ImageEnhance.Contrast(rgb).enhance(1.05)
     rgb = ImageEnhance.Color(rgb).enhance(1.04)
-    rgb = ImageEnhance.Sharpness(rgb).enhance(1.12)
+    rgb = ImageEnhance.Sharpness(rgb).enhance(1.18)
+    if rgb.width > MAX_WIDTH:
+        ratio = MAX_WIDTH / rgb.width
+        rgb = rgb.resize(
+            (MAX_WIDTH, int(rgb.height * ratio)),
+            Image.Resampling.LANCZOS,
+        )
     return rgb
 
 
-def _trim_overlay_text(img: Image.Image, bottom_ratio: float = 0.14) -> Image.Image:
-    w, h = img.size
-    crop_h = int(h * (1 - bottom_ratio))
-    return img.crop((0, 0, w, crop_h))
+def _save(img: Image.Image, path: Path) -> Path:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    img.save(path, format="JPEG", quality=JPG_QUALITY, optimize=True, progressive=True)
+    return path
 
 
-def _on_canvas(
-    product: Image.Image,
-    canvas_size: tuple[int, int],
-    bg: tuple[int, int, int] = (245, 245, 247),
-    scale: float = 0.82,
-) -> Image.Image:
-    canvas = Image.new("RGB", canvas_size, bg)
-    pw, ph = product.size
-    target_w = int(canvas_size[0] * scale)
-    target_h = int(ph * target_w / pw)
-    if target_h > int(canvas_size[1] * scale):
-        target_h = int(canvas_size[1] * scale)
-        target_w = int(pw * target_h / ph)
-    resized = product.resize((target_w, target_h), Image.Resampling.LANCZOS)
-    shadow = Image.new("RGBA", (target_w + 40, target_h + 40), (0, 0, 0, 0))
-    mask = Image.new("L", resized.size, 0)
-    mask_draw = Image.new("L", resized.size, 180)
-    shadow.paste((0, 0, 0, 55), (18, 22), mask_draw)
-    shadow = shadow.filter(ImageFilter.GaussianBlur(12))
-    x = (canvas_size[0] - target_w) // 2
-    y = (canvas_size[1] - target_h) // 2
-    canvas_rgba = canvas.convert("RGBA")
-    canvas_rgba.alpha_composite(shadow, (x - 10, y - 8))
-    canvas_rgba.paste(resized, (x, y))
-    return canvas_rgba.convert("RGB")
+def _thumb(img: Image.Image, path: Path) -> Path:
+    square = ImageOps.fit(img, (THUMB_SIZE, THUMB_SIZE), method=Image.Resampling.LANCZOS, centering=(0.5, 0.45))
+    return _save(square, path)
 
 
-def _square_thumb(img: Image.Image, size: int = 1000) -> Image.Image:
-    return ImageOps.fit(img, (size, size), method=Image.Resampling.LANCZOS, centering=(0.5, 0.45))
+def _process(src: Path, dst: Path, *, rotate: int = 0, make_thumb: bool = False) -> dict[str, Path]:
+    img = _retouch(Image.open(src), rotate=rotate)
+    out = {"main": _save(img, dst)}
+    if make_thumb:
+        thumb_path = dst.with_name(dst.stem + "-thumb-1000.jpg")
+        out["thumb"] = _thumb(img, thumb_path)
+    return out
 
 
-def build_usa_e6000() -> dict[str, Path]:
-    src = Image.open(SOURCES["usa_e6000"])
-    hero = _enhance(src)
-    hero_path = OUT / "usa-e6000-front-back-hero.jpg"
-    hero.save(hero_path, quality=94, optimize=True)
+def build_all() -> dict[str, dict[str, Path]]:
+    usa = SRC_ROOT / "usa e6000"
+    g110 = SRC_ROOT / "e6000 110g"
+    g30 = SRC_ROOT / "e6000 30g"
 
-    thumb = _square_thumb(hero, 1000)
-    thumb_path = OUT / "usa-e6000-thumb-1000.jpg"
-    thumb.save(thumb_path, quality=94, optimize=True)
+    results: dict[str, dict[str, Path]] = {}
 
-    white = _on_canvas(hero, (1200, 900), bg=(255, 255, 255), scale=0.88)
-    white_path = OUT / "usa-e6000-white-hero.jpg"
-    white.save(white_path, quality=94, optimize=True)
-    return {"hero": hero_path, "thumb": thumb_path, "white": white_path}
+    results["usa_e6000"] = {}
+    mapping_usa = [
+        (usa / "4.jpg", OUT / "usa-e6000-front-back.jpg", 0, True),
+        (usa / "1.jpg", OUT / "usa-e6000-front.jpg", 0, False),
+        (usa / "2.jpg", OUT / "usa-e6000-twin.jpg", 0, False),
+        (usa / "3.jpg", OUT / "usa-e6000-applicator.jpg", 0, False),
+        (usa / "제목 없는 디자인 (18).png", OUT / "usa-e6000-cap-detail.jpg", 0, False),
+    ]
+    for src, dst, rot, thumb in mapping_usa:
+        results["usa_e6000"].update(_process(src, dst, rotate=rot, make_thumb=thumb))
 
+    results["e6000_110ml"] = {}
+    mapping_110 = [
+        (g110 / "9.jpg", OUT / "e6000-110ml-cross.jpg", 0, True),
+        (g110 / "7.png", OUT / "e6000-110ml-front.jpg", 180, False),
+        (g110 / "3.png", OUT / "e6000-110ml-nozzle.jpg", 0, False),
+        (g110 / "6.png", OUT / "e6000-110ml-seal.jpg", 0, False),
+    ]
+    for src, dst, rot, thumb in mapping_110:
+        results["e6000_110ml"].update(_process(src, dst, rotate=rot, make_thumb=thumb))
 
-def build_tube_variant(key: str, prefix: str, bottom_ratio: float = 0.14) -> dict[str, Path]:
-    raw = Image.open(SOURCES[key])
-    trimmed = _trim_overlay_text(raw, bottom_ratio=bottom_ratio)
-    lifestyle = _enhance(trimmed)
-    lifestyle_path = OUT / f"{prefix}-lifestyle.jpg"
-    lifestyle.save(lifestyle_path, quality=94, optimize=True)
+    for i in range(1, 5):
+        src = g110 / f"활용{i}.png"
+        dst = OUT / f"e6000-110ml-use-0{i}.jpg"
+        results["e6000_110ml"][f"use_{i}"] = _process(src, dst)["main"]
 
-    white = _on_canvas(trimmed, (1200, 900), bg=(248, 248, 250), scale=0.78)
-    white_path = OUT / f"{prefix}-white-hero.jpg"
-    white.save(white_path, quality=94, optimize=True)
+    results["e6000_30ml"] = {}
+    mapping_30 = [
+        (g30 / "제품 정면 사진.png", OUT / "e6000-30ml-front.jpg", 0, True),
+        (g30 / "2.png", OUT / "e6000-30ml-angle.jpg", 0, False),
+    ]
+    for src, dst, rot, thumb in mapping_30:
+        results["e6000_30ml"].update(_process(src, dst, rotate=rot, make_thumb=thumb))
 
-    thumb = _square_thumb(white, 1000)
-    thumb_path = OUT / f"{prefix}-thumb-1000.jpg"
-    thumb.save(thumb_path, quality=94, optimize=True)
-    return {"lifestyle": lifestyle_path, "white": white_path, "thumb": thumb_path}
+    for i in range(1, 5):
+        src = g30 / f"활용{i}.png"
+        dst = OUT / f"e6000-30ml-use-0{i}.jpg"
+        results["e6000_30ml"][f"use_{i}"] = _process(src, dst)["main"]
+
+    return results
 
 
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    results = {
-        "usa_e6000": build_usa_e6000(),
-        "e6000_110ml": build_tube_variant("e6000_110ml", "e6000-110ml"),
-        "e6000_30ml": build_tube_variant("e6000_30ml", "e6000-30ml", bottom_ratio=0.15),
-    }
-    print("E6000 detail images saved:")
+    results = build_all()
+    print(f"Source: {SRC_ROOT}")
+    print(f"Output: {OUT}")
     for group, paths in results.items():
-        print(f"  [{group}]")
+        print(f"\n[{group}]")
         for name, path in paths.items():
-            print(f"    {name}: {path}")
+            print(f"  {name}: {path.name}")
 
 
 if __name__ == "__main__":

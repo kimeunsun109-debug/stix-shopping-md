@@ -8,151 +8,42 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --ink: #141414;
-      --mute: #5a5a5a;
-      --paper: #f7f7f8;
-      --line: rgba(20, 20, 20, 0.1);
-      --red: #d71920;
-      --silver: #b8bcc4;
-      --max: 860px;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: "Noto Sans KR", system-ui, sans-serif;
-      color: var(--ink);
-      background: #fff;
-      line-height: 1.6;
-    }
-    .detail-wrap { max-width: var(--max); margin: 0 auto; }
-    .capture-area { overflow: hidden; }
-    .section-title {
-      font-family: Outfit, "Noto Sans KR", sans-serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--red);
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    .hero {
-      position: relative;
-      background: linear-gradient(160deg, #1a1a1a 0%, #2d2d2d 55%, #111 100%);
-      color: #fff;
-      padding: 48px 28px 0;
-      text-align: center;
-    }
-    .hero .badge {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.22em;
-      color: var(--red);
-      border: 1px solid rgba(215, 25, 32, 0.55);
-      padding: 6px 14px;
-      margin-bottom: 18px;
-    }
-    .hero h1 {
-      font-size: clamp(1.5rem, 5vw, 2rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      line-height: 1.25;
-      margin-bottom: 10px;
-    }
-    .hero .sub {
-      color: rgba(255, 255, 255, 0.78);
-      font-size: 0.98rem;
-      margin-bottom: 28px;
-    }
-    .hero img {
-      width: 100%;
-      max-width: 720px;
-      display: block;
-      margin: 0 auto;
-    }
-    .panel {
-      padding: 44px 28px;
-      border-bottom: 1px solid var(--line);
-    }
-    .panel h2 {
-      font-size: clamp(1.2rem, 3.5vw, 1.55rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 14px;
-    }
-    .panel .lead { color: var(--mute); margin-bottom: 22px; }
-    .points {
-      list-style: none;
-      display: grid;
-      gap: 12px;
-    }
-    .points li {
-      display: grid;
-      grid-template-columns: 2rem 1fr;
-      gap: 10px;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--line);
-      font-weight: 600;
-    }
-    .points li span {
-      font-family: Outfit, sans-serif;
-      font-weight: 800;
-      color: var(--red);
-    }
-    .media {
-      width: 100%;
-      display: block;
-      border-radius: 4px;
-      background: var(--paper);
-    }
-    .spec-grid {
-      display: grid;
-      grid-template-columns: 110px 1fr;
-      gap: 0;
-      border-top: 1px solid var(--line);
-      font-size: 0.95rem;
-    }
-    .spec-grid div {
-      padding: 12px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .spec-grid dt { font-weight: 700; color: var(--mute); }
-    .spec-grid dd { font-weight: 600; }
-    .steps { list-style: none; display: grid; gap: 16px; }
-    .steps li {
-      display: grid;
-      grid-template-columns: 2.4rem 1fr;
-      gap: 12px;
-      align-items: start;
-    }
-    .steps .n {
-      width: 2.4rem; height: 2.4rem;
-      border-radius: 50%;
-      background: var(--ink);
-      color: #fff;
-      display: grid; place-items: center;
-      font-family: Outfit, sans-serif;
-      font-weight: 800;
-    }
-    .faq details { border-bottom: 1px solid var(--line); padding: 14px 0; }
-    .faq summary { cursor: pointer; font-weight: 700; list-style: none; }
-    .faq summary::-webkit-details-marker { display: none; }
-    .faq p { margin-top: 8px; color: var(--mute); font-size: 0.95rem; }
-    .closing {
-      background: linear-gradient(160deg, #1a1a1a 0%, #2a2a2a 100%);
-      color: #fff;
-      text-align: center;
-    }
-    .closing h2 { color: #fff; margin-bottom: 10px; }
-    .closing p { color: rgba(255,255,255,0.75); }
-    .brand-foot {
-      margin-top: 20px;
-      font-family: Outfit, sans-serif;
-      font-weight: 800;
-      letter-spacing: 0.2em;
-      font-size: 0.85rem;
-      color: var(--red);
-    }
+    :root { --ink:#141414; --mute:#5a5a5a; --paper:#f7f7f8; --line:rgba(20,20,20,.1); --red:#d71920; --max:860px; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:"Noto Sans KR",system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+    .detail-wrap{max-width:var(--max);margin:0 auto}
+    .capture-area{overflow:hidden}
+    .section-title{font-family:Outfit,"Noto Sans KR",sans-serif;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:10px}
+    .hero{background:linear-gradient(160deg,#1a1a1a 0%,#2d2d2d 55%,#111 100%);color:#fff;padding:48px 28px 0;text-align:center}
+    .hero .badge{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.22em;color:var(--red);border:1px solid rgba(215,25,32,.55);padding:6px 14px;margin-bottom:18px}
+    .hero h1{font-size:clamp(1.5rem,5vw,2rem);font-weight:800;letter-spacing:-.02em;line-height:1.25;margin-bottom:10px}
+    .hero .sub{color:rgba(255,255,255,.78);font-size:.98rem;margin-bottom:28px}
+    .hero img{width:100%;display:block}
+    .panel{padding:44px 28px;border-bottom:1px solid var(--line)}
+    .panel h2{font-size:clamp(1.2rem,3.5vw,1.55rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+    .panel .lead{color:var(--mute);margin-bottom:22px}
+    .points{list-style:none;display:grid;gap:12px}
+    .points li{display:grid;grid-template-columns:2rem 1fr;gap:10px;padding:14px 0;border-bottom:1px solid var(--line);font-weight:600}
+    .points li span{font-family:Outfit,sans-serif;font-weight:800;color:var(--red)}
+    .media{width:100%;display:block;border-radius:4px;background:var(--paper)}
+    .grid-2{display:grid;gap:14px}
+    .use-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .use-grid img{width:100%;display:block;border-radius:4px}
+    .spec-grid{display:grid;grid-template-columns:110px 1fr;border-top:1px solid var(--line);font-size:.95rem}
+    .spec-grid div{padding:12px 0;border-bottom:1px solid var(--line)}
+    .spec-grid dt{font-weight:700;color:var(--mute)}
+    .spec-grid dd{font-weight:600}
+    .steps{list-style:none;display:grid;gap:16px}
+    .steps li{display:grid;grid-template-columns:2.4rem 1fr;gap:12px;align-items:start}
+    .steps .n{width:2.4rem;height:2.4rem;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:Outfit,sans-serif;font-weight:800}
+    .faq details{border-bottom:1px solid var(--line);padding:14px 0}
+    .faq summary{cursor:pointer;font-weight:700;list-style:none}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq p{margin-top:8px;color:var(--mute);font-size:.95rem}
+    .closing{background:linear-gradient(160deg,#1a1a1a 0%,#2a2a2a 100%);color:#fff;text-align:center}
+    .closing h2{color:#fff;margin-bottom:10px}
+    .closing p{color:rgba(255,255,255,.75)}
+    .brand-foot{margin-top:20px;font-family:Outfit,sans-serif;font-weight:800;letter-spacing:.2em;font-size:.85rem;color:var(--red)}
   </style>
 </head>
 <body>
@@ -161,43 +52,55 @@
   <section class="capture-area hero" id="sec-01">
     <div class="badge">USA OFFICIAL · 110ML</div>
     <h1>USA E6000<br>정품 다용도 접착제 110ml</h1>
-    <p class="sub">Industrial Strength · Self-Leveling · Clear Medium Viscosity</p>
-    <img src="images/usa-e6000-front-back-hero.jpg" alt="USA E6000 110ml 정품 접착제 앞뒤 제품사진" />
+    <p class="sub">Industrial Strength · High Transparency · Self-Leveling</p>
+    <img src="images/usa-e6000-front-back.jpg" alt="USA E6000 110ml 정품 앞뒤 제품사진" />
   </section>
 
   <section class="capture-area panel" id="sec-02">
     <p class="section-title">Why E6000</p>
     <h2>미국 정품 USA E6000,<br>한 번 붙으면 오래 갑니다</h2>
-    <p class="lead">보석십자수·핸드메이드·가죽·플라스틱·금속까지 폭넓게 쓰이는 산업용 다용도 접착제입니다. 투명하게 굳고 탄성이 있어 충격에도 강합니다.</p>
+    <p class="lead">보석십자수·핸드메이드·가죽·플라스틱·금속까지 폭넓게 쓰이는 산업용 다용도 접착제입니다. HIGH TRANSPARENCY 마킹으로 투명 마감이 뛰어납니다.</p>
     <ul class="points">
-      <li><span>01</span>방수 · 비연소 · 유연 · 도장 가능 4대 핵심 성능</li>
+      <li><span>01</span>방수 · 비연소 · 유연 · 도장 가능</li>
       <li><span>02</span>Self-Leveling 젤 타입 — 틈새까지 고르게 채움</li>
-      <li><span>03</span>건조 후 투명 마감, 백화 현상 최소</li>
+      <li><span>03</span>정밀 메탈 노즐 + 캡 내 핀 — 막힘 방지</li>
       <li><span>04</span>110ml 대용량 — DIY·수리·공예 작업에 충분</li>
     </ul>
   </section>
 
   <section class="capture-area panel" id="sec-03">
     <p class="section-title">Product Shot</p>
-    <h2>깔끔한 화이트 배경 제품컷</h2>
-    <p class="lead">썸네일·메인 이미지·상세 상단에 바로 쓸 수 있는 정리된 제품사진입니다.</p>
-    <img class="media" src="images/usa-e6000-white-hero.jpg" alt="USA E6000 110ml 화이트 배경 제품사진" />
+    <h2>제품 사진</h2>
+    <div class="grid-2">
+      <img class="media" src="images/usa-e6000-front.jpg" alt="USA E6000 110ml 정면 제품사진" />
+      <img class="media" src="images/usa-e6000-twin.jpg" alt="USA E6000 110ml 2개 세트 제품사진" />
+    </div>
   </section>
 
   <section class="capture-area panel" id="sec-04">
+    <p class="section-title">Detail</p>
+    <h2>정밀 노즐 &amp; 캡 디테일</h2>
+    <p class="lead">얇은 메탈 노즐로 좁은 틈새·디테일 작업이 편하고, 캡 안 핀이 노즐을 막아 건조를 방지합니다.</p>
+    <div class="grid-2">
+      <img class="media" src="images/usa-e6000-applicator.jpg" alt="USA E6000 정밀 노즐 디테일" />
+      <img class="media" src="images/usa-e6000-cap-detail.jpg" alt="USA E6000 캡 핀 디테일" />
+    </div>
+  </section>
+
+  <section class="capture-area panel" id="sec-05">
     <p class="section-title">Specification</p>
     <h2>제품 사양</h2>
     <dl class="spec-grid">
       <dt>브랜드</dt><dd>USA E6000 (정품)</dd>
       <dt>용량</dt><dd>110ml / 3.7 fl.oz.</dd>
       <dt>타입</dt><dd>Clear · Medium Viscosity</dd>
-      <dt>특징</dt><dd>Waterproof · Flexible · Paintable · Non-flammable</dd>
+      <dt>특징</dt><dd>Waterproof · Flexible · Paintable · Non-flammable · High Transparency</dd>
       <dt>권장 용도</dt><dd>보석십자수, 핸드메이드, 가죽·플라스틱·금속 접합, 소품 수리</dd>
       <dt>건조</dt><dd>표면 건조 약 10~20분 · 완전 경화 24~72시간</dd>
     </dl>
   </section>
 
-  <section class="capture-area panel" id="sec-05">
+  <section class="capture-area panel" id="sec-06">
     <p class="section-title">How to Use</p>
     <h2>올바른 사용 방법</h2>
     <ol class="steps">
@@ -208,20 +111,20 @@
     </ol>
   </section>
 
-  <section class="capture-area panel" id="sec-06">
+  <section class="capture-area panel" id="sec-07">
     <p class="section-title">FAQ</p>
     <h2>자주 묻는 질문</h2>
     <div class="faq">
       <details><summary>USA E6000과 일반 E6000 차이가 있나요?</summary>
-        <p>USA E6000은 미국 Eclectic Products 정품 라인으로, 공식 USA 마킹과 정품 포장이 확인됩니다. 성분·성능은 동일 계열의 Industrial Strength 제품입니다.</p></details>
+        <p>USA E6000은 미국 Eclectic Products 정품 라인으로, 공식 USA 마킹과 HIGH TRANSPARENCY 표기가 확인됩니다.</p></details>
       <details><summary>보석십자수에 써도 되나요?</summary>
-        <p>네. 투명하게 굳고 탄성이 있어 큐빅·비즈 고정, 캔버스 마감에 많이 사용됩니다. 소량만 도포하고 충분히 말려 주세요.</p></details>
+        <p>네. 투명하게 굳고 탄성이 있어 큐빅·비즈 고정, 캔버스 마감에 많이 사용됩니다.</p></details>
       <details><summary>냄새가 강한데 안전한가요?</summary>
-        <p>휘발성 성분이 있어 환기가 잘 되는 곳에서 사용하세요. 밀폐 공간·어린이 손이 닿는 곳에서는 사용을 피하는 것이 좋습니다.</p></details>
+        <p>휘발성 성분이 있어 환기가 잘 되는 곳에서 사용하세요. 밀폐 공간에서는 사용을 피하는 것이 좋습니다.</p></details>
     </div>
   </section>
 
-  <section class="capture-area panel closing" id="sec-07">
+  <section class="capture-area panel closing" id="sec-08">
     <h2>스팃스 STIX · USA E6000 110ml</h2>
     <p>정품 다용도 접착제 · 공예·수리·DIY 필수템</p>
     <p class="brand-foot">STIX</p>
