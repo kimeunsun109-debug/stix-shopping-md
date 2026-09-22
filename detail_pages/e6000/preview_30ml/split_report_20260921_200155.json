@@ -1,0 +1,94 @@
+{
+  "html": "C:\\Users\\user\\OneDrive\\Desktop\\쇼핑몰관리md\\detail_pages\\e6000\\E6000_30ml_상세페이지.html",
+  "out_dir": "C:\\Users\\user\\OneDrive\\Desktop\\쇼핑몰관리md\\detail_pages\\e6000\\preview_30ml",
+  "base_name": "E6000_30ml",
+  "section_count": 10,
+  "saved_count": 10,
+  "skipped_count": 0,
+  "sections": [
+    {
+      "index": 1,
+      "section_id": "sec-01",
+      "title": "E6000 다용도 접착제30ml 소용량",
+      "file": "E6000_30ml_01_E6000_다용도_접착제30ml_소용량.jpg",
+      "bytes": 57355,
+      "status": "saved"
+    },
+    {
+      "index": 2,
+      "section_id": "sec-02",
+      "title": "Size Guide",
+      "file": "E6000_30ml_02_Size_Guide.jpg",
+      "bytes": 91244,
+      "status": "saved"
+    },
+    {
+      "index": 3,
+      "section_id": "sec-03",
+      "title": "Product Shot",
+      "file": "E6000_30ml_03_Product_Shot.jpg",
+      "bytes": 28850,
+      "status": "saved"
+    },
+    {
+      "index": 4,
+      "section_id": "sec-04",
+      "title": "Cap Guide",
+      "file": "E6000_30ml_04_Cap_Guide.jpg",
+      "bytes": 90834,
+      "status": "saved"
+    },
+    {
+      "index": 5,
+      "section_id": "sec-05",
+      "title": "Use Case",
+      "file": "E6000_30ml_05_Use_Case.jpg",
+      "bytes": 132093,
+      "status": "saved"
+    },
+    {
+      "index": 6,
+      "section_id": "sec-06",
+      "title": "Curing Time",
+      "file": "E6000_30ml_06_Curing_Time.jpg",
+      "bytes": 67142,
+      "status": "saved"
+    },
+    {
+      "index": 7,
+      "section_id": "sec-07",
+      "title": "Why 30ml",
+      "file": "E6000_30ml_07_Why_30ml.jpg",
+      "bytes": 92930,
+      "status": "saved"
+    },
+    {
+      "index": 8,
+      "section_id": "sec-08",
+      "title": "Specification",
+      "file": "E6000_30ml_08_Specification.jpg",
+      "bytes": 152293,
+      "status": "saved"
+    },
+    {
+      "index": 9,
+      "section_id": "sec-09",
+      "title": "FAQ",
+      "file": "E6000_30ml_09_FAQ.jpg",
+      "bytes": 50655,
+      "status": "saved"
+    },
+    {
+      "index": 10,
+      "section_id": "sec-10",
+      "title": "스팃스 STIX · E6000 30ml",
+      "file": "E6000_30ml_10_스팃스_STIX_·_E6000_30ml.jpg",
+      "bytes": 7427,
+      "status": "saved"
+    }
+  ],
+  "errors": [
+    "일부 이미지 로딩 시간 초과 (계속 진행)"
+  ],
+  "created_at": "2026-09-21T20:01:55"
+}
