@@ -14,11 +14,13 @@
     .detail-wrap{max-width:var(--max);margin:0 auto}
     .capture-area{overflow:hidden}
     .section-title{font-family:Outfit,"Noto Sans KR",sans-serif;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:10px}
-    .hero{background:linear-gradient(180deg,#f3f3f5 0%,#e8e8ec 100%);padding:44px 28px 0;text-align:center}
+    .hero{background:#ececee;padding:44px 28px 0;text-align:center}
     .hero .badge{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.22em;color:var(--red);border:2px solid var(--red);padding:5px 14px;margin-bottom:18px}
     .hero h1{font-size:clamp(1.5rem,5vw,2rem);font-weight:800;letter-spacing:-.02em;line-height:1.25;margin-bottom:10px}
-    .hero .sub{color:var(--mute);font-size:.98rem;margin-bottom:24px}
-    .hero img{width:100%;display:block}
+    .hero .sub{color:var(--mute);font-size:.98rem;margin-bottom:24px;line-height:1.65}
+    .hero-image-wrap{margin:0 -28px;background:#ececee}
+    .hero img{width:100%;display:block;background:#ececee}
+    .hero-fill{height:48px;background:#ececee;margin:0 -28px}
     .panel{padding:44px 28px;border-bottom:1px solid var(--line)}
     .panel h2{font-size:clamp(1.2rem,3.5vw,1.55rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
     .panel .lead{color:var(--mute);margin-bottom:22px}
@@ -37,7 +39,11 @@
     .callout p{margin-bottom:10px;font-weight:600;line-height:1.65}
     .callout p:last-child{margin-bottom:0}
     .callout strong{color:var(--red)}
-    .safety-note{margin-top:18px;padding:14px 16px;background:var(--paper);border-radius:4px;font-size:.9rem;font-weight:600;color:var(--mute);text-align:center}
+    .safety-note{margin-top:18px;padding:16px 18px;background:var(--paper);border-radius:4px;font-size:1.05rem;font-weight:700;color:var(--ink);text-align:center}
+    .faq-item{padding:16px 0;border-bottom:1px solid var(--line)}
+    .faq-item:last-child{border-bottom:0}
+    .faq-item h3{font-size:1rem;font-weight:700;margin-bottom:8px}
+    .faq-item p{color:var(--mute);font-size:.95rem;line-height:1.65}
     .points{list-style:none;display:grid;gap:12px}
     .points li{display:grid;grid-template-columns:2rem 1fr;gap:10px;padding:14px 0;border-bottom:1px solid var(--line);font-weight:600}
     .points li span{font-family:Outfit,sans-serif;font-weight:800;color:var(--red)}
@@ -45,10 +51,6 @@
     .spec-grid div{padding:12px 0;border-bottom:1px solid var(--line)}
     .spec-grid dt{font-weight:700;color:var(--mute)}
     .spec-grid dd{font-weight:600}
-    .faq details{border-bottom:1px solid var(--line);padding:14px 0}
-    .faq summary{cursor:pointer;font-weight:700;list-style:none}
-    .faq summary::-webkit-details-marker{display:none}
-    .faq p{margin-top:8px;color:var(--mute);font-size:.95rem}
     .closing{background:linear-gradient(160deg,#1a1a1a 0%,#2a2a2a 100%);color:#fff;text-align:center}
     .closing h2{color:#fff;margin-bottom:10px}
     .closing p{color:rgba(255,255,255,.75)}
@@ -61,14 +63,17 @@
   <section class="capture-area hero" id="sec-01">
     <div class="badge">DETAIL SIZE · 30ML</div>
     <h1>E6000 다용도 접착제<br>30ml 소용량</h1>
-    <p class="sub">29.7ml / 1 fl.oz. · 디테일·테스트·소량 작업용</p>
-    <img src="images/e6000-30ml-front.jpg" alt="E6000 30ml 소용량 정면 제품사진" />
+    <p class="sub">DIY 리폼부터 전문가의 산업용 작업까지 이거 하나면 끝!<br>나무, 금속, 유리, 플라스틱, 가죽, 패브릭까지 재질을 가리지 않고 완벽하게 결합합니다.</p>
+    <div class="hero-image-wrap">
+      <img src="images/e6000-30ml-front.jpg" alt="E6000 30ml 소용량 정면 제품사진" />
+    </div>
+    <div class="hero-fill"></div>
   </section>
 
   <section class="capture-area panel" id="sec-02">
     <p class="section-title">Size Guide</p>
     <h2>좁은 틈새·소량 작업엔<br>30ml가 딱 맞습니다</h2>
-    <p class="lead">DIY 리폼부터 전문가의 산업용 작업까지 이거 하나면 끝!<br>나무, 금속, 유리, 플라스틱, 가죽, 패브릭까지 재질을 가리지 않고 완벽하게 결합합니다.</p>
+    <p class="lead">29.7ml / 1 fl.oz. · 디테일·테스트·소량 작업용</p>
     <div class="size-card">
       <div class="active"><strong>30ml</strong><span>✔️만능접착제</span></div>
       <div><strong>내구성</strong><span>✔️다양한 재질에 사용</span></div>
@@ -85,8 +90,8 @@
   <section class="capture-area panel" id="sec-04">
     <p class="section-title">Cap Guide</p>
     <h2>사용 후 캡을 꼭 끼워 주세요</h2>
-    <p class="lead">E6000은 사용이 끝나면 <strong>흰색 캡을 노즐에 단단히 끼워</strong> 보관해야 합니다. 캡을 제대로 닫아 두면 접착제가 마르면서 노즐이 막히는 것을 막고, 다음에도 깔끔하게 짜낼 수 있습니다.</p>
-    <img class="media" src="images/e6000-110ml-nozzle.jpg" alt="E6000 캡과 노즐 — 사용 후 캡을 끼워 보관" />
+    <p class="lead">E6000은 사용이 끝나면 <strong>흰색 캡을 노즐에 단단히 끼워</strong> 보관해야 합니다.<br>캡을 제대로 닫아 두면 접착제가 마르면서 노즐이 막히는 것을 막고, 다음에도 깔끔하게 짜낼 수 있습니다.</p>
+    <img class="media" src="images/e6000-30ml-nozzle.jpg" alt="E6000 캡과 노즐 — 사용 후 캡을 끼워 보관" />
     <p class="use-caption">노즐에 캡을 끼운 상태로 보관 · 개봉 후 뚜껑 필수</p>
   </section>
 
@@ -139,9 +144,6 @@
       <dt>점도</dt><dd>Medium Viscosity</dd>
       <dt>특징</dt><dd>Waterproof · Flexible · Paintable · Non-flammable</dd>
       <dt>권장 용도</dt><dd>비즈·큐빅 고정, 파츠 접착, 소형 수리, 테스트용</dd>
-      <dt>경화 시간</dt><dd>표면 건조 10~20분 · 완전 경화 24~72시간</dd>
-      <dt>보관</dt><dd>직사광선·고온 피하고 사용 후 캡을 꼭 끼워 보관</dd>
-      <dt>안전신고</dt><dd>생활화학제품 안전관리신고번호 제 FB25-11-0011호</dd>
     </dl>
     <p class="safety-note">생활화학제품 안전관리신고번호 — 제 FB25-11-0011호</p>
   </section>
@@ -150,17 +152,23 @@
     <p class="section-title">FAQ</p>
     <h2>자주 묻는 질문</h2>
     <div class="faq">
-      <details><summary>29.7ml와 30ml 표기가 다른 이유는?</summary>
-        <p>제품 라벨에 29.7ml (1 fl.oz.)로 표기되며, 판매 시 30ml로 안내하는 경우가 많습니다.</p></details>
-      <details><summary>한 번 열면 얼마나 쓸 수 있나요?</summary>
-        <p>큐빅·파츠 소량 접착 기준으로 수십 회 사용 가능합니다. 개봉 후 뚜껑을 꼭 닫아 보관하세요.</p></details>
-      <details><summary>어린이 공예용으로 괜찮나요?</summary>
-        <p>휘발성 성분이 있어 환기가 필요합니다. 보호자 동반·환기된 공간에서 사용해 주세요.</p></details>
+      <div class="faq-item">
+        <h3>29.7ml와 30ml 표기가 다른 이유는?</h3>
+        <p>제품 라벨에 29.7ml (1 fl.oz.)로 표기되며, 판매 시 30ml로 안내하는 경우가 많습니다.</p>
+      </div>
+      <div class="faq-item">
+        <h3>한 번 열면 얼마나 쓸 수 있나요?</h3>
+        <p>큐빅·파츠 소량 접착 기준으로 수십 회 사용 가능합니다. 개봉 후 뚜껑을 꼭 닫아 보관하세요.</p>
+      </div>
+      <div class="faq-item">
+        <h3>어린이 공예용으로 괜찮나요?</h3>
+        <p>휘발성 성분이 있어 환기가 필요합니다. 보호자 동반·환기된 공간에서 사용해 주세요.</p>
+      </div>
     </div>
   </section>
 
   <section class="capture-area panel closing" id="sec-10">
-    <h2>스팃스 STIX · E6000 30ml</h2>
+    <h2>STIX · E6000 30ml</h2>
     <p>소용량 다용도 접착제 · 디테일 작업 최적</p>
     <p class="brand-foot">STIX</p>
   </section>
