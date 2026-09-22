@@ -55,18 +55,8 @@ COMMON_STYLE = """
     .brand-foot{margin-top:20px;font-family:Outfit,sans-serif;font-weight:800;letter-spacing:.2em;font-size:.85rem;color:var(--red)}
 """
 
-SUB_COPY = (
-    "DIY 리폼부터 전문가의 산업용 작업까지 이거 하나면 끝!<br>"
-    "나무, 금속, 유리, 플라스틱, 가죽, 패브릭까지 재질을 가리지 않고 완벽하게 결합합니다."
-)
-RECOMMEND = """
-      <li>💎 큐빅, 비즈, 파츠 등 정교한 공예/액세서리 작가님</li>
-      <li>👟 뜯어진 운동화 밑창, 구두 굽을 셀프로 고치고 싶은 분</li>
-      <li>🪵 가구 가공, 타일 보수 등 셀프 인테리어 DIY족</li>
-      <li>🚗 진동이 많은 차량 내부 용품을 단단히 고정하고 싶은 운전자</li>"""
-
-
 def render_page(cfg: dict) -> str:
+    recommend = "\n".join(f"      <li>{item}</li>" for item in cfg["recommend"])
     use_imgs = "\n".join(
         f'      <img src="{cfg["img_prefix"]}{n}" alt="{cfg["brand"]} 활용" />'
         for n in cfg["use_images"]
@@ -100,7 +90,7 @@ def render_page(cfg: dict) -> str:
   <section class="capture-area hero" id="sec-01">
     <div class="badge">{cfg['badge']}</div>
     <h1>{cfg['h1']}</h1>
-    <p class="sub">{SUB_COPY}</p>
+    <p class="sub">{cfg['sub_copy']}</p>
     <div class="hero-image-box">
       <img src="{cfg['hero_image']}" alt="{cfg['hero_alt']}" />
     </div>
@@ -111,9 +101,9 @@ def render_page(cfg: dict) -> str:
     <h2>{cfg['size_h2']}</h2>
     <p class="lead">{cfg['size_lead']}</p>
     <div class="size-card">
-      <div class="active"><strong>{cfg['size_active']}</strong><span>✔️만능접착제</span></div>
-      <div><strong>내구성</strong><span>✔️다양한 재질에 사용</span></div>
-      <div><strong>색상</strong><span>✔️깔끔한 마감</span></div>
+      <div class="active"><strong>{cfg['size_active']}</strong><span>{cfg['size_card_1']}</span></div>
+      <div><strong>{cfg['size_card_2_title']}</strong><span>{cfg['size_card_2']}</span></div>
+      <div><strong>{cfg['size_card_3_title']}</strong><span>{cfg['size_card_3']}</span></div>
     </div>
   </section>
 
@@ -125,7 +115,7 @@ def render_page(cfg: dict) -> str:
 
   <section class="capture-area panel" id="sec-04">
     <p class="section-title">Cap Guide</p>
-    <h2>사용 후 캡을 꼭 끼워 주세요</h2>
+    <h2>{cfg['cap_h2']}</h2>
     <p class="lead">{cfg['cap_lead']}</p>
     <img class="media" src="{cfg['cap_image']}" alt="{cfg['brand']} 캡 보관" />
     <p class="use-caption">{cfg['cap_caption']}</p>
@@ -133,22 +123,23 @@ def render_page(cfg: dict) -> str:
 
   <section class="capture-area panel" id="sec-05">
     <p class="section-title">Use Case</p>
-    <h2>실생활 활용</h2>
-    <p class="lead">이런 분들께 강력 추천합니다!</p>
-    <ul class="recommend-list">{RECOMMEND}
+    <h2>{cfg['use_h2']}</h2>
+    <p class="lead">{cfg['use_lead']}</p>
+    <ul class="recommend-list">
+{recommend}
     </ul>
     <div class="use-grid">
 {use_imgs}
     </div>
-    <p class="use-caption">도자기 · 신발 · 핸드메이드 · DIY</p>
+    <p class="use-caption">{cfg['use_caption']}</p>
   </section>
 
   <section class="capture-area panel" id="sec-06">
     <p class="section-title">Curing Time</p>
     <h2>경화 시간 안내</h2>
     <div class="callout">
-      <p>{cfg['brand']}은 초기 고정 후 완전히 굳기까지 <strong>24~72시간</strong>이 걸립니다.</p>
-      <p>초기 접착 후 하루 동안 단단히 고정해 주시면 평생 가는 접착력을 경험할 수 있습니다.</p>
+      <p>{cfg['curing_p1']}</p>
+      <p>{cfg['curing_p2']}</p>
     </div>
   </section>
 
@@ -195,18 +186,39 @@ PRODUCTS = [
         "title": "E6000 110ml 다용도 접착제",
         "badge": "BEST SIZE · 110ML",
         "h1": "E6000 다용도 접착제<br>110ml 대용량",
+        "sub_copy": (
+            "여러 번 반복하는 공예·수리 작업엔 대용량이 경제적입니다.<br>"
+            "나무, 금속, 유리, 가죽, 패브릭까지 한 통으로 넓은 면적도 든든하게 접합합니다."
+        ),
         "hero_image": "images/e6000-110ml-front-box.jpg",
         "hero_alt": "E6000 110ml 대용량 제품사진",
         "size_h2": "넉넉한 작업량에는<br>110ml가 정답입니다",
         "size_lead": "110ml / 3.7 fl.oz. · 대용량·반복 작업용",
         "size_active": "110ml",
+        "size_card_1": "✔️대용량·가성비",
+        "size_card_2_title": "접착력",
+        "size_card_2": "✔️산업용급 내구성",
+        "size_card_3_title": "마감",
+        "size_card_3": "✔️투명·자동평탄",
         "product_image": "images/e6000-110ml-angle.jpg",
+        "cap_h2": "대용량도 캡 관리가 핵심입니다",
         "cap_lead": (
             "E6000은 사용이 끝나면 <strong>흰색 캡을 노즐에 단단히 끼워</strong> 보관해야 합니다.<br>"
-            "캡을 제대로 닫아 두면 접착제가 마르면서 노즐이 막히는 것을 막고, 다음에도 깔끔하게 짜낼 수 있습니다."
+            "110ml는 개봉 후 사용 기간이 길어질 수 있어, 캡을 빠짐없이 닫아 두는 것이 더욱 중요합니다."
         ),
         "cap_image": "images/e6000-110ml-nozzle.jpg",
         "cap_caption": "노즐에 캡을 끼운 상태로 보관 · 개봉 후 뚜껑 필수",
+        "use_h2": "대용량이 빛나는 작업",
+        "use_lead": "한 통으로 여러 프로젝트를 마무리하고 싶은 분께 추천합니다.",
+        "recommend": [
+            "🧵 보석십자수·대형 캔버스 등 넓은 면적 공예 작업",
+            "👟 운동화·가방 등 수리가 잦은 가죽·고무 소품",
+            "🪑 의자 보강, 선반 설치 등 가구·인테리어 DIY",
+            "🏠 여러 방 소품을 한 번에 고정하는 홈 수리족",
+        ],
+        "use_caption": "보석십자수 · 가죽 수리 · 가구 DIY · 홈 수리",
+        "curing_p1": "E6000은 초기 고정 후 완전히 굳기까지 <strong>24~72시간</strong>이 걸립니다.",
+        "curing_p2": "넓은 면적·두껍게 도포한 경우 하루 이상 고정해 두면 접착력이 더 안정적으로 잡힙니다.",
         "img_prefix": "images/e6000-110ml-use-0",
         "use_images": ["1.jpg", "2.jpg", "3.jpg", "4.jpg"],
         "brand": "E6000",
@@ -239,18 +251,39 @@ PRODUCTS = [
         "title": "USA E6000 110ml 정품 다용도 접착제",
         "badge": "USA OFFICIAL · 110ML",
         "h1": "USA E6000<br>정품 다용도 접착제 110ml",
+        "sub_copy": (
+            "미국 Eclectic Products 정품 — HIGH TRANSPARENCY 라인.<br>"
+            "큐빅·비즈 마감이 깨끗하게 보이는 투명 접착이 필요한 핸드메이드·수리 작업에 적합합니다."
+        ),
         "hero_image": "images/usa-e6000-front-box.jpg",
         "hero_alt": "USA E6000 110ml 정품 제품사진",
         "size_h2": "미국 정품 USA E6000,<br>110ml 대용량",
         "size_lead": "110ml / 3.7 fl.oz. · HIGH TRANSPARENCY · 정품",
         "size_active": "USA",
+        "size_card_1": "✔️정품·고투명",
+        "size_card_2_title": "노즐",
+        "size_card_2": "✔️메탈+핀 캡",
+        "size_card_3_title": "마감",
+        "size_card_3": "✔️큐빅·비즈용",
         "product_image": "images/usa-e6000-angle.jpg",
+        "cap_h2": "메탈 노즐·핀 캡으로 막힘 방지",
         "cap_lead": (
             "USA E6000은 사용이 끝나면 <strong>흰색 캡을 메탈 노즐에 단단히 끼워</strong> 보관해야 합니다.<br>"
-            "캡 안 핀이 노즐을 막아 건조·막힘을 방지하고, 다음에도 정밀하게 짜낼 수 있습니다."
+            "캡 안 핀이 노즐 구멍을 막아 건조·막힘을 방지하고, 다음에도 정밀하게 짜낼 수 있습니다."
         ),
         "cap_image": "images/usa-e6000-cap-detail.jpg",
         "cap_caption": "메탈 노즐 + 핀 캡 보관 · 개봉 후 뚜껑 필수",
+        "use_h2": "정품이 빛나는 작업",
+        "use_lead": "투명 마감과 정품 신뢰가 중요한 공예·수리 작업에 추천합니다.",
+        "recommend": [
+            "💎 큐빅·비즈가 돋보이는 보석십자수·액세서리 작가",
+            "👜 가죽 밴드·장식이 떨어진 명품·핸드백 수리",
+            "🎨 투명 마감이 중요한 레진·핸드메이드 소품",
+            "✨ USA 정품 라벨·마킹을 확인하고 싶은 구매자",
+        ],
+        "use_caption": "보석십자수 · 가죽 수리 · 핸드메이드 · 정품 마킹",
+        "curing_p1": "USA E6000은 초기 고정 후 완전히 굳기까지 <strong>24~72시간</strong>이 걸립니다.",
+        "curing_p2": "얇게 도포한 큐빅·비즈 작업은 초기 고정 후 24시간 이상 그대로 두면 투명 마감이 더 선명해집니다.",
         "img_prefix": "images/usa-e6000-use-0",
         "use_images": ["1.jpg", "2.jpg", "3.jpg", "4.jpg"],
         "brand": "USA E6000",
@@ -282,18 +315,39 @@ PRODUCTS = [
         "title": "B6000 15ml 소용량 다용도 접착제",
         "badge": "DETAIL SIZE · 15ML",
         "h1": "B6000 다용도 접착제<br>15ml 소용량",
+        "sub_copy": (
+            "0.8mm 초정밀 노즐로 좁은 틈새·작은 파츠에 딱 맞게 도포합니다.<br>"
+            "핸드폰 수리, 큐빅·비즈, 미니어처 등 소량·정밀 작업에 알맞은 소용량 접착제입니다."
+        ),
         "hero_image": "images/b6000-15ml-front-box.jpg",
         "hero_alt": "B6000 15ml 소용량 제품사진",
         "size_h2": "좁은 틈새·정밀 작업엔<br>15ml가 딱 맞습니다",
         "size_lead": "15ml / 0.5 fl.oz. · 디테일·테스트·소량 작업용",
         "size_active": "15ml",
+        "size_card_1": "✔️0.8mm 정밀",
+        "size_card_2_title": "용도",
+        "size_card_2": "✔️폰·큐빅·파츠",
+        "size_card_3_title": "마감",
+        "size_card_3": "✔️투명 젤 타입",
         "product_image": "images/b6000-15ml-angle.jpg",
+        "cap_h2": "0.8mm 노즐은 핀 캡이 필수입니다",
         "cap_lead": (
             "B6000은 사용이 끝나면 <strong>핀 캡을 메탈 노즐에 단단히 끼워</strong> 보관해야 합니다.<br>"
-            "캡 안 핀이 노즐 구멍을 막아 말라 붙는 것을 방지하고, 다음에도 0.8mm 초정밀 도포가 가능합니다."
+            "가느다란 0.8mm 구멍이 막히면 도포가 어려워지므로, 사용 직후 캡을 꼭 닫아 주세요."
         ),
         "cap_image": "images/b6000-15ml-cap-detail.jpg",
         "cap_caption": "0.8mm 초정밀 노즐 · 막힘 방지 핀 캡 필수",
+        "use_h2": "정밀 작업에 최적",
+        "use_lead": "조금만 쓰는 작업, 좁은 틈새 도포가 필요한 분께 추천합니다.",
+        "recommend": [
+            "📱 스크린·배터리 커버 등 핸드폰·태블릿 소형 수리",
+            "💎 큐빅·비즈·레진 파츠를 한 점씩 붙이는 공예 작가",
+            "🧩 미니어처·프라모델 등 작은 부품 접합",
+            "✨ 액세서리·키링 등 소형 핸드메이드 제작",
+        ],
+        "use_caption": "폰 수리 · 큐빅 · 미니어처 · 액세서리",
+        "curing_p1": "B6000은 초기 고정 후 완전히 굳기까지 <strong>24~72시간</strong>이 걸립니다.",
+        "curing_p2": "얇게 소량 도포한 정밀 작업은 초기 고정 후 움직이지 않게 고정해 두면 깔끔하게 마감됩니다.",
         "img_prefix": "images/b6000-15ml-use-0",
         "use_images": ["1.jpg", "2.jpg", "3.jpg", "4.jpg"],
         "brand": "B6000",
