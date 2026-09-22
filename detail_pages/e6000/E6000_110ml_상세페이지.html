@@ -15,36 +15,46 @@
     .capture-area{overflow:hidden}
     .section-title{font-family:Outfit,"Noto Sans KR",sans-serif;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:10px}
     .hero{background:#ececee;padding:44px 28px 0;text-align:center}
-    .hero .badge{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.22em;color:#fff;background:var(--ink);padding:6px 14px;margin-bottom:18px}
+    .hero .badge{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.22em;color:var(--red);border:2px solid var(--red);padding:5px 14px;margin-bottom:18px}
     .hero h1{font-size:clamp(1.5rem,5vw,2rem);font-weight:800;letter-spacing:-.02em;line-height:1.25;margin-bottom:10px}
-    .hero .sub{color:var(--mute);font-size:.98rem;margin-bottom:24px}
-    .hero img{width:100%;display:block}
+    .hero .sub{color:var(--mute);font-size:.98rem;margin-bottom:24px;line-height:1.65}
+    .hero-image-box{margin:0 -28px;background:#ececee;overflow:hidden;line-height:0}
+    .hero-image-box img{width:100%;height:auto;display:block}
     .panel{padding:44px 28px;border-bottom:1px solid var(--line)}
     .panel h2{font-size:clamp(1.2rem,3.5vw,1.55rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
     .panel .lead{color:var(--mute);margin-bottom:22px}
-    .highlight-strip{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-    .highlight-strip div{background:var(--paper);padding:16px 14px;text-align:center;font-weight:700;font-size:.92rem;border-radius:4px}
-    .highlight-strip strong{display:block;font-family:Outfit,sans-serif;font-size:1.35rem;color:var(--red);margin-bottom:4px}
+    .size-card{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center}
+    .size-card div{padding:18px 10px;border:1px solid var(--line);border-radius:4px}
+    .size-card .active{border-color:var(--red);background:rgba(215,25,32,.04)}
+    .size-card strong{display:block;font-family:Outfit,sans-serif;font-size:1.2rem;margin-bottom:4px}
+    .size-card span{font-size:.82rem;color:var(--mute);font-weight:600}
     .media{width:100%;display:block;border-radius:4px;background:var(--paper);margin-bottom:14px}
-    .media:last-child{margin-bottom:0}
     .use-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     .use-grid img{width:100%;display:block;border-radius:4px}
     .use-caption{margin-top:14px;font-size:.9rem;color:var(--mute);font-weight:600;text-align:center}
+    .recommend-list{list-style:none;display:grid;gap:12px;margin-bottom:22px}
+    .recommend-list li{padding:12px 14px;background:var(--paper);border-radius:4px;font-weight:600;font-size:.95rem;line-height:1.5}
+    .callout{background:linear-gradient(135deg,#fff5f5 0%,#f7f7f8 100%);border-left:4px solid var(--red);padding:20px 18px;border-radius:4px}
+    .callout p{margin-bottom:10px;font-weight:600;line-height:1.65}
+    .callout p:last-child{margin-bottom:0}
+    .callout strong{color:var(--red)}
+    .safety-note{margin-top:18px;padding:16px 18px;background:var(--paper);border-radius:4px;font-size:1.05rem;font-weight:700;color:var(--ink);text-align:center}
+    .faq-item{padding:16px 0;border-bottom:1px solid var(--line)}
+    .faq-item:last-child{border-bottom:0}
+    .faq-item h3{font-size:1rem;font-weight:700;margin-bottom:8px}
+    .faq-item p{color:var(--mute);font-size:.95rem;line-height:1.65}
+    .points{list-style:none;display:grid;gap:12px}
+    .points li{display:grid;grid-template-columns:2rem 1fr;gap:10px;padding:14px 0;border-bottom:1px solid var(--line);font-weight:600}
+    .points li span{font-family:Outfit,sans-serif;font-weight:800;color:var(--red)}
     .spec-grid{display:grid;grid-template-columns:110px 1fr;border-top:1px solid var(--line);font-size:.95rem}
     .spec-grid div{padding:12px 0;border-bottom:1px solid var(--line)}
     .spec-grid dt{font-weight:700;color:var(--mute)}
     .spec-grid dd{font-weight:600}
-    .use-cases{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-    .use-cases li{background:var(--paper);padding:14px;font-weight:600;font-size:.92rem;border-left:3px solid var(--red)}
-    .faq details{border-bottom:1px solid var(--line);padding:14px 0}
-    .faq summary{cursor:pointer;font-weight:700;list-style:none}
-    .faq summary::-webkit-details-marker{display:none}
-    .faq p{margin-top:8px;color:var(--mute);font-size:.95rem}
     .closing{background:linear-gradient(160deg,#1a1a1a 0%,#2a2a2a 100%);color:#fff;text-align:center}
     .closing h2{color:#fff;margin-bottom:10px}
     .closing p{color:rgba(255,255,255,.75)}
     .brand-foot{margin-top:20px;font-family:Outfit,sans-serif;font-weight:800;letter-spacing:.2em;font-size:.85rem;color:var(--red)}
-  </style>
+</style>
 </head>
 <body>
 <div class="detail-wrap">
@@ -52,57 +62,77 @@
   <section class="capture-area hero" id="sec-01">
     <div class="badge">BEST SIZE · 110ML</div>
     <h1>E6000 다용도 접착제<br>110ml 대용량</h1>
-    <p class="sub">Industrial Strength · Clear · Medium Viscosity · Self-Leveling</p>
-    <img src="images/e6000-110ml-cross.jpg" alt="E6000 110ml 접착제 제품사진" />
+    <p class="sub">DIY 리폼부터 전문가의 산업용 작업까지 이거 하나면 끝!<br>나무, 금속, 유리, 플라스틱, 가죽, 패브릭까지 재질을 가리지 않고 완벽하게 결합합니다.</p>
+    <div class="hero-image-box">
+      <img src="images/e6000-110ml-front-box.jpg" alt="E6000 110ml 대용량 제품사진" />
+    </div>
   </section>
 
   <section class="capture-area panel" id="sec-02">
-    <p class="section-title">Key Point</p>
-    <h2>가장 많이 찾는 110ml,<br>작업량과 가성비의 균형</h2>
-    <p class="lead">15ml·30ml로 부족했던 분들에게 추천하는 스테디셀러 용량입니다. 보석십자수·핸드폰 수리·신발 밑창·핸드메이드까지 한 통으로 여러 번 사용할 수 있습니다.</p>
-    <div class="highlight-strip">
-      <div><strong>110ml</strong>대용량</div>
-      <div><strong>CLEAR</strong>투명 마감</div>
-      <div><strong>24h</strong>완전 경화</div>
-      <div><strong>4IN1</strong>방수·유연·도장·비연소</div>
+    <p class="section-title">Size Guide</p>
+    <h2>넉넉한 작업량에는<br>110ml가 정답입니다</h2>
+    <p class="lead">110ml / 3.7 fl.oz. · 대용량·반복 작업용</p>
+    <div class="size-card">
+      <div class="active"><strong>110ml</strong><span>✔️만능접착제</span></div>
+      <div><strong>내구성</strong><span>✔️다양한 재질에 사용</span></div>
+      <div><strong>색상</strong><span>✔️깔끔한 마감</span></div>
     </div>
   </section>
 
   <section class="capture-area panel" id="sec-03">
     <p class="section-title">Product Shot</p>
     <h2>제품 사진</h2>
-    <img class="media" src="images/e6000-110ml-front.jpg" alt="E6000 110ml 정면 제품사진" />
-    <img class="media" src="images/e6000-110ml-nozzle.jpg" alt="E6000 110ml 노즐 디테일" />
-    <img class="media" src="images/e6000-110ml-seal.jpg" alt="E6000 110ml 실링 디테일" />
+    <img class="media" src="images/e6000-110ml-angle.jpg" alt="E6000 제품 사진" />
   </section>
 
   <section class="capture-area panel" id="sec-04">
-    <p class="section-title">Use Case</p>
-    <h2>실생활 활용</h2>
-    <p class="lead">도자기 수리, 신발 밑창 보수, 핸드메이드·비즈 공예 등 다양한 상황에서 사용합니다.</p>
-    <div class="use-grid">
-      <img src="images/e6000-110ml-use-01.jpg" alt="E6000 도자기 수리 활용" />
-      <img src="images/e6000-110ml-use-02.jpg" alt="E6000 신발 밑창 보수 활용" />
-      <img src="images/e6000-110ml-use-03.jpg" alt="E6000 핸드메이드 활용" />
-      <img src="images/e6000-110ml-use-04.jpg" alt="E6000 DIY 활용" />
-    </div>
-    <p class="use-caption">도자기 · 신발 · 핸드메이드 · DIY</p>
+    <p class="section-title">Cap Guide</p>
+    <h2>사용 후 캡을 꼭 끼워 주세요</h2>
+    <p class="lead">E6000은 사용이 끝나면 <strong>흰색 캡을 노즐에 단단히 끼워</strong> 보관해야 합니다.<br>캡을 제대로 닫아 두면 접착제가 마르면서 노즐이 막히는 것을 막고, 다음에도 깔끔하게 짜낼 수 있습니다.</p>
+    <img class="media" src="images/e6000-110ml-nozzle.jpg" alt="E6000 캡 보관" />
+    <p class="use-caption">노즐에 캡을 끼운 상태로 보관 · 개봉 후 뚜껑 필수</p>
   </section>
 
   <section class="capture-area panel" id="sec-05">
     <p class="section-title">Use Case</p>
-    <h2>이럴 때 쓰세요</h2>
-    <ul class="use-cases">
-      <li>보석십자수·비즈 공예</li>
-      <li>핸드폰·태블릿 부품 수리</li>
-      <li>신발·가방 밑창·가죽 보수</li>
-      <li>리본·파츠·장식품 접착</li>
-      <li>플라스틱·금속·유리 접합</li>
-      <li>DIY·소품 제작 마감</li>
+    <h2>실생활 활용</h2>
+    <p class="lead">이런 분들께 강력 추천합니다!</p>
+    <ul class="recommend-list">
+      <li>💎 큐빅, 비즈, 파츠 등 정교한 공예/액세서리 작가님</li>
+      <li>👟 뜯어진 운동화 밑창, 구두 굽을 셀프로 고치고 싶은 분</li>
+      <li>🪵 가구 가공, 타일 보수 등 셀프 인테리어 DIY족</li>
+      <li>🚗 진동이 많은 차량 내부 용품을 단단히 고정하고 싶은 운전자</li>
     </ul>
+    <div class="use-grid">
+      <img src="images/e6000-110ml-use-01.jpg" alt="E6000 활용" />
+      <img src="images/e6000-110ml-use-02.jpg" alt="E6000 활용" />
+      <img src="images/e6000-110ml-use-03.jpg" alt="E6000 활용" />
+      <img src="images/e6000-110ml-use-04.jpg" alt="E6000 활용" />
+    </div>
+    <p class="use-caption">도자기 · 신발 · 핸드메이드 · DIY</p>
   </section>
 
   <section class="capture-area panel" id="sec-06">
+    <p class="section-title">Curing Time</p>
+    <h2>경화 시간 안내</h2>
+    <div class="callout">
+      <p>E6000은 초기 고정 후 완전히 굳기까지 <strong>24~72시간</strong>이 걸립니다.</p>
+      <p>초기 접착 후 하루 동안 단단히 고정해 주시면 평생 가는 접착력을 경험할 수 있습니다.</p>
+    </div>
+  </section>
+
+  <section class="capture-area panel" id="sec-07">
+    <p class="section-title">Why 110ml</p>
+    <h2>대용량이 유리한 이유</h2>
+    <ul class="points">
+      <li><span>01</span>여러 번·넓은 면적 작업에 한 통으로 충분</li>
+      <li><span>02</span>30ml 대비 가성비 좋은 스테디셀러 용량</li>
+      <li><span>03</span>보석십자수·수리·DIY 반복 작업에 적합</li>
+      <li><span>04</span>30ml와 동일한 Clear · Self-Leveling 성능</li>
+    </ul>
+  </section>
+
+  <section class="capture-area panel" id="sec-08">
     <p class="section-title">Specification</p>
     <h2>제품 사양</h2>
     <dl class="spec-grid">
@@ -111,26 +141,32 @@
       <dt>색상</dt><dd>Clear (투명)</dd>
       <dt>점도</dt><dd>Medium Viscosity</dd>
       <dt>특징</dt><dd>Waterproof · Flexible · Paintable · Non-flammable</dd>
-      <dt>표면 건조</dt><dd>약 10~20분</dd>
-      <dt>완전 경화</dt><dd>24~72시간</dd>
+      <dt>권장 용도</dt><dd>비즈·큐빅 고정, 파츠 접착, 신발·가구 수리, DIY</dd>
     </dl>
+    <p class="safety-note">생활화학제품 안전관리신고번호 — 제 FB25-11-0011호</p>
   </section>
 
-  <section class="capture-area panel" id="sec-07">
+  <section class="capture-area panel" id="sec-09">
     <p class="section-title">FAQ</p>
     <h2>자주 묻는 질문</h2>
     <div class="faq">
-      <details><summary>30ml과 110ml 중 어떤 걸 사야 하나요?</summary>
-        <p>처음 써보거나 소량·디테일 작업이면 30ml, 여러 번·넓은 면적 작업이면 110ml이 경제적입니다.</p></details>
-      <details><summary>B7000과 차이가 있나요?</summary>
-        <p>E6000은 산업용 다용도 접착제로 접착력·내구성이 더 강한 편입니다.</p></details>
-      <details><summary>순간접착제 대신 쓰는 이유는?</summary>
-        <p>굳기 전 위치 조정이 가능하고, 건조 후 탄성이 있어 충격에 강합니다.</p></details>
+      <div class="faq-item">
+        <h3>30ml과 110ml 중 어떤 걸 사야 하나요?</h3>
+        <p>처음 써보거나 소량·디테일 작업이면 30ml, 여러 번·넓은 면적 작업이면 110ml이 경제적입니다.</p>
+      </div>
+      <div class="faq-item">
+        <h3>B7000과 차이가 있나요?</h3>
+        <p>E6000은 산업용 다용도 접착제로 접착력·내구성이 더 강한 편입니다.</p>
+      </div>
+      <div class="faq-item">
+        <h3>순간접착제 대신 쓰는 이유는?</h3>
+        <p>굳기 전 위치 조정이 가능하고, 건조 후 탄성이 있어 충격에 강합니다.</p>
+      </div>
     </div>
   </section>
 
-  <section class="capture-area panel closing" id="sec-08">
-    <h2>스팃스 STIX · E6000 110ml</h2>
+  <section class="capture-area panel closing" id="sec-10">
+    <h2>STIX · E6000 110ml</h2>
     <p>다용도 접착제 대용량 · 공예·수리 필수</p>
     <p class="brand-foot">STIX</p>
   </section>
