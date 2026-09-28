@@ -1,0 +1,113 @@
+{
+  "html": "detail_pages/e6000/E6000_110ml_상세페이지.html",
+  "out_dir": "detail_pages/e6000/preview_110ml",
+  "base_name": "E6000_110ml",
+  "width": 860,
+  "section_count": 10,
+  "saved_count": 10,
+  "sections": [
+    {
+      "index": 1,
+      "section_id": "sec-01",
+      "title": "E6000 다용도 접착제 110ml 대용량",
+      "file": "E6000_110ml_01_hero.jpg",
+      "width": 860,
+      "height": 881,
+      "bytes": 52569,
+      "status": "saved"
+    },
+    {
+      "index": 2,
+      "section_id": "sec-02",
+      "title": "넉넉한 작업량에는 110ml가 정답입니다",
+      "file": "E6000_110ml_02_size.jpg",
+      "width": 860,
+      "height": 359,
+      "bytes": 27079,
+      "status": "saved"
+    },
+    {
+      "index": 3,
+      "section_id": "sec-03",
+      "title": "제품 사진",
+      "file": "E6000_110ml_03_product.jpg",
+      "width": 860,
+      "height": 992,
+      "bytes": 59142,
+      "status": "saved"
+    },
+    {
+      "index": 4,
+      "section_id": "sec-04",
+      "title": "대용량도 캡 관리가 핵심입니다",
+      "file": "E6000_110ml_04_cap.jpg",
+      "width": 860,
+      "height": 1087,
+      "bytes": 116872,
+      "status": "saved"
+    },
+    {
+      "index": 5,
+      "section_id": "sec-05",
+      "title": "대용량이 빛나는 작업",
+      "file": "E6000_110ml_05_use.jpg",
+      "width": 860,
+      "height": 1308,
+      "bytes": 208540,
+      "status": "saved"
+    },
+    {
+      "index": 6,
+      "section_id": "sec-06",
+      "title": "경화 시간 안내",
+      "file": "E6000_110ml_06_curing.jpg",
+      "width": 860,
+      "height": 276,
+      "bytes": 25172,
+      "status": "saved"
+    },
+    {
+      "index": 7,
+      "section_id": "sec-07",
+      "title": "대용량이 유리한 이유",
+      "file": "E6000_110ml_07_why.jpg",
+      "width": 860,
+      "height": 428,
+      "bytes": 33839,
+      "status": "saved"
+    },
+    {
+      "index": 8,
+      "section_id": "sec-08",
+      "title": "제품 사양",
+      "file": "E6000_110ml_08_spec.jpg",
+      "width": 860,
+      "height": 398,
+      "bytes": 36826,
+      "status": "saved"
+    },
+    {
+      "index": 9,
+      "section_id": "sec-09",
+      "title": "자주 묻는 질문",
+      "file": "E6000_110ml_09_faq.jpg",
+      "width": 860,
+      "height": 447,
+      "bytes": 38576,
+      "status": "saved"
+    },
+    {
+      "index": 10,
+      "section_id": "sec-10",
+      "title": "STIX · E6000 110ml",
+      "file": "E6000_110ml_10_brand.jpg",
+      "width": 860,
+      "height": 207,
+      "bytes": 12178,
+      "status": "saved"
+    }
+  ],
+  "errors": [],
+  "created_at": "2026-09-28T22:13:50+00:00",
+  "note": "ESM 상세 교체용 860px. 흰 화면·가로 초과·특수문자 파일명을 고친 재분할."
+}

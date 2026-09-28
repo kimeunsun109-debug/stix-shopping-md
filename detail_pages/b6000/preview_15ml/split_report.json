@@ -1,0 +1,113 @@
+{
+  "html": "detail_pages/b6000/B6000_15ml_상세페이지.html",
+  "out_dir": "detail_pages/b6000/preview_15ml",
+  "base_name": "B6000_15ml",
+  "width": 860,
+  "section_count": 10,
+  "saved_count": 10,
+  "sections": [
+    {
+      "index": 1,
+      "section_id": "sec-01",
+      "title": "B6000 다용도 접착제 15ml 소용량",
+      "file": "B6000_15ml_01_hero.jpg",
+      "width": 860,
+      "height": 881,
+      "bytes": 49547,
+      "status": "saved"
+    },
+    {
+      "index": 2,
+      "section_id": "sec-02",
+      "title": "좁은 틈새·정밀 작업엔 15ml가 딱 맞습니다",
+      "file": "B6000_15ml_02_size.jpg",
+      "width": 860,
+      "height": 359,
+      "bytes": 27128,
+      "status": "saved"
+    },
+    {
+      "index": 3,
+      "section_id": "sec-03",
+      "title": "제품 사진",
+      "file": "B6000_15ml_03_product.jpg",
+      "width": 860,
+      "height": 992,
+      "bytes": 45995,
+      "status": "saved"
+    },
+    {
+      "index": 4,
+      "section_id": "sec-04",
+      "title": "0.8mm 노즐은 핀 캡이 필수입니다",
+      "file": "B6000_15ml_04_cap.jpg",
+      "width": 860,
+      "height": 1355,
+      "bytes": 134375,
+      "status": "saved"
+    },
+    {
+      "index": 5,
+      "section_id": "sec-05",
+      "title": "정밀 작업에 최적",
+      "file": "B6000_15ml_05_use.jpg",
+      "width": 860,
+      "height": 1307,
+      "bytes": 177211,
+      "status": "saved"
+    },
+    {
+      "index": 6,
+      "section_id": "sec-06",
+      "title": "경화 시간 안내",
+      "file": "B6000_15ml_06_curing.jpg",
+      "width": 860,
+      "height": 277,
+      "bytes": 25097,
+      "status": "saved"
+    },
+    {
+      "index": 7,
+      "section_id": "sec-07",
+      "title": "소용량이 유리한 이유",
+      "file": "B6000_15ml_07_why.jpg",
+      "width": 860,
+      "height": 428,
+      "bytes": 32042,
+      "status": "saved"
+    },
+    {
+      "index": 8,
+      "section_id": "sec-08",
+      "title": "제품 사양",
+      "file": "B6000_15ml_08_spec.jpg",
+      "width": 860,
+      "height": 397,
+      "bytes": 35171,
+      "status": "saved"
+    },
+    {
+      "index": 9,
+      "section_id": "sec-09",
+      "title": "자주 묻는 질문",
+      "file": "B6000_15ml_09_faq.jpg",
+      "width": 860,
+      "height": 448,
+      "bytes": 43329,
+      "status": "saved"
+    },
+    {
+      "index": 10,
+      "section_id": "sec-10",
+      "title": "STIX · B6000 15ml",
+      "file": "B6000_15ml_10_brand.jpg",
+      "width": 860,
+      "height": 207,
+      "bytes": 11652,
+      "status": "saved"
+    }
+  ],
+  "errors": [],
+  "created_at": "2026-09-28T22:13:55+00:00",
+  "note": "ESM 상세 교체용 860px. 흰 화면·가로 초과·특수문자 파일명을 고친 재분할."
+}

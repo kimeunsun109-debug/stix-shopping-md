@@ -57,10 +57,17 @@ COMMON_STYLE = """
 
 def render_page(cfg: dict) -> str:
     recommend = "\n".join(f"      <li>{item}</li>" for item in cfg["recommend"])
-    use_imgs = "\n".join(
-        f'      <img src="{cfg["img_prefix"]}{n}" alt="{cfg["brand"]} 활용" />'
-        for n in cfg["use_images"]
-    )
+    if len(cfg["use_images"]) == 1:
+        use_block = (
+            f'    <img class="media" src="{cfg["img_prefix"]}{cfg["use_images"][0]}" '
+            f'alt="{cfg["brand"]} 활용" />'
+        )
+    else:
+        use_imgs = "\n".join(
+            f'      <img src="{cfg["img_prefix"]}{n}" alt="{cfg["brand"]} 활용" />'
+            for n in cfg["use_images"]
+        )
+        use_block = f'    <div class="use-grid">\n{use_imgs}\n    </div>'
     faq = "\n".join(
         f"""      <div class="faq-item">
         <h3>{q}</h3>
@@ -128,9 +135,7 @@ def render_page(cfg: dict) -> str:
     <ul class="recommend-list">
 {recommend}
     </ul>
-    <div class="use-grid">
-{use_imgs}
-    </div>
+{use_block}
     <p class="use-caption">{cfg['use_caption']}</p>
   </section>
 
@@ -349,7 +354,7 @@ PRODUCTS = [
         "curing_p1": "B6000은 초기 고정 후 완전히 굳기까지 <strong>24~72시간</strong>이 걸립니다.",
         "curing_p2": "얇게 소량 도포한 정밀 작업은 초기 고정 후 움직이지 않게 고정해 두면 깔끔하게 마감됩니다.",
         "img_prefix": "images/b6000-15ml-use-0",
-        "use_images": ["1.jpg", "2.jpg", "3.jpg", "4.jpg"],
+        "use_images": ["1.jpg"],
         "brand": "B6000",
         "why_title": "Why 15ml",
         "why_h2": "소용량이 유리한 이유",
