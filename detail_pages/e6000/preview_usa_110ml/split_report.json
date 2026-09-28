@@ -1,0 +1,113 @@
+{
+  "html": "detail_pages/e6000/USA_E6000_110ml_상세페이지.html",
+  "out_dir": "detail_pages/e6000/preview_usa_110ml",
+  "base_name": "USA_E6000_110ml",
+  "width": 860,
+  "section_count": 10,
+  "saved_count": 10,
+  "sections": [
+    {
+      "index": 1,
+      "section_id": "sec-01",
+      "title": "USA E6000 정품 다용도 접착제 110ml",
+      "file": "USA_E6000_110ml_01_hero.jpg",
+      "width": 860,
+      "height": 881,
+      "bytes": 60281,
+      "status": "saved"
+    },
+    {
+      "index": 2,
+      "section_id": "sec-02",
+      "title": "미국 정품 USA E6000, 110ml 대용량",
+      "file": "USA_E6000_110ml_02_size.jpg",
+      "width": 860,
+      "height": 359,
+      "bytes": 26336,
+      "status": "saved"
+    },
+    {
+      "index": 3,
+      "section_id": "sec-03",
+      "title": "제품 사진",
+      "file": "USA_E6000_110ml_03_product.jpg",
+      "width": 860,
+      "height": 992,
+      "bytes": 76511,
+      "status": "saved"
+    },
+    {
+      "index": 4,
+      "section_id": "sec-04",
+      "title": "메탈 노즐·핀 캡으로 막힘 방지",
+      "file": "USA_E6000_110ml_04_cap.jpg",
+      "width": 860,
+      "height": 1087,
+      "bytes": 63399,
+      "status": "saved"
+    },
+    {
+      "index": 5,
+      "section_id": "sec-05",
+      "title": "정품이 빛나는 작업",
+      "file": "USA_E6000_110ml_05_use.jpg",
+      "width": 860,
+      "height": 1308,
+      "bytes": 192079,
+      "status": "saved"
+    },
+    {
+      "index": 6,
+      "section_id": "sec-06",
+      "title": "경화 시간 안내",
+      "file": "USA_E6000_110ml_06_curing.jpg",
+      "width": 860,
+      "height": 276,
+      "bytes": 26308,
+      "status": "saved"
+    },
+    {
+      "index": 7,
+      "section_id": "sec-07",
+      "title": "USA 정품이 유리한 이유",
+      "file": "USA_E6000_110ml_07_why.jpg",
+      "width": 860,
+      "height": 428,
+      "bytes": 34433,
+      "status": "saved"
+    },
+    {
+      "index": 8,
+      "section_id": "sec-08",
+      "title": "제품 사양",
+      "file": "USA_E6000_110ml_08_spec.jpg",
+      "width": 860,
+      "height": 373,
+      "bytes": 34747,
+      "status": "saved"
+    },
+    {
+      "index": 9,
+      "section_id": "sec-09",
+      "title": "자주 묻는 질문",
+      "file": "USA_E6000_110ml_09_faq.jpg",
+      "width": 860,
+      "height": 448,
+      "bytes": 38596,
+      "status": "saved"
+    },
+    {
+      "index": 10,
+      "section_id": "sec-10",
+      "title": "STIX · USA E6000 110ml",
+      "file": "USA_E6000_110ml_10_brand.jpg",
+      "width": 860,
+      "height": 207,
+      "bytes": 13794,
+      "status": "saved"
+    }
+  ],
+  "errors": [],
+  "created_at": "2026-09-28T22:13:52+00:00",
+  "note": "ESM 상세 교체용 860px. 흰 화면·가로 초과·특수문자 파일명을 고친 재분할."
+}
