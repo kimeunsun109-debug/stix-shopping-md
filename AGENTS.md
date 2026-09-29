@@ -50,5 +50,5 @@
 - **테스트**: `python3 -m unittest discover -s commerce_ai/tests` (또는 `python3 md_commerce_ai.py --test`). API 스모크 테스트가 Starlette `TestClient`를 쓰므로 `httpx`가 필요 (requirements.txt 테스트 섹션에 포함). 최신 Starlette가 "install httpx2" deprecation 경고를 내지만 `httpx`로 정상 동작.
 - **린트**: 저장소에 린트 도구/설정 없음. 문법 점검은 `python3 -m compileall commerce_ai seo_engine item_winner *.py`.
 - **데이터**: `쇼핑몰별 전체상품/` 엑셀이 Git에 포함되어 clone 즉시 분석 가능(~7,853 상품). Cloud에서 별도 업로드 불필요.
-- **Playwright 브라우저**: `playwright install chromium`(브라우저 바이너리)은 로컬 CDP 스크래핑(Chrome 9233) 전용. Cloud의 웹/분석/리포트에는 불필요하므로 기동 속도를 위해 건너뛰어도 됨(규칙 #3 참고).
+- **Playwright 브라우저**: `.cursor/cloud-install.sh`는 Python 패키지만 설치한다. `playwright install chromium`(브라우저 바이너리)은 로컬 CDP 스크래핑(Chrome 9233) 전용이라 Cloud 설치에서 실행하지 않는다(규칙 #3).
 - **런타임 산출물 주의**: `--batch`/`--autonomous`/`--daily-report` 실행 시 `commerce_history/`의 추적 파일들(jsonl/json)이 수정되고 `commerce_history/daily/`에 리포트가 생성됨. 커밋 전 `git checkout -- .` 및 `git clean -fd commerce_history/daily`로 정리할 것.
