@@ -1,0 +1,23 @@
+다시제작 SKU — Gemini 4분할 재생성 우선순위 (2026-10-04)
+총 67개 / 재생성 18개 / 표준구조 49개
+
+프롬프트: 감성있는 4분할 이미지 만들어줘. 상품은 절대 변경하지마
+
+P0 | 42_크래프트 와이어 실버 5yd 1.5mm 공예 철사 플라워아트 DIY 와이 | 31991 bytes | flat_layout_missing_composite_folder;critically_small_folder
+P0 | 47_양모펠트 니들펠트 기본 바늘 교체침 7개입 펠트공예 DIY 필수 소모품 | 33069 bytes | flat_layout_missing_composite_folder;critically_small_folder
+P0 | 48_SKC 양모 니들펠트 3본침 펠트바늘 니들펠트 바늘 공예 DIY 도구 | 24502 bytes | flat_layout_missing_composite_folder;critically_small_folder
+P0 | 49_SKC 양모 니들펠트 1본침 펠트바늘 니들펠트 기본 바늘 공예 DIY 도 | 21767 bytes | flat_layout_missing_composite_folder;critically_small_folder
+P0 | 50_SKC 양모 니들펠트 7본침 펠트바늘 니들펠트 바늘 대면적 작업 DIY | 39802 bytes | flat_layout_missing_composite_folder;critically_small_folder
+P0 | 53_8사이즈 독일 원목 원형수틀 프랑스자수 십자수 자수틀 | 37556 bytes | flat_layout_missing_composite_folder;critically_small_folder
+P0 | 59_원목 탁상형 자수 수틀 받침대 후프 거치대 높이조절 작업 스탠드 (수틀미 | 31459 bytes | flat_layout_missing_composite_folder;critically_small_folder
+P0 | 60_특대형 대나무 원형 수틀 37cm 41cm 선택 자수틀 십자수 자수 고정 | 109893 bytes | flat_layout_missing_composite_folder;critically_small_folder
+P0 | 61_드림캐쳐 마크라메 링 DIY 메탈링 O링 공예용 10종 택1 만들기 재료 | 117762 bytes | flat_layout_missing_composite_folder;critically_small_folder
+P0 | 62_타원형 우드 수틀 4사이즈 택1 자수 십자수 프레임 원단 고정 DIY 공 | 26157 bytes | flat_layout_missing_composite_folder;critically_small_folder
+P0 | 63_원목 원형 좌식 수틀 30cm 자수틀 십자수 거치대 수예 프레임 DIY | 38106 bytes | flat_layout_missing_composite_folder;critically_small_folder
+P0 | 64_SKC 타원형 플라스틱 컬러수틀 L 11.4x22.8cm 자수 수예틀 | 36846 bytes | flat_layout_missing_composite_folder;critically_small_folder
+P0 | 71_DMC 자수실 489색 풀세트 + DMC 24호 바늘세트 증정 프랑스자수 | 35848 bytes | flat_layout_missing_composite_folder;critically_small_folder
+P1 | 19_보석십자수 코팅제 광택 마감제 120ml 완성작 보호 코팅 | 537817 bytes | flat_layout_missing_composite_folder;small_folder_bytes
+P1 | 27_원단용 핑킹가위 톱니형 5mm 재단 가위 올풀림 방지 재봉 수예용품 | 509116 bytes | flat_layout_missing_composite_folder;small_folder_bytes
+P1 | 39_고급형 스텐 핀셋 곡선형 12cm 정밀 핀셋 비즈 네일 공예용 | 205410 bytes | flat_layout_missing_composite_folder;small_folder_bytes
+P1 | 44_SKC 통가죽 코인골무 손바느질 재봉 수예 골무 | 473827 bytes | flat_layout_missing_composite_folder;small_folder_bytes
+P1 | 57_프랑스자수 순면 조각천 2사이즈 옵션 자수 원단 공예용 패브릭 | 236134 bytes | flat_layout_missing_composite_folder;small_folder_bytes
