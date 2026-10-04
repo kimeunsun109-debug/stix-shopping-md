@@ -51,26 +51,34 @@ async function evalJs(c, expression, timeout = 20000) {
   return r.result?.value;
 }
 
-async function clickAria(c, label) {
-  const ok = await evalJs(c, `(() => {
-    const el = [...document.querySelectorAll('button, [role=button]')]
-      .find(b => (b.getAttribute('aria-label')||'') === ${JSON.stringify(label)} && b.offsetParent !== null);
-    if (!el) return false;
-    el.click();
-    return true;
-  })()`);
-  if (!ok) throw new Error("no button " + label);
+async function clickAria(c, labels) {
+  const list = Array.isArray(labels) ? labels : [labels];
+  for (const label of list) {
+    const ok = await evalJs(c, `(() => {
+      const el = [...document.querySelectorAll('button, [role=button]')]
+        .find(b => (b.getAttribute('aria-label')||'') === ${JSON.stringify(label)} && b.offsetParent !== null);
+      if (!el) return false;
+      el.click();
+      return true;
+    })()`);
+    if (ok) return;
+  }
+  throw new Error("no button " + list.join("|"));
 }
 
-async function clickText(c, text) {
-  const ok = await evalJs(c, `(() => {
-    const el = [...document.querySelectorAll('button, [role=menuitem], div, span')]
-      .find(b => (b.innerText||'').trim() === ${JSON.stringify(text)});
-    if (!el) return false;
-    el.click();
-    return true;
-  })()`);
-  if (!ok) throw new Error("no text " + text);
+async function clickText(c, texts) {
+  const list = Array.isArray(texts) ? texts : [texts];
+  for (const text of list) {
+    const ok = await evalJs(c, `(() => {
+      const el = [...document.querySelectorAll('button, [role=menuitem], div, span')]
+        .find(b => (b.innerText||'').trim() === ${JSON.stringify(text)});
+      if (!el) return false;
+      el.click();
+      return true;
+    })()`);
+    if (ok) return;
+  }
+  throw new Error("no text " + list.join("|"));
 }
 
 async function setFile(c, filePath) {
@@ -88,19 +96,32 @@ async function setFile(c, filePath) {
 
 const c = await connect(PAGE);
 try {
-  await c.send("Page.navigate", { url: "https://www.google.com/search?udm=50" });
-  await new Promise((r) => setTimeout(r, 1800));
-  const hello = await evalJs(c, "document.body.innerText.slice(0, 400)");
+  await c.send("Page.navigate", { url: "https://gemini.google.com/app" });
+  await new Promise((r) => setTimeout(r, 3500));
+  let hello = await evalJs(c, "document.body.innerText.slice(0, 600)");
+  if (hello.includes("Sign in") || hello.includes("로그인")) {
+    console.log("LOGIN_REQUIRED");
+    console.log(hello.slice(0, 300));
+    process.exit(3);
+  }
   if (hello.includes("일일 한도") || hello.includes("사용량 한도")) {
     console.log("QUOTA");
     console.log(hello);
     process.exit(2);
   }
-  await clickAria(c, "파일 및 도구 추가");
-  await new Promise((r) => setTimeout(r, 400));
-  await clickText(c, "이미지 만들기");
+  try {
+    await clickAria(c, ["파일 및 도구 추가", "Add files and tools", "Add files"]);
+  } catch {
+    await clickText(c, ["이미지 만들기", "Create image", "이미지"]);
+  }
+  await new Promise((r) => setTimeout(r, 600));
+  try {
+    await clickText(c, ["이미지 만들기", "Create image"]);
+  } catch {
+    /* already in image mode */
+  }
   await new Promise((r) => setTimeout(r, 500));
-  await clickAria(c, "파일 및 도구 추가");
+  await clickAria(c, ["파일 및 도구 추가", "Add files and tools", "Add files"]);
   await new Promise((r) => setTimeout(r, 400));
   await setFile(c, SRC);
   await new Promise((r) => setTimeout(r, 400));

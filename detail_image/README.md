@@ -54,6 +54,23 @@ node detail_image/scripts/gemini_4split_cdp.mjs \
 
 프롬프트는 `detail_image/prompts.py`의 `GEMINI_4SPLIT_PROMPT_FULL`과 동일합니다.
 
+### Windows 일괄 (P0/P1, 18 SKU)
+
+로그인된 Chrome CDP **9222** + Gemini 탭 필요:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File detail_image\scripts\Run-P0Regen.ps1
+```
+
+### Gemini API (Cloud 시크릿 `구글 api`가 **주입된** Agent만)
+
+```bash
+python3 detail_image/gemini_api_generate.py 썸네일.jpg -o 상세페이지_4분할_합성.jpg
+python3 detail_image/split_composite.py 상세페이지_4분할_합성.jpg -o 4분할/
+```
+
+Cloud에서 CDP만 쓰면 **LOGIN_REQUIRED** — headless Chrome은 Google 로그인 세션이 없습니다.
+
 ## 검수 루프
 
 1. Gemini로 합성 생성 → `상세페이지_4분할_합성.jpg` 저장
