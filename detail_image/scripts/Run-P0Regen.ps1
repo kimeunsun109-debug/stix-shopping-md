@@ -8,9 +8,17 @@ $NodeScript = Join-Path $Repo "detail_image\scripts\gemini_4split_cdp.mjs"
 $SplitPy = Join-Path $Repo "detail_image\split_composite.py"
 
 $tabs = Invoke-RestMethod "http://127.0.0.1:9222/json"
-$page = $tabs | Where-Object { $_.type -eq "page" } | Select-Object -First 1
-if (-not $page) { throw "Chrome CDP 9222 에 page 탭이 없습니다. Chrome을 --remote-debugging-port=9222 로 실행하세요." }
+$page = $tabs | Where-Object {
+  $_.type -eq "page" -and (
+    ($_.url -like "*gemini.google.com*") -or ($_.url -like "*google.com/search*udm=50*")
+  )
+} | Select-Object -First 1
+if (-not $page) {
+  $page = $tabs | Where-Object { $_.type -eq "page" } | Select-Object -First 1
+}
+if (-not $page) { throw "Chrome CDP 9222 에 page 탭이 없습니다. Start-GeminiLocal.ps1 로 Chrome을 먼저 실행하세요." }
 $ws = $page.webSocketDebuggerUrl
+Write-Host "CDP tab: $($page.url)"
 
 $priorityFile = Join-Path $Repo "detail_image\MD_다시제작_재생성_우선순위.txt"
 $lines = Get-Content $priorityFile -Encoding UTF8 | Where-Object { $_ -match '^P\d' }

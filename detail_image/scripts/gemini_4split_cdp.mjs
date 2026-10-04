@@ -109,19 +109,22 @@ try {
     console.log(hello);
     process.exit(2);
   }
+  const openTools = async () => {
+    try {
+      await clickAria(c, ["업로드 및 도구", "파일 및 도구 추가", "Add files and tools", "Add files"]);
+    } catch {
+      await clickText(c, ["이미지 만들기", "Create image", "Create images"]);
+    }
+  };
+  await openTools();
+  await new Promise((r) => setTimeout(r, 700));
   try {
-    await clickAria(c, ["파일 및 도구 추가", "Add files and tools", "Add files"]);
-  } catch {
-    await clickText(c, ["이미지 만들기", "Create image", "이미지"]);
-  }
-  await new Promise((r) => setTimeout(r, 600));
-  try {
-    await clickText(c, ["이미지 만들기", "Create image"]);
+    await clickText(c, ["이미지 만들기", "Create image", "Create images"]);
   } catch {
     /* already in image mode */
   }
   await new Promise((r) => setTimeout(r, 500));
-  await clickAria(c, ["파일 및 도구 추가", "Add files and tools", "Add files"]);
+  await openTools();
   await new Promise((r) => setTimeout(r, 400));
   await setFile(c, SRC);
   await new Promise((r) => setTimeout(r, 400));
