@@ -39,3 +39,6 @@ MD_*.json
 
 # Template only — keep example xls if present
 # (data under 쇼핑몰별 전체상품/ is tracked for Cursor Cloud)
+
+# detail_page output
+detail_page_out/
