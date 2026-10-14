@@ -40,14 +40,21 @@ PANEL_HINTS = (
 )
 
 
-def build_prompt(product_name: str, category_hint: str = "") -> str:
+def build_prompt(product_name: str, category_hint: str = "", has_reference: bool = True) -> str:
     panels = "\n".join(f"  ({i}) {h}" for i, h in enumerate(PANEL_HINTS, 1))
-    return f"""쇼핑몰 상세페이지용 2x2 4분할 합성 이미지, 정사각 1024x1024, 흰 배경, 프리미엄 상업 촬영.
+    ref = ""
+    if has_reference:
+        ref = """
+[필수 — 참조 사진]
+방금 첨부한 실제 상품 사진이 유일한 기준입니다. 상품명은 캡션·라벨 참고용만.
+다른 제품·다른 디자인·유사 대체품·임의 재구성 금지.
+첨부와 동일한 제품의 형태·색·비율·로고·구성·재질·패키지만 유지하고, 배경·조명·4분할 구도만 상세페이지용으로 재구성.
+"""
+    return f"""{ref}쇼핑몰 상세페이지용 2x2 4분할 합성 이미지, 정사각 1024x1024, 흰 배경, 프리미엄 상업 촬영.
 
-상품: {product_name}
+상품명(참고): {product_name}
 {('카테고리/특성: ' + category_hint) if category_hint else ''}
 
-첨부 썸네일과 동일한 제품만 사용. 제품 형태·색·비율·로고·구성 변경 금지.
 4칸 내용:
 {panels}
 
@@ -117,6 +124,121 @@ def probe_cdp_url(cdp: str | None) -> str:
     raise RuntimeError("CDP Chrome not found on ports " + ",".join(map(str, CDP_PORTS)))
 
 
+def enter_images_mode(page) -> None:
+    for loc in (
+        page.get_by_role("link", name=re.compile(r"Images|이미지", re.I)),
+        page.get_by_role("button", name=re.compile(r"Images|이미지", re.I)),
+        page.get_by_text("Images", exact=False),
+    ):
+        try:
+            loc.first.click(timeout=5000)
+            time.sleep(2)
+            return
+        except PlaywrightTimeout:
+            continue
+
+
+def start_new_chat(page) -> None:
+    for loc in (
+        page.get_by_role("button", name=re.compile(r"New chat|새 채팅", re.I)),
+        page.get_by_role("link", name=re.compile(r"New chat|새 채팅", re.I)),
+    ):
+        try:
+            loc.first.click(timeout=4000)
+            time.sleep(2)
+            return
+        except PlaywrightTimeout:
+            continue
+
+
+def attach_reference_image(page, thumb: Path) -> bool:
+    """Gemini 입력창에 참조 상품 사진을 먼저 붙인다."""
+    if not thumb.is_file():
+        return False
+    path = str(thumb.resolve())
+    attach_labels = (
+        "Upload",
+        "Attach",
+        "Add image",
+        "Insert image",
+        "이미지",
+        "첨부",
+        "업로드",
+    )
+    for label in attach_labels:
+        try:
+            with page.expect_file_chooser(timeout=4000) as fc_info:
+                page.get_by_role("button", name=re.compile(label, re.I)).first.click(timeout=2500)
+            fc_info.value.set_files(path)
+            time.sleep(4)
+            return True
+        except Exception:
+            continue
+    for sel in ('input[type="file"]', 'input[accept*="image"]'):
+        try:
+            inputs = page.locator(sel)
+            count = inputs.count()
+            for i in range(count):
+                try:
+                    inputs.nth(i).set_input_files(path)
+                    time.sleep(4)
+                    return True
+                except PlaywrightTimeout:
+                    continue
+        except PlaywrightTimeout:
+            continue
+    return False
+
+
+def generate_one_product(
+    page,
+    product: str,
+    thumb: Path,
+    out_dir: Path,
+    split_dir: Path,
+    wait_secs: int,
+    require_thumb: bool,
+) -> bool:
+    if require_thumb and not thumb.is_file():
+        print(f"SKIP: 참조 이미지 없음 — {product}", file=sys.stderr)
+        print(f"       경로 확인: {thumb}", file=sys.stderr)
+        return False
+
+    start_new_chat(page)
+    enter_images_mode(page)
+    has_ref = attach_reference_image(page, thumb)
+    if require_thumb and not has_ref:
+        print(f"FAIL: 참조 이미지 업로드 실패 — {product}", file=sys.stderr)
+        print("      Gemini에서 + / 첨부로 사진을 넣은 뒤 같은 프롬프트를 수동 실행하세요.", file=sys.stderr)
+        (out_dir / "prompt.txt").write_text(
+            build_prompt(product, infer_category(product), has_reference=True),
+            encoding="utf-8",
+        )
+        return False
+
+    prompt = build_prompt(product, infer_category(product), has_reference=has_ref)
+    (out_dir / "prompt.txt").write_text(prompt, encoding="utf-8")
+    if has_ref:
+        (out_dir / "reference_image.txt").write_text(str(thumb.resolve()), encoding="utf-8")
+
+    box = page.locator("textarea, div[contenteditable=true]").first
+    box.click(timeout=15_000)
+    box.fill(prompt)
+    page.keyboard.press("Enter")
+    time.sleep(wait_secs)
+    shot = split_dir / "result_screenshot.png"
+    page.screenshot(path=str(shot), full_page=True)
+    composite = out_dir / "상세페이지_4분할_합성.jpg"
+    if not composite.exists():
+        try:
+            import shutil
+
+            shutil.copy2(shot, composite)
+        except OSError:
+            pass
+    return True
+
+
 def _gemini_page(browser):
     for ctx in browser.contexts:
         for page in ctx.pages:
@@ -162,7 +284,13 @@ def login_check(profile: Path) -> bool:
         return not signed_out
 
 
-def run_batch_cdp(manifest: Path, cdp_url: str, limit: int | None) -> int:
+def run_batch_cdp(
+    manifest: Path,
+    cdp_url: str,
+    limit: int | None,
+    wait_secs: int = 50,
+    require_thumb: bool = True,
+) -> int:
     rows = list(csv.DictReader(manifest.open(encoding="utf-8-sig")))
     if limit:
         rows = rows[:limit]
@@ -181,44 +309,25 @@ def run_batch_cdp(manifest: Path, cdp_url: str, limit: int | None) -> int:
             out_dir.mkdir(parents=True, exist_ok=True)
             split_dir = out_dir / "4분할"
             split_dir.mkdir(parents=True, exist_ok=True)
-            prompt = build_prompt(product, infer_category(product))
-            (out_dir / "prompt.txt").write_text(prompt, encoding="utf-8")
             try:
-                page.get_by_text("Images", exact=False).first.click(timeout=8000)
-                time.sleep(2)
-            except PlaywrightTimeout:
-                pass
-            if thumb.is_file():
-                try:
-                    page.locator('input[type="file"]').first.set_input_files(str(thumb))
-                    time.sleep(2)
-                except PlaywrightTimeout:
-                    print(f"WARN: 파일 업로드 UI 없음 — {product}", file=sys.stderr)
-            try:
-                box = page.locator("textarea, div[contenteditable=true]").first
-                box.click(timeout=10_000)
-                box.fill(prompt)
-                page.keyboard.press("Enter")
-                time.sleep(45)
-                shot = split_dir / "result_screenshot.png"
-                page.screenshot(path=str(shot), full_page=True)
-                composite = out_dir / "상세페이지_4분할_합성.jpg"
-                if not composite.exists():
-                    try:
-                        import shutil
-
-                        shutil.copy2(shot, composite)
-                    except OSError:
-                        pass
-                ok += 1
-                print("done:", product, "->", out_dir)
+                if generate_one_product(
+                    page, product, thumb, out_dir, split_dir, wait_secs, require_thumb
+                ):
+                    ok += 1
+                    print("done:", product, "->", out_dir)
             except PlaywrightTimeout as e:
                 print(f"FAIL: {product} — {e}", file=sys.stderr)
     print(f"done {ok}/{len(rows)}")
     return 0 if ok else 2
 
 
-def run_batch(manifest: Path, profile: Path, limit: int | None) -> int:
+def run_batch(
+    manifest: Path,
+    profile: Path,
+    limit: int | None,
+    wait_secs: int = 50,
+    require_thumb: bool = True,
+) -> int:
     rows = list(csv.DictReader(manifest.open(encoding="utf-8-sig")))
     if limit:
         rows = rows[:limit]
@@ -246,29 +355,12 @@ def run_batch(manifest: Path, profile: Path, limit: int | None) -> int:
             out_dir.mkdir(parents=True, exist_ok=True)
             split_dir = out_dir / "4분할"
             split_dir.mkdir(parents=True, exist_ok=True)
-            prompt = build_prompt(product, infer_category(product))
-            (out_dir / "prompt.txt").write_text(prompt, encoding="utf-8")
             try:
-                # UI는 Gemini 업데이트에 따라 달라질 수 있음 — Images 모드 진입 시도
-                page.get_by_text("Images", exact=False).first.click(timeout=8000)
-                time.sleep(2)
-            except PlaywrightTimeout:
-                pass
-            if thumb.is_file():
-                try:
-                    page.locator('input[type="file"]').first.set_input_files(str(thumb))
-                    time.sleep(2)
-                except PlaywrightTimeout:
-                    print(f"WARN: 파일 업로드 UI 없음 — {product}", file=sys.stderr)
-            try:
-                box = page.locator("textarea, div[contenteditable=true]").first
-                box.click(timeout=10_000)
-                box.fill(prompt)
-                page.keyboard.press("Enter")
-                time.sleep(45)
-                page.screenshot(path=str(out_dir / "result_screenshot.png"), full_page=True)
-                ok += 1
-                print("queued:", product)
+                if generate_one_product(
+                    page, product, thumb, out_dir, split_dir, wait_secs, require_thumb
+                ):
+                    ok += 1
+                    print("queued:", product, "->", out_dir)
             except PlaywrightTimeout as e:
                 print(f"FAIL: {product} — {e}", file=sys.stderr)
         ctx.close()
@@ -282,8 +374,15 @@ def main() -> int:
     ap.add_argument("--cdp", default="", help="CDP URL e.g. http://127.0.0.1:9222 (auto-probe if empty)")
     ap.add_argument("--manifest", type=Path, help="CSV: product_name,thumbnail_path")
     ap.add_argument("--limit", type=int, default=None)
+    ap.add_argument("--wait-secs", type=int, default=50, help="생성 대기 초 (중지는 Gemini Stop 또는 Ctrl+C)")
+    ap.add_argument(
+        "--allow-no-thumb",
+        action="store_true",
+        help="참조 썸네일 없이 진행 (비추천 — 상품이 달라질 수 있음)",
+    )
     ap.add_argument("--login-check", action="store_true")
     args = ap.parse_args()
+    require_thumb = not args.allow_no_thumb
     if args.login_check:
         if args.cdp or _probe_optional_cdp():
             cdp_url = probe_cdp_url(args.cdp or None)
@@ -297,9 +396,11 @@ def main() -> int:
     try:
         cdp_url = probe_cdp_url(args.cdp or None)
         print("using CDP:", cdp_url)
-        return run_batch_cdp(args.manifest, cdp_url, args.limit)
+        return run_batch_cdp(
+            args.manifest, cdp_url, args.limit, args.wait_secs, require_thumb
+        )
     except RuntimeError:
-        return run_batch(args.manifest, args.profile, args.limit)
+        return run_batch(args.manifest, args.profile, args.limit, args.wait_secs, require_thumb)
 
 
 def _probe_optional_cdp() -> bool:
