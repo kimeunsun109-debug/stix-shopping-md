@@ -24,8 +24,13 @@ from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeo
 import urllib.request
 
 DEFAULT_PROFILE = Path("/tmp/stix-chrome-gemini-profile")
-OUT_ROOT = Path("/opt/cursor/artifacts/gemini-pdp-output")
+if sys.platform == "win32":
+    _win_out = Path.home() / "Desktop" / "상세페이지사진" / "gemini-pdp-output"
+    OUT_ROOT = Path(os.environ.get("GEMINI_PDP_OUT", str(_win_out)))
+else:
+    OUT_ROOT = Path(os.environ.get("GEMINI_PDP_OUT", "/opt/cursor/artifacts/gemini-pdp-output"))
 CDP_PORTS = (9222, 9233, 9223)
+CDP_ENV_KEYS = ("STIX_CDP_URL", "GEMINI_CDP_URL")
 
 PANEL_HINTS = (
     "제품 구성·패키지(구성품 전체)",
@@ -65,7 +70,39 @@ def infer_category(name: str) -> str:
     return "공예/DIY 취미용품 — 실사 상품 촬영 스타일"
 
 
+def resolve_thumbnail(row: dict) -> Path:
+    raw = os.path.expandvars(row.get("thumbnail_path") or "")
+    if not raw:
+        return Path()
+    p = Path(raw)
+    if p.is_file():
+        return p
+    parent = p.parent
+    if parent.is_dir():
+        for name in ("thumb.jpeg", "thumb.jpg", "썸네일.jpg", "thumbnail.jpg"):
+            candidate = parent / name
+            if candidate.is_file():
+                return candidate
+    return p
+
+
+def output_dir_for_row(row: dict, product: str) -> Path:
+    custom = os.path.expandvars(row.get("output_dir") or "")
+    if custom:
+        return Path(custom)
+    thumb = resolve_thumbnail(row)
+    if thumb.is_file():
+        return thumb.parent
+    safe = re.sub(r"[^\w가-힣.-]+", "_", product)[:80]
+    return OUT_ROOT / safe
+
+
 def probe_cdp_url(cdp: str | None) -> str:
+    if not cdp:
+        for key in CDP_ENV_KEYS:
+            cdp = os.environ.get(key, "").strip()
+            if cdp:
+                break
     if cdp:
         url = cdp.rstrip("/")
         urllib.request.urlopen(f"{url}/json/version", timeout=3)
@@ -139,9 +176,11 @@ def run_batch_cdp(manifest: Path, cdp_url: str, limit: int | None) -> int:
             return 1
         for row in rows:
             product = row.get("product_name") or row.get("name") or ""
-            thumb = Path(os.path.expandvars(row.get("thumbnail_path") or ""))
-            out_dir = OUT_ROOT / re.sub(r"[^\w가-힣.-]+", "_", product)[:80]
+            thumb = resolve_thumbnail(row)
+            out_dir = output_dir_for_row(row, product)
             out_dir.mkdir(parents=True, exist_ok=True)
+            split_dir = out_dir / "4분할"
+            split_dir.mkdir(parents=True, exist_ok=True)
             prompt = build_prompt(product, infer_category(product))
             (out_dir / "prompt.txt").write_text(prompt, encoding="utf-8")
             try:
@@ -161,9 +200,18 @@ def run_batch_cdp(manifest: Path, cdp_url: str, limit: int | None) -> int:
                 box.fill(prompt)
                 page.keyboard.press("Enter")
                 time.sleep(45)
-                page.screenshot(path=str(out_dir / "result_screenshot.png"), full_page=True)
+                shot = split_dir / "result_screenshot.png"
+                page.screenshot(path=str(shot), full_page=True)
+                composite = out_dir / "상세페이지_4분할_합성.jpg"
+                if not composite.exists():
+                    try:
+                        import shutil
+
+                        shutil.copy2(shot, composite)
+                    except OSError:
+                        pass
                 ok += 1
-                print("done:", product)
+                print("done:", product, "->", out_dir)
             except PlaywrightTimeout as e:
                 print(f"FAIL: {product} — {e}", file=sys.stderr)
     print(f"done {ok}/{len(rows)}")
@@ -193,9 +241,11 @@ def run_batch(manifest: Path, profile: Path, limit: int | None) -> int:
             return 1
         for row in rows:
             product = row.get("product_name") or row.get("name") or ""
-            thumb = Path(row.get("thumbnail_path") or "")
-            out_dir = OUT_ROOT / re.sub(r"[^\w가-힣.-]+", "_", product)[:80]
+            thumb = resolve_thumbnail(row)
+            out_dir = output_dir_for_row(row, product)
             out_dir.mkdir(parents=True, exist_ok=True)
+            split_dir = out_dir / "4분할"
+            split_dir.mkdir(parents=True, exist_ok=True)
             prompt = build_prompt(product, infer_category(product))
             (out_dir / "prompt.txt").write_text(prompt, encoding="utf-8")
             try:
