@@ -77,20 +77,34 @@ def infer_category(name: str) -> str:
     return "공예/DIY 취미용품 — 실사 상품 촬영 스타일"
 
 
+def _desktop_path_variants(path: Path) -> list[Path]:
+    """OneDrive Desktop vs local Desktop (Windows)."""
+    variants = [path]
+    s = str(path)
+    desk = f"{os.sep}Desktop{os.sep}"
+    od_desk = f"{os.sep}OneDrive{os.sep}Desktop{os.sep}"
+    if desk in s and od_desk not in s:
+        variants.append(Path(s.replace(desk, od_desk, 1)))
+    if od_desk in s:
+        variants.append(Path(s.replace(od_desk, desk, 1)))
+    return variants
+
+
 def resolve_thumbnail(row: dict) -> Path:
     raw = os.path.expandvars(row.get("thumbnail_path") or "")
     if not raw:
         return Path()
-    p = Path(raw)
-    if p.is_file():
-        return p
-    parent = p.parent
-    if parent.is_dir():
-        for name in ("thumb.jpeg", "thumb.jpg", "썸네일.jpg", "thumbnail.jpg"):
-            candidate = parent / name
-            if candidate.is_file():
-                return candidate
-    return p
+    thumb_names = ("thumb.jpeg", "thumb.jpg", "썸네일.jpg", "thumbnail.jpg")
+    for p in _desktop_path_variants(Path(raw)):
+        if p.is_file():
+            return p
+        parent = p.parent
+        if parent.is_dir():
+            for name in thumb_names:
+                candidate = parent / name
+                if candidate.is_file():
+                    return candidate
+    return Path(raw)
 
 
 def output_dir_for_row(row: dict, product: str) -> Path:
