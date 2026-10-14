@@ -14,15 +14,18 @@ from __future__ import annotations
 
 import argparse
 import csv
+import os
 import re
 import sys
 import time
 from pathlib import Path
 
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeout
+import urllib.request
 
 DEFAULT_PROFILE = Path("/tmp/stix-chrome-gemini-profile")
 OUT_ROOT = Path("/opt/cursor/artifacts/gemini-pdp-output")
+CDP_PORTS = (9222, 9233, 9223)
 
 PANEL_HINTS = (
     "제품 구성·패키지(구성품 전체)",
@@ -62,6 +65,44 @@ def infer_category(name: str) -> str:
     return "공예/DIY 취미용품 — 실사 상품 촬영 스타일"
 
 
+def probe_cdp_url(cdp: str | None) -> str:
+    if cdp:
+        url = cdp.rstrip("/")
+        urllib.request.urlopen(f"{url}/json/version", timeout=3)
+        return url
+    for port in CDP_PORTS:
+        url = f"http://127.0.0.1:{port}"
+        try:
+            urllib.request.urlopen(f"{url}/json/version", timeout=2)
+            return url
+        except Exception:
+            continue
+    raise RuntimeError("CDP Chrome not found on ports " + ",".join(map(str, CDP_PORTS)))
+
+
+def _gemini_page(browser):
+    for ctx in browser.contexts:
+        for page in ctx.pages:
+            if "gemini.google.com" in (page.url or ""):
+                return page
+    page = browser.contexts[0].new_page()
+    page.goto("https://gemini.google.com/app", wait_until="domcontentloaded", timeout=120_000)
+    time.sleep(3)
+    return page
+
+
+def login_check_cdp(cdp_url: str) -> bool:
+    with sync_playwright() as p:
+        browser = p.chromium.connect_over_cdp(cdp_url)
+        page = _gemini_page(browser)
+        time.sleep(2)
+        body = page.inner_text("body")
+        signed_out = "Sign in" in body and "Meet Gemini" in body
+        OUT_ROOT.mkdir(parents=True, exist_ok=True)
+        page.screenshot(path=str(OUT_ROOT / "login_check_cdp.png"), full_page=True)
+        return not signed_out
+
+
 def login_check(profile: Path) -> bool:
     with sync_playwright() as p:
         ctx = p.chromium.launch_persistent_context(
@@ -82,6 +123,51 @@ def login_check(profile: Path) -> bool:
         ctx.close()
         print("screenshot:", shot)
         return not signed_out
+
+
+def run_batch_cdp(manifest: Path, cdp_url: str, limit: int | None) -> int:
+    rows = list(csv.DictReader(manifest.open(encoding="utf-8-sig")))
+    if limit:
+        rows = rows[:limit]
+    OUT_ROOT.mkdir(parents=True, exist_ok=True)
+    ok = 0
+    with sync_playwright() as p:
+        browser = p.chromium.connect_over_cdp(cdp_url)
+        page = _gemini_page(browser)
+        if "Sign in" in page.inner_text("body"):
+            print("ERROR: Gemini 미로그인 (CDP)", file=sys.stderr)
+            return 1
+        for row in rows:
+            product = row.get("product_name") or row.get("name") or ""
+            thumb = Path(os.path.expandvars(row.get("thumbnail_path") or ""))
+            out_dir = OUT_ROOT / re.sub(r"[^\w가-힣.-]+", "_", product)[:80]
+            out_dir.mkdir(parents=True, exist_ok=True)
+            prompt = build_prompt(product, infer_category(product))
+            (out_dir / "prompt.txt").write_text(prompt, encoding="utf-8")
+            try:
+                page.get_by_text("Images", exact=False).first.click(timeout=8000)
+                time.sleep(2)
+            except PlaywrightTimeout:
+                pass
+            if thumb.is_file():
+                try:
+                    page.locator('input[type="file"]').first.set_input_files(str(thumb))
+                    time.sleep(2)
+                except PlaywrightTimeout:
+                    print(f"WARN: 파일 업로드 UI 없음 — {product}", file=sys.stderr)
+            try:
+                box = page.locator("textarea, div[contenteditable=true]").first
+                box.click(timeout=10_000)
+                box.fill(prompt)
+                page.keyboard.press("Enter")
+                time.sleep(45)
+                page.screenshot(path=str(out_dir / "result_screenshot.png"), full_page=True)
+                ok += 1
+                print("done:", product)
+            except PlaywrightTimeout as e:
+                print(f"FAIL: {product} — {e}", file=sys.stderr)
+    print(f"done {ok}/{len(rows)}")
+    return 0 if ok else 2
 
 
 def run_batch(manifest: Path, profile: Path, limit: int | None) -> int:
@@ -143,17 +229,35 @@ def run_batch(manifest: Path, profile: Path, limit: int | None) -> int:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--profile", type=Path, default=DEFAULT_PROFILE)
+    ap.add_argument("--cdp", default="", help="CDP URL e.g. http://127.0.0.1:9222 (auto-probe if empty)")
     ap.add_argument("--manifest", type=Path, help="CSV: product_name,thumbnail_path")
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--login-check", action="store_true")
     args = ap.parse_args()
     if args.login_check:
-        ok = login_check(args.profile)
+        if args.cdp or _probe_optional_cdp():
+            cdp_url = probe_cdp_url(args.cdp or None)
+            ok = login_check_cdp(cdp_url)
+        else:
+            ok = login_check(args.profile)
         print("logged_in:", ok)
         return 0 if ok else 1
     if not args.manifest:
         ap.error("--manifest 또는 --login-check 필요")
-    return run_batch(args.manifest, args.profile, args.limit)
+    try:
+        cdp_url = probe_cdp_url(args.cdp or None)
+        print("using CDP:", cdp_url)
+        return run_batch_cdp(args.manifest, cdp_url, args.limit)
+    except RuntimeError:
+        return run_batch(args.manifest, args.profile, args.limit)
+
+
+def _probe_optional_cdp() -> bool:
+    try:
+        probe_cdp_url(None)
+        return True
+    except RuntimeError:
+        return False
 
 
 if __name__ == "__main__":
