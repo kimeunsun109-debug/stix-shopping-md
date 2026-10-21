@@ -12,6 +12,7 @@ if errorlevel 1 (
   exit /b 1
 )
 
+if "%GEMINI_PDP_MANIFEST%"=="" set "GEMINI_PDP_MANIFEST=scripts\gemini_pdp_manifest_win.csv"
 if "%GEMINI_PDP_LIMIT%"=="" set GEMINI_PDP_LIMIT=1
-%_PY% scripts\gemini_pdp_4split_batch.py --manifest scripts\gemini_pdp_manifest_win.csv --limit %GEMINI_PDP_LIMIT%
+%_PY% scripts\gemini_pdp_4split_batch.py --manifest %GEMINI_PDP_MANIFEST% --limit %GEMINI_PDP_LIMIT%
 pause
