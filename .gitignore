@@ -37,5 +37,8 @@ MD_*.json
 # Misc local (outside data folder)
 로켓그로스 보관비.xlsx
 
+# 11번가 추가구성 도구가 --apply 때 남기는 수정 전 XML
+11st_addon_backups/
+
 # Template only — keep example xls if present
 # (data under 쇼핑몰별 전체상품/ is tracked for Cursor Cloud)
