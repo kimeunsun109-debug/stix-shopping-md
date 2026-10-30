@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -152,8 +153,8 @@ def _process_one(prd_no, client, *, apply, stock, backup_dir, out, report: Batch
         return Row(prd_no, status="error", error=str(exc))
     if not _addon_blocks_present(before_xml):
         print(
-            f"[{prd_no}] 조회 결과에 추가구성이 없습니다. "
-            "셀러오피스 화면에 있으면 상세 조회가 누락한 것이니 --apply 하지 마세요. 중복 등록됩니다.",
+            f"[{prd_no}] 재고 조회(stck)에 추가구성이 없습니다. "
+            "셀러오피스 화면에 있으면 조회가 누락한 것이니 --apply 하지 마세요. 중복 등록됩니다.",
             file=out,
         )
     try:
@@ -202,7 +203,9 @@ def _backup(backup_dir: Path | None, prd_no: str, xml: str) -> None:
         return
     backup_dir.mkdir(parents=True, exist_ok=True)
     target = backup_dir / f"{prd_no}.before.xml"
-    target.write_text(xml, encoding="utf-8")
+    # 파일은 UTF-8 로 남기고, 조회 응답의 euc-kr 선언도 UTF-8 로 맞춘다.
+    text = re.sub(r"""(<\?xml[^>]*?encoding\s*=\s*["'])[^"']+""", r"\g<1>UTF-8", xml, count=1)
+    target.write_text(text, encoding="utf-8")
 
 
 def _addon_blocks_present(xml: str) -> bool:

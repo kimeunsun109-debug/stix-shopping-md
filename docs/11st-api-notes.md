@@ -182,3 +182,11 @@ elevenia(`api.elevenia.co.id`)는 11번가와 같은 SK플래닛 계열 상품 A
 4. `addPrdGrpNm`과 `compPrdNm` 중 구매자 노출 필드.
 5. 수정 요청에서 비우면 지워지는 필드 목록.
 6. 성공 `resultCode`의 정확한 값과 인코딩.
+
+## 2026-10-30 실측 (은선 PC, 고정 IP)
+
+- `GET /rest/prodservices/product/details/{prdNo}` → HTTP 500, resultCode -997 `등록된 API 정보가 존재하지 않습니다`. 이 키로는 쓸 수 없어 도구에서 뺐다.
+- `GET /rest/prodmarketservice/prodmarket/{prdNo}` → 200, `<Product>` 전체 XML(EUC-KR). 추가구성은 들어 있지 않다.
+- `GET /rest/prodmarketservice/prodmarket/stck/{prdNo}` → 200, `<ns2:ProductStocks>` 안 `ns2:productComponents/productComponent`에 현재 추가구성(`addCompPrc`, `addPrdGrpNm`, `addUseYn`, `compPrdNm`, `compPrdQty`, `compPrdVatCd`)이 있다.
+- 도구는 두 응답을 합쳐(상품 XML 끝에 `ProductComponent` 블록) 비교하고, `--apply` 때 그 XML을 EUC-KR로 `PUT /rest/prodservices/product/{prdNo}` 한다. **prodmarket 조회 XML이 저장(PUT)에 필요한 필드를 모두 담는지는 아직 확인하지 않았다.** 첫 `--apply --limit 1` 뒤 셀러오피스·구매 화면에서 배송·옵션·상세가 그대로인지 반드시 본다.
+- 실제 응답 샘플: `tools/11st_addons/fixtures/*_8578012899.euckr.xml` (셀러오피스에서 4종·재고 999로 손으로 맞춘 상품).

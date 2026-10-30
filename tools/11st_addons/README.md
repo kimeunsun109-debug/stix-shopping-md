@@ -4,16 +4,35 @@
 
 | 추가구성 | 추가금액 | 재고 |
 | --- | ---: | ---: |
-| 3구펜+고체풀+트레이세트 | 1,000원 | 100 |
-| 코팅제 120ml | 5,500원 | 100 |
-| B7000 110ml | 5,000원 | 100 |
-| 보조눈금자 11.5cm | 5,000원 | 100 |
+| 3구펜+고체풀+트레이세트 | 1,000원 | 999 |
+| 보석십자수 코팅제 120ml | 5,500원 | 999 |
+| B7000 보석십자수본드 110ml | 5,000원 | 999 |
+| 보석십자수 보조눈금자 11.5cm | 5,000원 | 999 |
 
-재고 100은 바꿀 수 있습니다. `9999`는 셀러오피스에서 자주 들어가던 잘못된 값이라 도구가 거부합니다.
+그룹 이름(`addPrdGrpNm`)은 모두 `추가구성`, 부가세 `01`(과세), 사용 `Y`입니다. 재고 999는 `--addon-stock`으로 바꿀 수 있습니다. `9999`는 셀러오피스에서 자주 들어가던 잘못된 값이라 도구가 거부합니다.
 
 기본 실행은 **조회와 비교만** 합니다. 11번가에 저장하는 요청은 `--apply`를 적을 때만 나갑니다.
 
+조회는 두 번 합니다. `GET prodmarketservice/prodmarket/{prdNo}`(상품 전체 XML)와 `GET prodmarketservice/prodmarket/stck/{prdNo}`(현재 추가구성). 응답은 EUC-KR이고, 저장 본문도 EUC-KR로 보냅니다. 예전 `prodservices/product/details`는 이 키로 HTTP 500(-997)이라 쓰지 않습니다.
+
 API에서 확인한 내용과 아직 모르는 부분은 [docs/11st-api-notes.md](../../docs/11st-api-notes.md)에 있습니다. 추가구성만 고치는 주소는 공개 문서에서 찾지 못했습니다. 저장은 상품 XML 전체를 다시 보내는 방식이라, 아래 순서를 지킵니다.
+
+## Windows PowerShell (은선 PC)
+
+저장소는 `%USERPROFILE%\stix-11st` 에 있습니다. 키는 사용자 환경변수 `ELEVENST_API_KEY`에 저장돼 있고, 창마다 아래 첫 줄로 불러옵니다. 키를 화면에 출력하지 않습니다.
+
+```powershell
+cd $env:USERPROFILE\stix-11st
+git pull
+$env:ELEVENST_API_KEY=[Environment]::GetEnvironmentVariable('ELEVENST_API_KEY','User')
+"prdNo`n8578012899`n8578007121`n8578001406" | Set-Content -Encoding utf8 $env:USERPROFILE\run1030\check3.csv
+# 1) 드라이런 (저장 안 함)
+py tools\11st_addons\run.py --input $env:USERPROFILE\run1030\check3.csv --output $env:USERPROFILE\run1030\check3_result.csv --limit 0
+# 2) 한 개만 저장 (드라이런 결과가 셀러오피스 화면과 같을 때만)
+py tools\11st_addons\run.py --input $env:USERPROFILE\run1030\one.csv --output $env:USERPROFILE\run1030\one_result.csv --apply --limit 1
+# 테스트
+py -m unittest discover -s tools\11st_addons\tests
+```
 
 ## 준비
 
@@ -77,7 +96,7 @@ python3 tools/11st_addons/run.py \
 
 `--limit`를 생략해도 1개입니다. 수정 전 XML은 결과 CSV 옆 `11st_addon_backups/상품번호.before.xml`에 남습니다. 이 폴더는 git에 올리지 않습니다.
 
-상태가 `verified`이면, 저장 뒤 다시 조회했을 때 판매가·상품명·상세 HTML·이미지·카테고리·판매자 상품코드·본상품 재고·옵션 블록·배송(`dlv`)·할인(`cupon`/`cupn`/`dsc`) 값이 조회 때와 같고, 목표 추가구성의 재고가 100입니다.
+상태가 `verified`이면, 저장 뒤 다시 조회했을 때 판매가·상품명·상세 HTML·이미지·카테고리·판매자 상품코드·본상품 재고·옵션 블록·배송(`dlv`)·할인(`cupon`/`cupn`/`dsc`) 값이 조회 때와 같고, 목표 추가구성의 재고가 999입니다.
 
 ### 3. 구매자 페이지 확인
 
@@ -86,10 +105,10 @@ python3 tools/11st_addons/run.py \
 - 상품명과 판매가가 그대로인지
 - 옵션과 상세페이지가 그대로인지
 - 추가구성 4개의 이름과 추가금액이 위 표와 같은지
-- 재고가 100인지
+- 재고가 999인지
 - 원래 있던 다른 추가구성이 남아 있는지
 
-구매 화면 문구가 다르면 목록을 더 돌리지 않습니다. `addPrdGrpNm`(그룹 이름)과 `compPrdNm`(값) 중 화면에 뭐가 나오는지는 공개 문서에서 확정하지 못했습니다. 여러 줄이 그룹 이름을 공유하면 그룹 이름은 두고 값만 바꿉니다. 그 줄만 쓰는 그룹 이름이면 둘 다 목표 이름으로 바꿉니다.
+구매 화면 문구가 다르면 목록을 더 돌리지 않습니다. 그룹 이름은 항상 `추가구성`, 값(`compPrdNm`)은 위 표 이름으로 맞춥니다(8578012899 셀러오피스 수동 설정과 같음).
 
 ### 4. 나머지
 
@@ -103,7 +122,7 @@ python3 tools/11st_addons/run.py \
   --limit 0
 ```
 
-재고를 100이 아닌 값으로 보려면 `--addon-stock`을 붙입니다. 아래는 저장하지 않는 드라이런입니다. 저장까지 하려면 `--apply`를 같이 적습니다.
+재고를 999가 아닌 값으로 보려면 `--addon-stock`을 붙입니다. 아래는 저장하지 않는 드라이런입니다. 저장까지 하려면 `--apply`를 같이 적습니다.
 
 ```bash
 python3 tools/11st_addons/run.py --input 상품번호.csv --output 결과.csv --addon-stock 80
@@ -133,9 +152,9 @@ python3 tools/11st_addons/run.py --input 상품번호.csv --output 결과.csv --
 | 목표 | 기존 이름에 포함되면 같은 줄로 봅니다 |
 | --- | --- |
 | 3구펜+고체풀+트레이세트 | 3구펜, 고체풀, 트레이세트 |
-| 코팅제 120ml | 코팅제, 코팅액 |
-| B7000 110ml | B7000, B-7000 |
-| 보조눈금자 11.5cm | 보조눈금자, 눈금자 |
+| 보석십자수 코팅제 120ml | 코팅제, 코팅액 |
+| B7000 보석십자수본드 110ml | B7000, B-7000 |
+| 보석십자수 보조눈금자 11.5cm | 보조눈금자, 눈금자 |
 
 이 단어가 없는 추가구성은 유지합니다.
 
@@ -160,7 +179,7 @@ python3 tools/11st_addons/tests/test_tool.py -v
 | --- | --- |
 | `run.py` | 실행 진입점 |
 | `cli.py` | 인자. 기본 드라이런, `--apply`, `--limit` |
-| `client.py` | 조회 GET, 수정 PUT. 키는 헤더에만 |
+| `client.py` | 조회 GET(prodmarket + stck 합침), 수정 PUT(EUC-KR). 키는 헤더에만 |
 | `xml_edit.py` | 추가구성 블록만 교체하고 바깥 토큰을 검사 |
 | `spec.py` | 4종 이름·가격·재고 정책 |
 | `runner.py` | CSV, 연속 실패 2회 중단, 재조회 확인 |

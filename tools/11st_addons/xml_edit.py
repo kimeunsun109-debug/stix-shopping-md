@@ -11,6 +11,7 @@ from dataclasses import dataclass, field
 from xml.sax.saxutils import escape
 
 from spec import (
+    ADDON_GROUP,
     CANONICAL_ADDONS,
     NEW_COMPONENT_VAT,
     AddonSpec,
@@ -146,7 +147,7 @@ def plan_update(
         tail = pieces[-1]
         pieces[-1] = tail[: close.start()] + insertion + tail[close.start() :]
         for spec in missing:
-            created = AddonView(spec.name, spec.name, spec.price, stock, "Y")
+            created = AddonView(ADDON_GROUP, spec.name, spec.price, stock, "Y")
             after.append(created)
             changes.append(Change("add", "(없음)", created.render()))
 
@@ -255,23 +256,22 @@ def _rewrite_block(
     shared_groups: set[str],
 ) -> tuple[str, AddonView, bool]:
     text = block.text
-    group_shared = bool(view.group.strip()) and view.group.strip() in shared_groups
-    new_group = view.group if group_shared else spec.name
+    text = _set_child(text, "addPrdGrpNm", ADDON_GROUP)
     text = _set_child(text, "compPrdNm", spec.name)
-    if not group_shared:
-        text = _set_child(text, "addPrdGrpNm", spec.name)
     text = _set_child(text, "addCompPrc", str(spec.price))
     text = _set_child(text, "compPrdQty", str(stock))
     if _child_text(text, "addUseYn") is not None:
         text = _set_child(text, "addUseYn", "Y")
-    new_view = AddonView(new_group, spec.name, spec.price, stock, "Y" if _child_text(text, "addUseYn") else view.use_yn)
+    if _child_text(text, "compPrdVatCd") is None:
+        text = _set_child(text, "compPrdVatCd", NEW_COMPONENT_VAT)
+    new_view = AddonView(ADDON_GROUP, spec.name, spec.price, stock, "Y" if _child_text(text, "addUseYn") else view.use_yn)
     return text, new_view, text != block.text
 
 
 def _new_component(prefix: str, spec: AddonSpec, stock: int) -> str:
     tag = f"{prefix}ProductComponent"
     rows = (
-        ("addPrdGrpNm", spec.name),
+        ("addPrdGrpNm", ADDON_GROUP),
         ("compPrdNm", spec.name),
         ("addCompPrc", str(spec.price)),
         ("compPrdQty", str(stock)),

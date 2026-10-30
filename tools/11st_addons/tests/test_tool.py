@@ -11,9 +11,16 @@ PKG = Path(__file__).resolve().parents[1]
 if str(PKG) not in sys.path:
     sys.path.insert(0, str(PKG))
 
-from client import ApiError, ElevenStClient, _NoRedirect, decode_body  # noqa: E402
+from client import (  # noqa: E402
+    ApiError,
+    ElevenStClient,
+    _NoRedirect,
+    decode_body,
+    merge_components,
+    xml_declared_encoding,
+)
 from runner import read_prd_nos, run_batch, write_results  # noqa: E402
-from spec import StockPolicyError, validate_stock  # noqa: E402
+from spec import DEFAULT_ADDON_STOCK, StockPolicyError, validate_stock  # noqa: E402
 from xml_edit import (  # noqa: E402
     UnsafeProductDiff,
     assert_only_addon_markup_changed,
@@ -53,11 +60,11 @@ class PlanTests(unittest.TestCase):
         self.assertEqual(
             labels,
             [
-                "코팅제 120ml",
+                "보석십자수 코팅제 120ml",
                 "포장박스",
                 "3구펜+고체풀+트레이세트",
-                "B7000 110ml",
-                "보조눈금자 11.5cm",
+                "B7000 보석십자수본드 110ml",
+                "보석십자수 보조눈금자 11.5cm",
             ],
         )
         coating = plan.after[0]
@@ -77,9 +84,9 @@ class PlanTests(unittest.TestCase):
         self.assertIn("<![CDATA[<p>상세 설명 그대로</p>]]>", plan.xml)
         self.assertEqual([view.label() for view in plan.after], [
             "3구펜+고체풀+트레이세트",
-            "코팅제 120ml",
-            "B7000 110ml",
-            "보조눈금자 11.5cm",
+            "보석십자수 코팅제 120ml",
+            "B7000 보석십자수본드 110ml",
+            "보석십자수 보조눈금자 11.5cm",
         ])
         self.assertTrue(all(view.qty == 100 and view.price for view in plan.after))
         self.assertIn("<compPrdVatCd>01</compPrdVatCd>", plan.xml)
@@ -114,7 +121,7 @@ class PlanTests(unittest.TestCase):
             plan_update(xml, 100)
         self.assertIn("해석하지 않는", str(caught.exception))
 
-    def test_unique_group_name_is_renamed(self):
+    def test_group_name_becomes_chuga_gusung(self):
         xml = """<?xml version="1.0" encoding="UTF-8"?>
 <Product>
   <prdNm>이름</prdNm>
@@ -128,7 +135,9 @@ class PlanTests(unittest.TestCase):
 </Product>
 """
         plan = plan_update(xml, 100)
-        self.assertIn("<addPrdGrpNm>코팅제 120ml</addPrdGrpNm>", plan.xml)
+        self.assertIn("<addPrdGrpNm>추가구성</addPrdGrpNm>", plan.xml)
+        self.assertIn("<compPrdNm>보석십자수 코팅제 120ml</compPrdNm>", plan.xml)
+        self.assertIn("<compPrdVatCd>01</compPrdVatCd>", plan.xml)
         self.assertNotIn("구형 코팅제", plan.xml)
         self.assertIn("<selPrc>1000</selPrc>", plan.xml)
 
@@ -191,7 +200,7 @@ class BatchTests(unittest.TestCase):
         self.assertEqual(client.fetches, [PRD])
         self.assertEqual(report.rows[0].status, "dry_run")
         self.assertIn("구형 코팅제", report.rows[0].before)
-        self.assertIn("코팅제 120ml|+5500|재고100", report.rows[0].after)
+        self.assertIn("보석십자수 코팅제 120ml|+5500|재고100", report.rows[0].after)
         self.assertEqual(report.rows[1].status, "skipped_limit")
         text = out.getvalue()
         self.assertIn("드라이런", text)
@@ -308,7 +317,8 @@ class ClientTests(unittest.TestCase):
         self.assertNotIn(secret, str(caught.exception))
         self.assertNotIn(secret, transport.url)
         self.assertEqual(transport.header, secret)
-        self.assertTrue(transport.url.endswith(f"/prodservices/product/details/{PRD}"))
+        self.assertTrue(transport.url.endswith(f"/prodmarketservice/prodmarket/{PRD}"))
+        self.assertNotIn("/details/", transport.url)
         self.assertEqual(transport.method, "GET")
 
         class Ok:
@@ -403,6 +413,139 @@ class CliTests(unittest.TestCase):
         source.unlink()
         target.unlink()
         folder.rmdir()
+
+
+REAL_PRD = "8578012899"
+REAL_BASE_RAW = (PKG / "fixtures" / "prodmarket_8578012899.euckr.xml").read_bytes()
+REAL_STCK_RAW = (PKG / "fixtures" / "stck_8578012899.euckr.xml").read_bytes()
+
+
+class RoutingTransport:
+    """prodmarket / stck 경로별로 실제 11번가 응답 바이트를 돌려준다. PUT 은 기록만 한다."""
+
+    def __init__(self, base=REAL_BASE_RAW, stck=REAL_STCK_RAW, content_type="text/xml"):
+        self.base = base
+        self.stck = stck
+        self.content_type = content_type
+        self.calls: list[tuple[str, str]] = []
+        self.bodies: list[bytes] = []
+        self.headers: list[dict] = []
+
+    def send(self, method, url, headers, body, timeout):
+        self.calls.append((method, url))
+        self.headers.append(dict(headers))
+        if method == "PUT":
+            self.bodies.append(body)
+            return 200, "text/xml", b"<ClientMessage><resultCode>200</resultCode></ClientMessage>"
+        if "/prodmarketservice/prodmarket/stck/" in url:
+            return 200, self.content_type, self.stck
+        if "/prodmarketservice/prodmarket/" in url:
+            return 200, self.content_type, self.base
+        return 500, "text/xml", "<ClientMessage><resultCode>-997</resultCode></ClientMessage>".encode()
+
+
+class RealSampleTests(unittest.TestCase):
+    """8578012899 는 셀러오피스에서 4종·재고 999 로 손으로 맞춘 상품이다."""
+
+    def test_raw_euc_kr_decodes_from_xml_declaration_without_charset_header(self):
+        self.assertNotIn(b"charset", b"text/xml")
+        base = decode_body(REAL_BASE_RAW, "text/xml")
+        stck = decode_body(REAL_STCK_RAW, None)
+        self.assertIn("시원한여름", base)
+        self.assertIn("보석십자수 보조눈금자 11.5cm", stck)
+        self.assertEqual(xml_declared_encoding(REAL_BASE_RAW).lower(), "euc-kr")
+
+    def test_client_reads_prodmarket_and_stck_never_details(self):
+        transport = RoutingTransport()
+        client = ElevenStClient("SECRETKEY1234567890ABCD", transport=transport)
+        merged = client.fetch_product(REAL_PRD)
+        urls = [url for _, url in transport.calls]
+        self.assertEqual(len(urls), 2)
+        self.assertTrue(urls[0].endswith(f"/prodmarketservice/prodmarket/{REAL_PRD}"))
+        self.assertTrue(urls[1].endswith(f"/prodmarketservice/prodmarket/stck/{REAL_PRD}"))
+        self.assertFalse(any("/details/" in url for url in urls))
+        self.assertEqual(merged.count("<ProductComponent>"), 4)
+        self.assertIn("<selPrc>21800</selPrc>", merged)
+
+    def test_hand_fixed_product_is_unchanged_at_default_stock_999(self):
+        self.assertEqual(DEFAULT_ADDON_STOCK, 999)
+        merged = merge_components(decode_body(REAL_BASE_RAW, None), decode_body(REAL_STCK_RAW, None))
+        plan = plan_update(merged, DEFAULT_ADDON_STOCK)
+        self.assertTrue(plan.unchanged)
+        self.assertEqual(plan.xml, merged)
+        self.assertEqual(
+            [view.render() for view in plan.after],
+            [
+                "3구펜+고체풀+트레이세트|+1000|재고999",
+                "보석십자수 코팅제 120ml|+5500|재고999",
+                "B7000 보석십자수본드 110ml|+5000|재고999",
+                "보석십자수 보조눈금자 11.5cm|+5000|재고999",
+            ],
+        )
+        self.assertTrue(all(view.group == "추가구성" for view in plan.after))
+
+    def test_dry_run_batch_on_real_sample_reports_unchanged_and_no_put(self):
+        transport = RoutingTransport()
+        client = ElevenStClient("SECRETKEY1234567890ABCD", transport=transport)
+        out = io.StringIO()
+        report = run_batch([REAL_PRD], client, apply=False, limit=1, stock=999, backup_dir=None, out=out)
+        self.assertEqual(report.rows[0].status, "unchanged")
+        self.assertFalse(any(method == "PUT" for method, _ in transport.calls))
+        self.assertTrue(report.ok)
+
+    def test_apply_on_unchanged_real_sample_sends_no_put(self):
+        transport = RoutingTransport()
+        client = ElevenStClient("SECRETKEY1234567890ABCD", transport=transport)
+        report = run_batch([REAL_PRD], client, apply=True, limit=1, stock=999, backup_dir=None, out=io.StringIO())
+        self.assertEqual(report.rows[0].status, "unchanged")
+        self.assertEqual(transport.bodies, [])
+
+    def test_missing_one_addon_in_stck_plans_only_that_add(self):
+        text = decode_body(REAL_STCK_RAW, None)
+        start = text.index("<productComponent><addCompPrc>5000</addCompPrc>")
+        end = text.index("</productComponent>", start) + len("</productComponent>")
+        trimmed = (text[:start] + text[end:]).encode("euc-kr")
+        transport = RoutingTransport(stck=trimmed)
+        client = ElevenStClient("k" * 20, transport=transport)
+        report = run_batch([REAL_PRD], client, apply=False, limit=1, stock=999, backup_dir=None, out=io.StringIO())
+        self.assertEqual(report.rows[0].status, "dry_run")
+        self.assertNotIn("B7000", report.rows[0].before)
+        self.assertIn("B7000 보석십자수본드 110ml|+5000|재고999", report.rows[0].after)
+
+    def test_old_stock_100_is_planned_up_to_999(self):
+        text = decode_body(REAL_STCK_RAW, None).replace("<compPrdQty>999</compPrdQty>", "<compPrdQty>100</compPrdQty>")
+        merged = merge_components(decode_body(REAL_BASE_RAW, None), text)
+        plan = plan_update(merged, 999)
+        self.assertEqual([change.action for change in plan.changes], ["rename"] * 4)
+        self.assertNotIn("<compPrdQty>100</compPrdQty>", plan.xml)
+
+    def test_put_body_is_euc_kr_with_matching_declaration(self):
+        merged = merge_components(decode_body(REAL_BASE_RAW, None), decode_body(REAL_STCK_RAW, None))
+        transport = RoutingTransport()
+        client = ElevenStClient("k" * 20, transport=transport)
+        client.update_product(REAL_PRD, merged)
+        body = transport.bodies[0]
+        self.assertTrue(body.startswith(b'<?xml version="1.0" encoding="euc-kr"'))
+        text = body.decode("euc-kr")
+        self.assertEqual(text.count("<?xml"), 1)
+        self.assertIn("<compPrdNm>보석십자수 보조눈금자 11.5cm</compPrdNm>", text)
+        self.assertNotIn("<message>", text)
+        self.assertNotIn("<nResult>", text)
+        self.assertIn("charset=EUC-KR", transport.headers[-1]["Content-Type"])
+        self.assertEqual(transport.calls[-1][0], "PUT")
+        self.assertTrue(transport.calls[-1][1].endswith(f"/prodservices/product/{REAL_PRD}"))
+
+    def test_stck_failure_stops_the_product(self):
+        class StckDown(RoutingTransport):
+            def send(self, method, url, headers, body, timeout):
+                if "/stck/" in url:
+                    return 500, "text/xml", b"<ClientMessage><resultCode>-997</resultCode></ClientMessage>"
+                return super().send(method, url, headers, body, timeout)
+
+        client = ElevenStClient("k" * 20, transport=StckDown())
+        report = run_batch([REAL_PRD], client, apply=True, limit=1, stock=999, backup_dir=None, out=io.StringIO())
+        self.assertEqual(report.rows[0].status, "error")
+        self.assertIn("-997", report.rows[0].error)
 
 
 if __name__ == "__main__":
