@@ -247,7 +247,7 @@ def _reject_failure_code(xml: str, allow_missing: bool) -> None:
         return
     if code is None:
         raise ApiError("응답에 resultCode 가 없습니다.")
-    raise ApiError(f"11번가 resultCode {code}")
+    raise ApiError(f"11번가 resultCode {code}{_error_hint(xml)}")
 
 
 def _result_code(xml: str) -> str | None:
