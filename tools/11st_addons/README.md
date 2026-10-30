@@ -25,11 +25,13 @@ API에서 확인한 내용과 아직 모르는 부분은 [docs/11st-api-notes.md
 cd $env:USERPROFILE\stix-11st
 git pull
 $env:ELEVENST_API_KEY=[Environment]::GetEnvironmentVariable('ELEVENST_API_KEY','User')
-"prdNo`n8578012899`n8578007121`n8578001406" | Set-Content -Encoding utf8 $env:USERPROFILE\run1030\check3.csv
+New-Item -ItemType Directory -Force run1030 | Out-Null   # 저장소 안 작업 폴더(git 에 올리지 않음)
+"prdNo`n8578012899`n8578007121`n8578001406" | Set-Content -Encoding utf8 run1030\check3.csv
 # 1) 드라이런 (저장 안 함)
-py tools\11st_addons\run.py --input $env:USERPROFILE\run1030\check3.csv --output $env:USERPROFILE\run1030\check3_result.csv --limit 0
-# 2) 한 개만 저장 (드라이런 결과가 셀러오피스 화면과 같을 때만)
-py tools\11st_addons\run.py --input $env:USERPROFILE\run1030\one.csv --output $env:USERPROFILE\run1030\one_result.csv --apply --limit 1
+py tools\11st_addons\run.py --input run1030\check3.csv --output run1030\check3_result.csv --limit 0
+# 2) 한 개만 저장 (드라이런 결과가 셀러오피스 화면과 같을 때만). one.csv 에는 prdNo 한 줄만
+"prdNo`n4510236933" | Set-Content -Encoding utf8 run1030\one.csv
+py tools\11st_addons\run.py --input run1030\one.csv --output run1030\one_result.csv --apply --limit 1
 # 테스트
 py -m unittest discover -s tools\11st_addons\tests
 ```
