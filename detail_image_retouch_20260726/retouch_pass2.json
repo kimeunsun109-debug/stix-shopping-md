@@ -1,0 +1,10 @@
+{
+  "pass2": true,
+  "anchor_ref": "_official_refs\\anchor_lovecrafts_1.jpg",
+  "clover_ref": "_official_refs\\clover_jp_57-550_dealer_1.png",
+  "actions": [
+    "colorchart strong 2D illumination flatten + bg neutralize",
+    "clover same-SKU dealer ref guided + glare polish",
+    "anchor detail ref-guided mild LAB match"
+  ]
+}

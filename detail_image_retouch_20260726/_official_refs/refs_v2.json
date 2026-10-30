@@ -1,0 +1,74 @@
+[
+  {
+    "key": "anchor_official_mouline",
+    "brand": "ANCHOR",
+    "verify_url": "https://anchorcrafts.com/products/anchor-stranded-cotton-mouline-5",
+    "note": "공식 Stranded Cotton Mouliné — 444 solid colours",
+    "images": [],
+    "saved": [],
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "anchor_official_shade_card",
+    "brand": "ANCHOR",
+    "verify_url": "https://anchorcrafts.com/products/anchor-embroidery-thread-shade-card",
+    "note": "공식 Shade Card CA-4546",
+    "images": [],
+    "saved": [],
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "clover_official_hoop_18cm",
+    "brand": "CLOVER",
+    "verify_url": "https://www.clover-mfg.com/en/product/n8812",
+    "note": "공식 Embroidery Hoop 18cm (동일 구조 제품군)",
+    "images": [],
+    "saved": []
+  },
+  {
+    "key": "clover_jp_57-550_dealer",
+    "brand": "CLOVER",
+    "verify_url": "https://eshop.needleworkclub.com/product-13539",
+    "note": "딜러 동일 SKU 57-550 / JAN 4901316575502",
+    "images": [
+      "https://resource.oneposplus.com/public/hk/n14/needleworkclub/image/catalog/15e72308d0ceb93ddb6c85cdf97c8fcc.png",
+      "https://eshop.needleworkclub.com/image/catalog/placeholder-40x40.png"
+    ],
+    "saved": [
+      "_official_refs\\clover_jp_57-550_dealer_1.png",
+      "_official_refs\\clover_jp_57-550_dealer_2.png"
+    ]
+  },
+  {
+    "key": "clover_rakuten_same",
+    "brand": "CLOVER",
+    "verify_url": "https://search.rakuten.co.jp/search/mall/%E3%82%AF%E3%83%AD%E3%83%90%E3%83%BC+57-550/",
+    "note": "라쿠텐 동일제품 57-550 검색",
+    "images": [],
+    "saved": []
+  },
+  {
+    "key": "anchor_sewandso_shade",
+    "brand": "ANCHOR",
+    "verify_url": "https://www.sewandso.co.uk/product/anchor-stranded-cotton-colour-card/168246",
+    "note": "동일 ANCHOR stranded cotton / shade 계열 공식유통",
+    "saved": [
+      "_official_refs\\anchor_sewandso_shade_1.jpg"
+    ],
+    "images": [
+      "https://content.prod.lovecrafts.co/lovecrafts/a46bec4a-8317-48e6-beda-d7830ebee8d5_yarn.png?auto=compress,format"
+    ]
+  },
+  {
+    "key": "anchor_lovecrafts",
+    "brand": "ANCHOR",
+    "verify_url": "https://www.lovecrafts.com/en-gb/p/anchor-stranded-cotton",
+    "note": "동일 ANCHOR stranded cotton / shade 계열 공식유통",
+    "saved": [
+      "_official_refs\\anchor_lovecrafts_1.jpg"
+    ],
+    "images": [
+      "https://isv.prod.lovecrafts.co/v1/images/03a5964d2cc5747a09187ed77be6b46f/e383494a-0c82-488e-9921-a8e9aedc13e0.jpg/0/-/416x416"
+    ]
+  }
+]
