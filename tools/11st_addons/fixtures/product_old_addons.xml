@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Product>
+  <prdNo>1234567890</prdNo>
+  <prdNm>스팃스 보석십자수 액자형</prdNm>
+  <selPrc>35900</selPrc>
+  <prdSelQty>40</prdSelQty>
+  <htmlDetail><![CDATA[<p>상세 설명 그대로</p>]]></htmlDetail>
+  <dispCtgrNo>1001</dispCtgrNo>
+  <prdImage01>http://img.example/a.jpg</prdImage01>
+  <sellerPrdCd>STIX-1</sellerPrdCd>
+  <dlvCst>0</dlvCst>
+  <cupnDscMthdCd>01</cupnDscMthdCd>
+  <ProductOption>
+    <colTitle>사이즈</colTitle>
+    <colValue0>30x40</colValue0>
+    <addPrc>0</addPrc>
+    <stckQty>7</stckQty>
+  </ProductOption>
+  <ProductComponent>
+    <addPrdGrpNm>추가구성</addPrdGrpNm>
+    <compPrdNm>구형 코팅제</compPrdNm>
+    <addCompPrc>3000</addCompPrc>
+    <compPrdQty>9999</compPrdQty>
+    <addUseYn>Y</addUseYn>
+    <compPrdVatCd>01</compPrdVatCd>
+  </ProductComponent>
+  <ProductComponent>
+    <addPrdGrpNm>추가구성</addPrdGrpNm>
+    <compPrdNm>포장박스</compPrdNm>
+    <addCompPrc>500</addCompPrc>
+    <compPrdQty>3</compPrdQty>
+    <addUseYn>Y</addUseYn>
+  </ProductComponent>
+</Product>
